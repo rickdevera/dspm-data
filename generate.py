@@ -3,7 +3,7 @@ generate.py - Config-driven simulation orchestrator.
 
 Usage:
     python3 generate.py                                # Default (config.json)
-    python3 generate.py --config configs/acme.json  # Alternate company
+    python3 generate.py --config configs/fintech.json  # Alternate company
     python3 generate.py --quick                        # 7-day test run
     python3 generate.py --list-configs                 # Show available configs
 """
@@ -152,10 +152,10 @@ def run(config_path=None, quick=False):
         },
         "datastore_summary": {
             "total_datastores": len(datastores),
-            "critical_sensitivity": sum(1 for d in datastores if d["sensitivity"] == "critical"),
-            "phi_datastores": sum(1 for d in datastores if d["classification"] == "PHI"),
-            "pii_datastores": sum(1 for d in datastores if d["classification"] == "PII"),
-            "pci_datastores": sum(1 for d in datastores if d["classification"] == "PCI"),
+            "critical_sensitivity": sum(1 for d in datastores if d.get("sensitivity_level") == "Restricted"),
+            "phi_datastores": sum(1 for d in datastores if d.get("category") == "PHI"),
+            "pii_datastores": sum(1 for d in datastores if d.get("category") == "PII"),
+            "pci_datastores": sum(1 for d in datastores if d.get("category") == "PCI"),
         },
         "activity_summary": {
             "total_events": len(events),

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-21T20:10:15.756369",
-  "company": "Acme Financial",
-  "industry": "financial",
-  "config_used": "configs/acme.json",
+  "generated_at": "2026-04-21T22:42:24.086612",
+  "company": "Meridian Health Analytics",
+  "industry": "healthcare",
+  "config_used": "config.json",
   "simulation_days": 90,
   "identity_summary": {
     "total_identities": 80,
@@ -13,22 +13,22 @@
     "users_with_permission_drift": 1
   },
   "datastore_summary": {
-    "total_datastores": 8,
-    "critical_sensitivity": 2,
-    "phi_datastores": 1,
-    "pii_datastores": 2,
+    "total_datastores": 10,
+    "critical_sensitivity": 4,
+    "phi_datastores": 3,
+    "pii_datastores": 3,
     "pci_datastores": 1
   },
   "activity_summary": {
-    "total_events": 35655,
-    "scenario_events": 113,
-    "total_data_transferred_gb": 71.12,
-    "unique_flagged_users": 10
+    "total_events": 35531,
+    "scenario_events": 181,
+    "total_data_transferred_gb": 72.95,
+    "unique_flagged_users": 15
   },
   "findings_summary": {
-    "total": 5,
-    "critical": 2,
-    "high": 3,
+    "total": 12,
+    "critical": 3,
+    "high": 9,
     "findings": [
       {
         "id": "FIND-001",
@@ -54,6 +54,41 @@
         "id": "FIND-005",
         "severity": "HIGH",
         "title": "PII Data Found in Unclassified Development Bucket"
+      },
+      {
+        "id": "FIND-006",
+        "severity": "CRITICAL",
+        "title": "Credentials and Secrets Accessible to Broad User Population"
+      },
+      {
+        "id": "FIND-007",
+        "severity": "HIGH",
+        "title": "Data Classification Mismatch \u2014 meridian-analytics-raw-data"
+      },
+      {
+        "id": "FIND-008",
+        "severity": "HIGH",
+        "title": "Data Classification Mismatch \u2014 meridian-hr-documents"
+      },
+      {
+        "id": "FIND-009",
+        "severity": "HIGH",
+        "title": "Data Classification Mismatch \u2014 meridian-app-configs-prod"
+      },
+      {
+        "id": "FIND-010",
+        "severity": "HIGH",
+        "title": "Data Classification Mismatch \u2014 meridian-data-lake-raw"
+      },
+      {
+        "id": "FIND-011",
+        "severity": "HIGH",
+        "title": "Sensitive Data Stored Without Encryption \u2014 meridian-dev-scratch-pad"
+      },
+      {
+        "id": "FIND-012",
+        "severity": "HIGH",
+        "title": "Sensitive Data Stored Without Encryption \u2014 meridian-app-configs-prod"
       }
     ]
   }

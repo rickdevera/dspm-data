@@ -83,7 +83,7 @@ Each of the 80 users is generated with a behavioral profile that stays consisten
 
 ### Scenarios are injected on top
 
-Five security situations are layered into the baseline activity. Each scenario produces events that look unusual relative to the user's established normal behavior — not just random anomalies, but patterns that tell a story.
+Eight security scenarios are layered into the baseline activity. Each scenario produces events that look unusual relative to the user's established normal behavior — not just random anomalies, but patterns that tell a story.
 
 ---
 
@@ -95,9 +95,12 @@ Five security situations are layered into the baseline activity. Each scenario p
 |---|---|---|
 | CRITICAL | Pre-departure data exfiltration | A user's download volume from a customer data store increases 40x over their final 14 days. Activity shifts to evening hours outside their normal work pattern. The escalation is sustained — not a one-time event. |
 | CRITICAL | Credential compromise | A user's account accesses sensitive data stores from a foreign IP address between 1am and 5am over several days. Their normal access pattern is business hours from a known IP range. No travel was logged. |
+| CRITICAL | Secrets exposed in accessible datastore | A config bucket with no encryption contains live passwords, secret keys, and API tokens. Six engineers with legitimate access are regularly reading these files during deployments — the problem is what the files contain, not who is reading them. |
 | HIGH | Orphaned account | An employee left the company but their account was never disabled. The account continues accessing sensitive data stores weeks after their departure date. |
 | HIGH | Service account with excess access | An automated pipeline account has permissions to four data stores but only needs two for its stated function. It is actively using the extra permissions — this is not just unused access, it is access being exercised. |
 | HIGH | Sensitive data copied to wrong location | An engineer copies 450MB of customer records into a development data store that has no encryption requirements and is accessible to all 18 engineers. Fourteen of them subsequently access it. |
+| HIGH | Data classification mismatch | The DSPM scanner found data types that exceed the bucket's stated label. One analytics bucket labeled CONFIDENTIAL contains MRN and MBI records (both Restricted PHI). The classification is 669 days old — predating the data that is now inside it. |
+| HIGH / CRITICAL | Sensitive data stored without encryption | High and critical sensitivity datastores where encryption is not enforced. Users are actively transferring data from these stores unencrypted. Any storage-layer access or network interception bypasses all data protection controls. |
 
 Each finding includes:
 - What triggered it — the specific signals in the activity data
@@ -107,7 +110,7 @@ Each finding includes:
 
 ### Planned scenarios
 
-Two additional scenarios are designed but not yet built. Both require tracking how behavior changes over time — something that works better with AI-assisted generation than with fixed probability rules.
+Two scenarios are designed but not yet built. Both require tracking how behavior changes over time — something that works better with AI-assisted generation than with fixed probability rules.
 
 **Behavioral drift.** A user gradually starts accessing data outside their normal job function. There is no single suspicious event. The signal is that their access pattern diverges from their colleagues over 30 days. A help desk administrator who starts reading financial records with increasing frequency, while no one else in IT operations touches financial data at all, is an example.
 
@@ -143,12 +146,27 @@ Key settings:
   },
   "scenarios": {
     "enabled": ["pre_departure_exfil", "orphaned_account", "foreign_ip",
-                "service_account_overreach", "shadow_data"]
+                "service_account_overreach", "shadow_data",
+                "secrets_exposed", "classification_mismatch",
+                "unencrypted_sensitive_data"]
   }
 }
 ```
 
 Setting `seed` to `null` generates a different environment on every run. Setting it to a number makes the output reproducible — useful for sharing a specific environment with someone else.
+
+### Data sensitivity taxonomy
+
+Datastore sensitivity uses a four-tier hierarchy aligned to the Tenable Cloud Security classification model:
+
+| Level | Meaning |
+|---|---|
+| `Restricted` | PHI, SSN, credit card numbers, credentials — highest protection required |
+| `Confidential` | PII (names, email, addresses), internal financial data |
+| `Private` | Internal-only data with no external exposure requirement |
+| `Public` | Intentionally public or non-sensitive |
+
+Each datastore in `config.json` also carries `data_types_detected` (granular content scan results), `classification_mismatch` (whether the label matches the contents), and `sample_finding_evidence` (the specific signal a scanner would surface).
 
 ---
 
@@ -189,7 +207,7 @@ client   = anthropic.Anthropic()
 findings = json.load(open("output/findings.json"))
 
 response = client.messages.create(
-    model="claude-opus-4-7",
+    model="claude-opus-4-5",
     max_tokens=1024,
     system="You are a security analyst reviewing cloud data access findings.",
     messages=[{
@@ -222,7 +240,7 @@ One observation worth noting: running an AI model locally with no external conne
 
 **Web dashboard.** The command-line query tool covers the same ground without adding dependencies. A visual interface is a reasonable next step but not required to demonstrate the core idea.
 
-**More findings.** A real scan of an 80-person company would produce 50 to 150 findings, mostly low severity, with a few important ones buried in the noise. This prototype generates 5 findings at the two highest severity levels. A post-simulation findings engine that scans users, data stores, and activity logs automatically would produce realistic volume and distribution. The architecture supports it — it just has not been built yet.
+**More findings.** A real scan of an 80-person company would produce 50 to 150 findings, mostly low severity, with a few important ones buried in the noise. This prototype generates 12 findings across CRITICAL and HIGH severity. A post-simulation findings engine that scans users, data stores, and activity logs automatically would produce realistic volume and distribution. The architecture supports it — it just has not been built yet.
 
 **Live cloud infrastructure.** The output format mirrors a real cloud security schema (AWS Security Hub) so the data could be ingested by a real tool. But no actual AWS account is involved. The simulation generates what a real scan would find — not the underlying infrastructure to scan.
 

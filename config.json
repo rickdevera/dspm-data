@@ -1,5 +1,6 @@
 {
-  "_comment": "DSPM Demo Environment Configuration. Copy and edit to generate different environments.",
+  "_comment": "DSPM Demo Environment Configuration — data types aligned to Tenable Cloud Security taxonomy",
+  "_sensitivity_levels": "Public < Private < Confidential < Restricted (matches Tenable's actual hierarchy)",
 
   "company": {
     "name": "Meridian Health Analytics",
@@ -13,7 +14,7 @@
     "days": 90,
     "end_date": "2024-03-31",
     "seed": 42,
-    "_seed_comment": "Set to null for random output every run. Set to integer for reproducible output."
+    "_seed_comment": "null = random every run, integer = reproducible"
   },
 
   "departments": {
@@ -88,97 +89,344 @@
       "id": "s3-patient-records",
       "name": "meridian-patient-records-prod",
       "type": "s3_bucket",
+      "category": "PHI",
       "classification": "PHI",
-      "sensitivity": "critical",
+      "sensitivity_level": "Restricted",
+      "_sensitivity_note": "PHI always Restricted per HIPAA — finding severity escalated one level",
       "region": "us-east-1",
-      "contains": ["patient_names", "dob", "ssn", "diagnosis_codes", "treatment_records"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2023-09-01",
+      "classification_age_days": 212,
+      "stale_classification": false,
       "row_estimate": 2400000,
       "legitimate_accessors": ["data_science", "engineering"],
-      "compliance": ["HIPAA", "SOC2"]
+      "compliance": ["HIPAA", "SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["csv", "parquet"], "object_count": 1840},
+        {"classification": "Unstructured", "type": "Documents", "extensions": ["pdf"], "object_count": 412}
+      ],
+      "data_types_detected": [
+        {"category": "PHI", "data_type": "MRN", "description": "Medical Record Number", "sensitivity": "Restricted", "entry_count": 2400000},
+        {"category": "PHI", "data_type": "DEA", "description": "Drug Enforcement Agency Number", "sensitivity": "Restricted", "entry_count": 18400},
+        {"category": "PHI", "data_type": "HL7", "description": "Clinical and administrative health data", "sensitivity": "Restricted", "entry_count": 890000},
+        {"category": "PHI", "data_type": "NPI", "description": "National Provider Identifier", "sensitivity": "Restricted", "entry_count": 4200},
+        {"category": "PII", "data_type": "Social Security Number", "description": "US SSN", "sensitivity": "Restricted", "entry_count": 2400000},
+        {"category": "PII", "data_type": "Birth Date", "description": "Person date of birth", "sensitivity": "Private", "entry_count": 2400000},
+        {"category": "PII", "data_type": "Person", "description": "Full name", "sensitivity": "Confidential", "entry_count": 2400000}
+      ],
+      "actual_data_types": ["MRN", "DEA", "HL7", "NPI", "Social Security Number", "Birth Date", "Person"],
+      "labeled_data_types": ["PHI", "health_records"],
+      "classification_mismatch": false,
+      "sample_finding_evidence": "SSN pattern detected: XXX-XX-XXXX in 2.4M records across 1,840 CSV objects"
     },
     {
       "id": "s3-customer-pii",
       "name": "meridian-customer-data-prod",
       "type": "s3_bucket",
+      "category": "PII",
       "classification": "PII",
-      "sensitivity": "high",
+      "sensitivity_level": "Restricted",
       "region": "us-east-1",
-      "contains": ["customer_names", "emails", "phone_numbers", "addresses"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2023-11-15",
+      "classification_age_days": 137,
+      "stale_classification": false,
       "row_estimate": 180000,
       "legitimate_accessors": ["sales", "customer_success", "engineering"],
-      "compliance": ["GDPR", "CCPA"]
+      "compliance": ["GDPR", "CCPA"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["csv", "xlsx"], "object_count": 340},
+        {"classification": "Semi-structured", "type": "Configuration files", "extensions": ["json"], "object_count": 89}
+      ],
+      "data_types_detected": [
+        {"category": "PII", "data_type": "Person", "description": "Full name", "sensitivity": "Confidential", "entry_count": 180000},
+        {"category": "PII", "data_type": "Email", "description": "Email address", "sensitivity": "Confidential", "entry_count": 178500},
+        {"category": "PII", "data_type": "Phone Number", "description": "Personal contact number", "sensitivity": "Confidential", "entry_count": 162000},
+        {"category": "PII", "data_type": "Address", "description": "Physical address", "sensitivity": "Confidential", "entry_count": 174000},
+        {"category": "PII", "data_type": "Zip Code", "description": "Postal code", "sensitivity": "Confidential", "entry_count": 174000}
+      ],
+      "actual_data_types": ["Person", "Email", "Phone Number", "Address", "Zip Code"],
+      "labeled_data_types": ["PII", "customer_data"],
+      "classification_mismatch": false,
+      "sample_finding_evidence": "Email pattern detected: 178,500 entries matching RFC-5322 format across 340 CSV objects"
     },
     {
       "id": "rds-billing",
       "name": "meridian-billing-db-prod",
       "type": "rds_postgres",
+      "category": "PCI",
       "classification": "PCI",
-      "sensitivity": "critical",
+      "sensitivity_level": "Restricted",
+      "_sensitivity_note": "CVV and Credit Card Number are both Restricted — finding severity escalated",
       "region": "us-east-1",
-      "contains": ["credit_card_tokens", "billing_history", "payment_methods"],
+      "encryption": "AES-256 + TLS in-transit",
+      "public_access": false,
+      "last_classified": "2024-01-10",
+      "classification_age_days": 81,
+      "stale_classification": false,
       "row_estimate": 95000,
       "legitimate_accessors": ["finance", "engineering"],
-      "compliance": ["PCI-DSS", "SOC2"]
+      "compliance": ["PCI-DSS", "SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Managed database", "extensions": ["rds_postgres"], "table_count": 14}
+      ],
+      "data_types_detected": [
+        {"category": "PCI", "data_type": "Credit Card Number", "description": "Personal account number (Visa/MC/AMEX)", "sensitivity": "Restricted", "entry_count": 95000},
+        {"category": "PCI", "data_type": "CVV", "description": "Credit Card Verification Number", "sensitivity": "Restricted", "entry_count": 95000},
+        {"category": "PCI", "data_type": "Full Magnetic Stripe", "description": "Full track data", "sensitivity": "Restricted", "entry_count": 12400},
+        {"category": "PII", "data_type": "Person", "description": "Cardholder name", "sensitivity": "Confidential", "entry_count": 95000},
+        {"category": "PII", "data_type": "Address", "description": "Billing address", "sensitivity": "Confidential", "entry_count": 95000}
+      ],
+      "actual_data_types": ["Credit Card Number", "CVV", "Full Magnetic Stripe", "Person", "Address"],
+      "labeled_data_types": ["PCI", "financial_data"],
+      "classification_mismatch": false,
+      "sample_finding_evidence": "Credit Card Number detected: Visa (4xxx), Mastercard (5xxx), AMEX (3xxx) patterns in billing_transactions table"
     },
     {
       "id": "s3-analytics-raw",
       "name": "meridian-analytics-raw-data",
       "type": "s3_bucket",
+      "category": "PHI",
       "classification": "CONFIDENTIAL",
-      "sensitivity": "high",
+      "sensitivity_level": "Confidential",
+      "_classification_warning": "Labeled CONFIDENTIAL but contains PHI data types — stale classification",
       "region": "us-west-2",
-      "contains": ["aggregated_health_metrics", "de_identified_records", "model_training_data"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2022-06-01",
+      "classification_age_days": 669,
+      "stale_classification": true,
       "row_estimate": 8700000,
       "legitimate_accessors": ["data_science", "engineering"],
-      "compliance": ["HIPAA", "SOC2"]
+      "compliance": ["HIPAA", "SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["parquet", "csv"], "object_count": 14200},
+        {"classification": "Semi-structured", "type": "Configuration files", "extensions": ["json"], "object_count": 890}
+      ],
+      "data_types_detected": [
+        {"category": "PHI", "data_type": "MRN", "description": "Medical Record Number", "sensitivity": "Restricted", "entry_count": 4100000},
+        {"category": "PHI", "data_type": "HICN", "description": "Health Insurance Claim Number", "sensitivity": "Confidential", "entry_count": 2800000},
+        {"category": "PHI", "data_type": "MBI", "description": "Medicare Beneficiary Identifier", "sensitivity": "Restricted", "entry_count": 1200000},
+        {"category": "PII", "data_type": "Birth Date", "description": "Person date of birth", "sensitivity": "Private", "entry_count": 8700000}
+      ],
+      "actual_data_types": ["MRN", "HICN", "MBI", "Birth Date"],
+      "labeled_data_types": ["CONFIDENTIAL", "analytics"],
+      "classification_mismatch": true,
+      "_mismatch_note": "Scanner found MRN and MBI (both Restricted PHI) — bucket labeled CONFIDENTIAL. Last classified 669 days ago.",
+      "sample_finding_evidence": "MRN pattern detected in 4.1M records across parquet objects last modified after classification date"
     },
     {
       "id": "s3-employee-records",
       "name": "meridian-hr-documents",
       "type": "s3_bucket",
+      "category": "PII",
       "classification": "CONFIDENTIAL",
-      "sensitivity": "high",
+      "sensitivity_level": "Confidential",
+      "_classification_warning": "Contains SSN and Bank Account Number — should be Restricted",
       "region": "us-east-1",
-      "contains": ["employee_pii", "salary_data", "performance_reviews", "ssn"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2021-03-15",
+      "classification_age_days": 1117,
+      "stale_classification": true,
       "row_estimate": 740,
       "legitimate_accessors": ["hr", "legal", "finance"],
-      "compliance": ["SOC2"]
+      "compliance": ["SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["xlsx", "csv"], "object_count": 48},
+        {"classification": "Unstructured", "type": "Documents", "extensions": ["pdf", "docx"], "object_count": 312}
+      ],
+      "data_types_detected": [
+        {"category": "PII", "data_type": "Social Security Number", "description": "US SSN", "sensitivity": "Restricted", "entry_count": 740},
+        {"category": "PII", "data_type": "Bank Account Number", "description": "Personal bank account (US)", "sensitivity": "Restricted", "entry_count": 740},
+        {"category": "PII", "data_type": "Person", "description": "Full name", "sensitivity": "Confidential", "entry_count": 740},
+        {"category": "PII", "data_type": "Birth Date", "description": "Date of birth", "sensitivity": "Private", "entry_count": 740},
+        {"category": "PII", "data_type": "Address", "description": "Home address", "sensitivity": "Confidential", "entry_count": 740},
+        {"category": "PII", "data_type": "Email", "description": "Personal email", "sensitivity": "Confidential", "entry_count": 740}
+      ],
+      "actual_data_types": ["Social Security Number", "Bank Account Number", "Person", "Birth Date", "Address", "Email"],
+      "labeled_data_types": ["CONFIDENTIAL", "hr_records"],
+      "classification_mismatch": true,
+      "_mismatch_note": "Contains Social Security Number and Bank Account Number (both Restricted) — bucket labeled CONFIDENTIAL. 1,117 days since last classification.",
+      "sample_finding_evidence": "SSN pattern XXX-XX-XXXX detected in payroll.xlsx. Bank routing + account number pairs detected in direct_deposit.csv."
     },
     {
       "id": "s3-financial-reports",
       "name": "meridian-finance-reports",
       "type": "s3_bucket",
+      "category": "Financial",
       "classification": "CONFIDENTIAL",
-      "sensitivity": "medium",
+      "sensitivity_level": "Confidential",
       "region": "us-east-1",
-      "contains": ["quarterly_reports", "forecasts", "board_materials"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2023-07-20",
+      "classification_age_days": 255,
+      "stale_classification": false,
       "row_estimate": 3200,
       "legitimate_accessors": ["finance", "legal"],
-      "compliance": ["SOC2"]
+      "compliance": ["SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Unstructured", "type": "Documents", "extensions": ["pdf", "docx"], "object_count": 847},
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["xlsx"], "object_count": 312}
+      ],
+      "data_types_detected": [
+        {"category": "PII", "data_type": "EIN", "description": "US Employer Identification Number", "sensitivity": "Restricted", "entry_count": 24},
+        {"category": "PII", "data_type": "Billing", "description": "Transaction statements", "sensitivity": "Confidential", "entry_count": 3200},
+        {"category": "PII", "data_type": "Person", "description": "Executive names", "sensitivity": "Confidential", "entry_count": 156}
+      ],
+      "actual_data_types": ["EIN", "Billing", "Person"],
+      "labeled_data_types": ["CONFIDENTIAL", "financial"],
+      "classification_mismatch": false,
+      "sample_finding_evidence": "EIN pattern XX-XXXXXXX detected in 24 quarterly report objects"
     },
     {
       "id": "s3-dev-scratch",
       "name": "meridian-dev-scratch-pad",
       "type": "s3_bucket",
+      "category": "Internal",
       "classification": "INTERNAL",
-      "sensitivity": "medium",
+      "sensitivity_level": "Private",
+      "_sensitivity_note": "No encryption enforced — any sensitive data copied here becomes immediately at risk",
       "region": "us-west-2",
-      "contains": ["dev_configs", "test_data", "build_artifacts"],
+      "encryption": "none",
+      "public_access": false,
+      "last_classified": "2022-01-05",
+      "classification_age_days": 816,
+      "stale_classification": true,
       "row_estimate": 12000,
       "legitimate_accessors": ["engineering"],
-      "compliance": []
+      "compliance": [],
+      "secrets_risk": true,
+      "file_formats_detected": [
+        {"classification": "Semi-structured", "type": "Configuration files", "extensions": ["env", "yaml", "json", "tfstate"], "object_count": 847},
+        {"classification": "Unstructured", "type": "Code", "extensions": ["py", "sh", "ps1"], "object_count": 2140},
+        {"classification": "Secrets", "type": "Key files", "extensions": ["pem", "key"], "object_count": 3}
+      ],
+      "data_types_detected": [
+        {"category": "Secrets", "data_type": "Generic Password", "description": "Unified password detection with entropy validation", "sensitivity": "Restricted", "entry_count": 47},
+        {"category": "Secrets", "data_type": "Secret Key", "description": "Persistent secret for token generation", "sensitivity": "Restricted", "entry_count": 12},
+        {"category": "Secrets", "data_type": "Token", "description": "Ephemeral secret used for authentication", "sensitivity": "Restricted", "entry_count": 34},
+        {"category": "Secrets", "data_type": "Sensitive URL", "description": "URLs containing auth parameters or embedded tokens", "sensitivity": "Restricted", "entry_count": 8}
+      ],
+      "actual_data_types": ["Generic Password", "Secret Key", "Token", "Sensitive URL"],
+      "labeled_data_types": ["INTERNAL", "engineering"],
+      "classification_mismatch": false,
+      "_note": "Secrets present but classification not technically wrong — issue is secrets should not be here at all",
+      "known_secrets": ["Generic Password", "Secret Key", "Token", "Sensitive URL"],
+      "sample_finding_evidence": "Generic Password detected in 47 .env files. Secret Key detected in 3 .pem files. Entropy validation passed — not synthetic data."
     },
     {
       "id": "rds-app-prod",
       "name": "meridian-app-db-prod",
       "type": "rds_postgres",
+      "category": "PII",
       "classification": "PII",
-      "sensitivity": "high",
+      "sensitivity_level": "Restricted",
       "region": "us-east-1",
-      "contains": ["user_accounts", "session_data", "api_keys", "customer_profiles"],
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2023-12-01",
+      "classification_age_days": 121,
+      "stale_classification": false,
       "row_estimate": 220000,
       "legitimate_accessors": ["engineering", "customer_success"],
-      "compliance": ["SOC2", "GDPR"]
+      "compliance": ["SOC2", "GDPR"],
+      "secrets_risk": true,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Managed database", "extensions": ["rds_postgres"], "table_count": 22}
+      ],
+      "data_types_detected": [
+        {"category": "PII", "data_type": "Email", "description": "User email addresses", "sensitivity": "Confidential", "entry_count": 220000},
+        {"category": "PII", "data_type": "User Name", "description": "Electronic username identifiers", "sensitivity": "Confidential", "entry_count": 220000},
+        {"category": "Secrets", "data_type": "Token", "description": "OAuth and session tokens in api_keys table", "sensitivity": "Restricted", "entry_count": 184000},
+        {"category": "Secrets", "data_type": "Secret Key", "description": "API keys stored in application database", "sensitivity": "Restricted", "entry_count": 64000}
+      ],
+      "actual_data_types": ["Email", "User Name", "Token", "Secret Key"],
+      "labeled_data_types": ["PII", "application_data"],
+      "classification_mismatch": false,
+      "known_secrets": ["Token", "Secret Key"],
+      "sample_finding_evidence": "Token pattern detected in api_keys table: 184,000 entries matching OAuth bearer token format. Secret Key detected: 64,000 API key entries."
+    },
+    {
+      "id": "s3-app-configs",
+      "name": "meridian-app-configs-prod",
+      "type": "s3_bucket",
+      "category": "Secrets",
+      "classification": "INTERNAL",
+      "sensitivity_level": "Private",
+      "_classification_warning": "Labeled INTERNAL but scanner found Restricted secrets — effective sensitivity is critical",
+      "region": "us-east-1",
+      "encryption": "none",
+      "public_access": false,
+      "last_classified": "2021-08-12",
+      "classification_age_days": 962,
+      "stale_classification": true,
+      "row_estimate": 847,
+      "legitimate_accessors": ["engineering", "it_ops"],
+      "compliance": [],
+      "secrets_risk": true,
+      "file_formats_detected": [
+        {"classification": "Semi-structured", "type": "Configuration files", "extensions": ["env", "yaml", "yml", "json", "properties"], "object_count": 612},
+        {"classification": "Secrets", "type": "Key files", "extensions": ["pem", "key", "p12"], "object_count": 8}
+      ],
+      "data_types_detected": [
+        {"category": "Secrets", "data_type": "Generic Password", "description": "Database passwords with entropy validation", "sensitivity": "Restricted", "entry_count": 23},
+        {"category": "Secrets", "data_type": "Secret Key", "description": "Encryption and signing keys", "sensitivity": "Restricted", "entry_count": 8},
+        {"category": "Secrets", "data_type": "Token", "description": "Third-party API tokens (Slack, Stripe, SendGrid)", "sensitivity": "Restricted", "entry_count": 31},
+        {"category": "Secrets", "data_type": "Sensitive URL", "description": "Connection strings with embedded credentials", "sensitivity": "Restricted", "entry_count": 14},
+        {"category": "Secrets", "data_type": "Runtime Secret", "description": "Secrets detected in deployment scripts", "sensitivity": "Restricted", "entry_count": 6}
+      ],
+      "actual_data_types": ["Generic Password", "Secret Key", "Token", "Sensitive URL", "Runtime Secret"],
+      "labeled_data_types": ["INTERNAL", "configs"],
+      "classification_mismatch": true,
+      "_mismatch_note": "All detected data types are Secrets/Restricted. Bucket labeled INTERNAL — correct label would be Secrets/Restricted. 962 days since classification.",
+      "known_secrets": ["Generic Password", "Secret Key", "Token", "Sensitive URL", "Runtime Secret"],
+      "sample_finding_evidence": "Generic Password: 23 occurrences in .env files matching DB_PASSWORD=, REDIS_PASSWORD= patterns. Secret Key: 8 .pem files. Token: 31 third-party tokens (Slack webhook, Stripe secret, SendGrid API key patterns detected)."
+    },
+    {
+      "id": "s3-data-lake",
+      "name": "meridian-data-lake-raw",
+      "type": "s3_bucket",
+      "category": "PHI",
+      "classification": "CONFIDENTIAL",
+      "sensitivity_level": "Confidential",
+      "_classification_warning": "Raw ingest bucket — scanner found PHI and PCI data in recently added objects",
+      "region": "us-west-2",
+      "encryption": "AES-256",
+      "public_access": false,
+      "last_classified": "2020-11-30",
+      "classification_age_days": 1217,
+      "stale_classification": true,
+      "row_estimate": 45000000,
+      "legitimate_accessors": ["data_science", "engineering"],
+      "compliance": ["HIPAA", "SOC2"],
+      "secrets_risk": false,
+      "file_formats_detected": [
+        {"classification": "Structured", "type": "Spreadsheets and databases", "extensions": ["parquet", "csv", "tsv"], "object_count": 84200},
+        {"classification": "Semi-structured", "type": "Configuration files", "extensions": ["json"], "object_count": 12400}
+      ],
+      "data_types_detected": [
+        {"category": "PHI", "data_type": "MRN", "description": "Medical Record Number in raw feed objects", "sensitivity": "Restricted", "entry_count": 12000000},
+        {"category": "PHI", "data_type": "MBI", "description": "Medicare Beneficiary Identifier", "sensitivity": "Restricted", "entry_count": 4800000},
+        {"category": "PHI", "data_type": "NPI", "description": "National Provider Identifier", "sensitivity": "Restricted", "entry_count": 890000},
+        {"category": "PII", "data_type": "Social Security Number", "description": "SSN in insurance claim feeds", "sensitivity": "Restricted", "entry_count": 8200000},
+        {"category": "PCI", "data_type": "Credit Card Number", "description": "Payment card numbers in billing feeds", "sensitivity": "Restricted", "entry_count": 340000},
+        {"category": "PII", "data_type": "Birth Date", "description": "Date of birth", "sensitivity": "Private", "entry_count": 45000000}
+      ],
+      "actual_data_types": ["MRN", "MBI", "NPI", "Social Security Number", "Credit Card Number", "Birth Date"],
+      "labeled_data_types": ["CONFIDENTIAL", "data_lake"],
+      "classification_mismatch": true,
+      "_mismatch_note": "Scanner found MRN, MBI, SSN (all Restricted PHI/PII) and Credit Card Number (Restricted PCI). Bucket labeled CONFIDENTIAL. 1,217 days since last classification — data composition has changed significantly.",
+      "sample_finding_evidence": "SSN pattern XXX-XX-XXXX: 8.2M entries in insurance_claims_*.parquet. Credit Card Number (Visa/MC): 340K entries in payment_feeds_*.csv. MRN pattern detected across 84,200 objects."
     }
   ],
 
@@ -187,22 +435,22 @@
       "id": "role-data-scientist",
       "name": "DataScientistRole",
       "policies": ["S3ReadAll", "AthenaFullAccess", "GlueReadOnly"],
-      "datastores": ["s3-analytics-raw", "s3-patient-records", "s3-customer-pii"],
+      "datastores": ["s3-analytics-raw", "s3-patient-records", "s3-customer-pii", "s3-data-lake"],
       "risk_level": "high"
     },
     {
       "id": "role-engineer-dev",
       "name": "EngineerDeveloperRole",
       "policies": ["S3FullAccess", "RDSReadWrite", "CloudWatchFullAccess", "IAMReadOnly"],
-      "datastores": ["s3-dev-scratch", "rds-app-prod", "s3-analytics-raw"],
-      "risk_level": "medium"
+      "datastores": ["s3-dev-scratch", "s3-app-configs", "rds-app-prod", "s3-analytics-raw"],
+      "risk_level": "high"
     },
     {
       "id": "role-engineer-senior",
       "name": "EngineerSeniorRole",
       "policies": ["S3FullAccess", "RDSFullAccess", "IAMPowerUser", "EC2FullAccess"],
-      "datastores": ["s3-dev-scratch", "rds-app-prod", "rds-billing", "s3-analytics-raw"],
-      "risk_level": "high"
+      "datastores": ["s3-dev-scratch", "s3-app-configs", "rds-app-prod", "rds-billing", "s3-analytics-raw"],
+      "risk_level": "critical"
     },
     {
       "id": "role-finance",
@@ -243,7 +491,7 @@
       "id": "role-svc-etl",
       "name": "ETLServiceRole",
       "policies": ["S3FullAccess", "RDSFullAccess", "GlueFullAccess"],
-      "datastores": ["s3-patient-records", "s3-analytics-raw", "rds-app-prod", "rds-billing"],
+      "datastores": ["s3-patient-records", "s3-analytics-raw", "rds-app-prod", "rds-billing", "s3-data-lake"],
       "risk_level": "critical"
     },
     {
@@ -251,7 +499,8 @@
       "name": "ContractorLimitedRole",
       "policies": ["S3ReadOnly"],
       "datastores": ["s3-dev-scratch"],
-      "risk_level": "low"
+      "risk_level": "medium",
+      "_note": "Contractors access dev scratch — which contains Restricted secrets"
     }
   ],
 
@@ -261,9 +510,11 @@
       "orphaned_account",
       "foreign_ip",
       "service_account_overreach",
-      "shadow_data"
+      "shadow_data",
+      "secrets_exposed",
+      "classification_mismatch",
+      "unencrypted_sensitive_data"
     ],
-    "_available_comment": "Available: pre_departure_exfil, orphaned_account, foreign_ip, service_account_overreach, shadow_data",
     "_future_comment": "Future: behavioral_drift, temp_access_abuse",
 
     "orphaned_accounts": {
@@ -271,20 +522,17 @@
       "min_days_since_departure": 30,
       "max_days_since_departure": 120
     },
-
     "pre_departure_exfil": {
       "lookback_days": 14,
       "volume_multiplier": 40,
       "target_departments": ["sales", "customer_success"]
     },
-
     "foreign_ip": {
       "incident_duration_days": 5,
       "active_hours_start": 1,
       "active_hours_end": 5,
       "target_departments": ["engineering", "data_science", "finance"]
     },
-
     "shadow_data": {
       "copy_volume_bytes": 450000000,
       "target_destination": "s3-dev-scratch",

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "company": "Acme Financial",
-  "total_findings": 5,
+  "company": "Meridian Health Analytics",
+  "total_findings": 12,
   "by_severity": {
-    "CRITICAL": 2,
-    "HIGH": 3,
+    "CRITICAL": 3,
+    "HIGH": 9,
     "MEDIUM": 0,
     "LOW": 0
   },
@@ -14,13 +14,13 @@
       "scenario": "pre_departure_exfiltration",
       "severity": "CRITICAL",
       "title": "Suspected Pre-Departure Data Exfiltration",
-      "description": "James King (sales) showed a 40x spike in data downloads from the customer PII datastore in the 14 days prior to simulation end. Activity concentrated in evening hours (5pm-10pm), outside normal work pattern.",
-      "affected_user": "usr_1050",
-      "affected_user_name": "James King",
+      "description": "Rachel Thomas (customer_success) showed a 40x spike in data downloads from the customer PII datastore in the 14 days prior to simulation end. Activity concentrated in evening hours (5pm-10pm), outside normal work pattern.",
+      "affected_user": "usr_1058",
+      "affected_user_name": "Rachel Thomas",
       "affected_datastore": "s3-customer-pii",
       "datastore_classification": "PII",
-      "event_count": 60,
-      "total_bytes": 16242572250,
+      "event_count": 57,
+      "total_bytes": 14771956385,
       "detection_signals": [
         "Volume anomaly: 40x baseline download rate",
         "Time anomaly: activity outside normal work hours",
@@ -34,7 +34,7 @@
         "CCPA"
       ],
       "recommended_action": "Suspend account, initiate DLP review, preserve logs for forensics",
-      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
       "AwsAccountId": "123456789012",
       "CreatedAt": "2024-03-31T00:00:00",
       "UpdatedAt": "2024-03-31T00:00:00",
@@ -49,15 +49,15 @@
       "scenario": "orphaned_account_access",
       "severity": "HIGH",
       "title": "Active Access by Departed Employee",
-      "description": "Rachel Rivera departed on 2024-02-05T00:00:00 but their account remains active. 4 access events detected after departure, targeting sensitive datastores including PII and employee records.",
-      "affected_user": "usr_dep_2",
-      "affected_user_name": "Rachel Rivera",
-      "departure_date": "2024-02-05T00:00:00",
-      "days_since_departure": 55,
-      "event_count": 4,
+      "description": "Elizabeth Miller departed on 2023-12-18T00:00:00 but their account remains active. 5 access events detected after departure, targeting sensitive datastores including PII and employee records.",
+      "affected_user": "usr_dep_1",
+      "affected_user_name": "Elizabeth Miller",
+      "departure_date": "2023-12-18T00:00:00",
+      "days_since_departure": 104,
+      "event_count": 5,
       "detection_signals": [
         "Account active past departure date",
-        "Access 55 days post-departure",
+        "Access 104 days post-departure",
         "No offboarding record in identity system",
         "MFA disabled \u2014 account potentially compromised"
       ],
@@ -68,7 +68,7 @@
         "HIPAA \u00a7 164.308(a)(3)"
       ],
       "recommended_action": "Immediately disable account, audit all post-departure activity, involve HR and Legal",
-      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
       "AwsAccountId": "123456789012",
       "CreatedAt": "2024-03-31T00:00:00",
       "UpdatedAt": "2024-03-31T00:00:00",
@@ -83,14 +83,14 @@
       "scenario": "foreign_ip_credential_compromise",
       "severity": "CRITICAL",
       "title": "Possible Credential Compromise \u2014 Foreign IP Access to Sensitive Data",
-      "description": "William Taylor (data_science) accessed critical datastores from IP 103.21.244.115 (foreign range) between 1am-5am over 4 days. Normal access pattern is standard from 192.168.1.203.",
-      "affected_user": "usr_1019",
-      "affected_user_name": "William Taylor",
-      "suspicious_ip": "103.21.244.115",
-      "normal_ip": "192.168.1.203",
-      "event_count": 14,
+      "description": "Michelle Campbell (engineering) accessed critical datastores from IP 103.21.244.161 (foreign range) between 1am-5am over 3 days. Normal access pattern is flexible from 192.168.2.97.",
+      "affected_user": "usr_1014",
+      "affected_user_name": "Michelle Campbell",
+      "suspicious_ip": "103.21.244.161",
+      "normal_ip": "192.168.2.97",
+      "event_count": 17,
       "detection_signals": [
-        "IP deviation: normal 192.168.1.203 vs suspicious 103.21.244.115",
+        "IP deviation: normal 192.168.2.97 vs suspicious 103.21.244.161",
         "Time anomaly: 1am-5am activity, outside all work patterns",
         "Geolocation: foreign IP range, not VPN",
         "Data sensitivity: PHI and PCI datastores accessed",
@@ -103,7 +103,7 @@
         "PCI DSS Req 10.6"
       ],
       "recommended_action": "Force password reset, revoke active sessions, enable step-up MFA, review accessed records",
-      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
       "AwsAccountId": "123456789012",
       "CreatedAt": "2024-03-31T00:00:00",
       "UpdatedAt": "2024-03-31T00:00:00",
@@ -118,13 +118,14 @@
       "scenario": "service_account_overreach",
       "severity": "HIGH",
       "title": "Service Account Actively Using Excess Permissions",
-      "description": "ETL pipeline service account (svc-etl-pipeline) has permissions to 4 datastores but only requires 2 for its stated function. Over 90 days, it made 28 accesses to patient records (PHI) and billing database (PCI) \u2014 datastores with no documented ETL requirement.",
+      "description": "ETL pipeline service account (svc-etl-pipeline) has permissions to 4 datastores but only requires 2 for its stated function. Over 90 days, it made 29 accesses to patient records (PHI) and billing database (PCI) \u2014 datastores with no documented ETL requirement.",
       "affected_user": "svc_etl_001",
       "affected_datastore": [
         "rds-app-prod",
-        "rds-billing"
+        "rds-billing",
+        "s3-data-lake"
       ],
-      "event_count": 28,
+      "event_count": 29,
       "detection_signals": [
         "Service account accessing PHI datastore with no documented requirement",
         "Service account accessing PCI datastore with no documented requirement",
@@ -139,7 +140,7 @@
         "PCI DSS Req 7"
       ],
       "recommended_action": "Scope service account to minimum required permissions, rotate credentials, audit all historical access",
-      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
       "AwsAccountId": "123456789012",
       "CreatedAt": "2024-03-31T00:00:00",
       "UpdatedAt": "2024-03-31T00:00:00",
@@ -154,20 +155,20 @@
       "scenario": "shadow_data_in_dev",
       "severity": "HIGH",
       "title": "PII Data Found in Unclassified Development Bucket",
-      "description": "Timothy Martin copied 450MB from the customer PII datastore to the dev scratch bucket on 2024-01-16. The dev bucket has no encryption enforcement, no DLP controls, and broader access than production. 6 subsequent accesses by other engineers detected.",
-      "affected_user": "usr_1016",
+      "description": "Michelle Campbell copied 450MB from the customer PII datastore to the dev scratch bucket on 2024-01-20. The dev bucket has no encryption enforcement, no DLP controls, and broader access than production. 14 subsequent accesses by other engineers detected.",
+      "affected_user": "usr_1014",
       "original_datastore": "s3-customer-pii",
       "shadow_datastore": "s3-dev-scratch",
-      "copy_date": "2024-01-16T00:00:00",
-      "days_exposed": 75,
+      "copy_date": "2024-01-20T00:00:00",
+      "days_exposed": 71,
       "data_volume_bytes": 450000000,
-      "secondary_accessors": 6,
+      "secondary_accessors": 14,
       "detection_signals": [
         "Large CopyObject from PII-classified to INTERNAL-classified bucket",
         "Classification mismatch: PII data in non-PII bucket",
         "Dev bucket lacks encryption at rest enforcement",
         "Dev bucket accessible to all engineers (18 users)",
-        "Data exposed for 75 days without remediation"
+        "Data exposed for 71 days without remediation"
       ],
       "mitre_tactic": "TA0009 - Collection",
       "mitre_technique": "T1530 - Data from Cloud Storage",
@@ -177,7 +178,344 @@
         "SOC2 CC6.1"
       ],
       "recommended_action": "Delete copied data immediately, add bucket policy to prevent cross-classification copies, classify dev bucket correctly",
-      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-006",
+      "scenario": "secrets_exposed",
+      "severity": "CRITICAL",
+      "title": "Credentials and Secrets Accessible to Broad User Population",
+      "description": "The datastore 'meridian-app-configs-prod' is classified as INTERNAL but contains live credentials including Generic Password, Secret Key, Token. 6 users made 58 accesses over the simulation period. The bucket has no encryption and has not been classified since 2021-08-12 (962 days ago).",
+      "affected_datastore": "s3-app-configs",
+      "datastore_classification": "INTERNAL",
+      "effective_sensitivity": "critical",
+      "known_secrets": [
+        "Generic Password",
+        "Secret Key",
+        "Token",
+        "Sensitive URL",
+        "Runtime Secret"
+      ],
+      "unique_accessors": 6,
+      "event_count": 58,
+      "encryption": "none",
+      "days_since_classified": 962,
+      "detection_signals": [
+        "Datastore labeled INTERNAL contains live credentials",
+        "No encryption enforced on secrets store",
+        "6 distinct users accessed credential files",
+        "Classification not reviewed in 962 days",
+        "Contractor role has read access to this bucket"
+      ],
+      "mitre_tactic": "TA0006 - Credential Access",
+      "mitre_technique": "T1552.001 - Credentials in Files",
+      "compliance_impact": [
+        "SOC2 CC6.1 - Logical access security",
+        "NIST CSF PR.AC-4 - Access permissions",
+        "CIS Control 14 - Controlled Access Based on Need to Know"
+      ],
+      "recommended_action": "Rotate all credentials immediately. Move secrets to a dedicated secrets manager (AWS Secrets Manager or HashiCorp Vault). Remove plaintext credentials from config files. Restrict bucket access to service accounts only with audit logging.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-007",
+      "scenario": "classification_mismatch",
+      "severity": "HIGH",
+      "title": "Data Classification Mismatch \u2014 meridian-analytics-raw-data",
+      "description": "Datastore 'meridian-analytics-raw-data' is labeled 'CONFIDENTIAL' but content scanning found data types that require 'CONFIDENTIAL' classification: MRN, HICN, MBI, Birth Date. The label has not been reviewed in 669 days. 45 users currently have access based on the incorrect label \u2014 some may not be authorized for the actual data sensitivity level.",
+      "affected_datastore": "s3-analytics-raw",
+      "current_classification": "CONFIDENTIAL",
+      "correct_classification": "CONFIDENTIAL",
+      "actual_data_types": [
+        "MRN",
+        "HICN",
+        "MBI",
+        "Birth Date"
+      ],
+      "labeled_data_types": [
+        "CONFIDENTIAL",
+        "analytics"
+      ],
+      "days_since_classified": 669,
+      "last_classified": "2022-06-01",
+      "users_with_current_access": 45,
+      "encryption": "AES-256",
+      "stale_classification": true,
+      "detection_signals": [
+        "Content scan found MRN, HICN, MBI \u2014 exceeds CONFIDENTIAL threshold",
+        "Classification label 669 days old \u2014 exceeds 365-day review policy",
+        "45 users granted access under incorrect classification",
+        "Encryption level (AES-256) insufficient for actual data sensitivity",
+        "No re-classification triggered after content change"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "GDPR Art.5 - Data accuracy and integrity principle",
+        "HIPAA \u00a7 164.514 - De-identification standards",
+        "SOC2 CC6.1 - Data classification controls"
+      ],
+      "recommended_action": "Re-classify 'meridian-analytics-raw-data' as CONFIDENTIAL. Review and reduce access list to only users authorized for CONFIDENTIAL data. Apply appropriate encryption. Establish automated re-classification triggers on content change.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-008",
+      "scenario": "classification_mismatch",
+      "severity": "HIGH",
+      "title": "Data Classification Mismatch \u2014 meridian-hr-documents",
+      "description": "Datastore 'meridian-hr-documents' is labeled 'CONFIDENTIAL' but content scanning found data types that require 'CONFIDENTIAL' classification: Social Security Number, Bank Account Number, Person, Birth Date. The label has not been reviewed in 1117 days. 17 users currently have access based on the incorrect label \u2014 some may not be authorized for the actual data sensitivity level.",
+      "affected_datastore": "s3-employee-records",
+      "current_classification": "CONFIDENTIAL",
+      "correct_classification": "CONFIDENTIAL",
+      "actual_data_types": [
+        "Social Security Number",
+        "Bank Account Number",
+        "Person",
+        "Birth Date",
+        "Address",
+        "Email"
+      ],
+      "labeled_data_types": [
+        "CONFIDENTIAL",
+        "hr_records"
+      ],
+      "days_since_classified": 1117,
+      "last_classified": "2021-03-15",
+      "users_with_current_access": 17,
+      "encryption": "AES-256",
+      "stale_classification": true,
+      "detection_signals": [
+        "Content scan found Social Security Number, Bank Account Number, Person \u2014 exceeds CONFIDENTIAL threshold",
+        "Classification label 1117 days old \u2014 exceeds 365-day review policy",
+        "17 users granted access under incorrect classification",
+        "Encryption level (AES-256) insufficient for actual data sensitivity",
+        "No re-classification triggered after content change"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "GDPR Art.5 - Data accuracy and integrity principle",
+        "HIPAA \u00a7 164.514 - De-identification standards",
+        "SOC2 CC6.1 - Data classification controls"
+      ],
+      "recommended_action": "Re-classify 'meridian-hr-documents' as CONFIDENTIAL. Review and reduce access list to only users authorized for CONFIDENTIAL data. Apply appropriate encryption. Establish automated re-classification triggers on content change.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-009",
+      "scenario": "classification_mismatch",
+      "severity": "HIGH",
+      "title": "Data Classification Mismatch \u2014 meridian-app-configs-prod",
+      "description": "Datastore 'meridian-app-configs-prod' is labeled 'INTERNAL' but content scanning found data types that require 'INTERNAL' classification: Generic Password, Secret Key, Token, Sensitive URL. The label has not been reviewed in 962 days. 34 users currently have access based on the incorrect label \u2014 some may not be authorized for the actual data sensitivity level.",
+      "affected_datastore": "s3-app-configs",
+      "current_classification": "INTERNAL",
+      "correct_classification": "INTERNAL",
+      "actual_data_types": [
+        "Generic Password",
+        "Secret Key",
+        "Token",
+        "Sensitive URL",
+        "Runtime Secret"
+      ],
+      "labeled_data_types": [
+        "INTERNAL",
+        "configs"
+      ],
+      "days_since_classified": 962,
+      "last_classified": "2021-08-12",
+      "users_with_current_access": 34,
+      "encryption": "none",
+      "stale_classification": true,
+      "detection_signals": [
+        "Content scan found Generic Password, Secret Key, Token \u2014 exceeds INTERNAL threshold",
+        "Classification label 962 days old \u2014 exceeds 365-day review policy",
+        "34 users granted access under incorrect classification",
+        "Encryption level (none) insufficient for actual data sensitivity",
+        "No re-classification triggered after content change"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "GDPR Art.5 - Data accuracy and integrity principle",
+        "HIPAA \u00a7 164.514 - De-identification standards",
+        "SOC2 CC6.1 - Data classification controls"
+      ],
+      "recommended_action": "Re-classify 'meridian-app-configs-prod' as INTERNAL. Review and reduce access list to only users authorized for INTERNAL data. Apply appropriate encryption. Establish automated re-classification triggers on content change.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-010",
+      "scenario": "classification_mismatch",
+      "severity": "HIGH",
+      "title": "Data Classification Mismatch \u2014 meridian-data-lake-raw",
+      "description": "Datastore 'meridian-data-lake-raw' is labeled 'CONFIDENTIAL' but content scanning found data types that require 'CONFIDENTIAL' classification: MRN, MBI, NPI, Social Security Number. The label has not been reviewed in 1217 days. 22 users currently have access based on the incorrect label \u2014 some may not be authorized for the actual data sensitivity level.",
+      "affected_datastore": "s3-data-lake",
+      "current_classification": "CONFIDENTIAL",
+      "correct_classification": "CONFIDENTIAL",
+      "actual_data_types": [
+        "MRN",
+        "MBI",
+        "NPI",
+        "Social Security Number",
+        "Credit Card Number",
+        "Birth Date"
+      ],
+      "labeled_data_types": [
+        "CONFIDENTIAL",
+        "data_lake"
+      ],
+      "days_since_classified": 1217,
+      "last_classified": "2020-11-30",
+      "users_with_current_access": 22,
+      "encryption": "AES-256",
+      "stale_classification": true,
+      "detection_signals": [
+        "Content scan found MRN, MBI, NPI \u2014 exceeds CONFIDENTIAL threshold",
+        "Classification label 1217 days old \u2014 exceeds 365-day review policy",
+        "22 users granted access under incorrect classification",
+        "Encryption level (AES-256) insufficient for actual data sensitivity",
+        "No re-classification triggered after content change"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "GDPR Art.5 - Data accuracy and integrity principle",
+        "HIPAA \u00a7 164.514 - De-identification standards",
+        "SOC2 CC6.1 - Data classification controls"
+      ],
+      "recommended_action": "Re-classify 'meridian-data-lake-raw' as CONFIDENTIAL. Review and reduce access list to only users authorized for CONFIDENTIAL data. Apply appropriate encryption. Establish automated re-classification triggers on content change.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-011",
+      "scenario": "unencrypted_sensitive_data",
+      "severity": "HIGH",
+      "title": "Sensitive Data Stored Without Encryption \u2014 meridian-dev-scratch-pad",
+      "description": "Datastore 'meridian-dev-scratch-pad' has sensitivity level 'Private' and contains Generic Password, Secret Key, Token but has no encryption enforced. Over the simulation period, 34 users transferred 4381.0MB of data from this store without encryption protection. Any network interception or storage access bypasses all data protection controls.",
+      "affected_datastore": "s3-dev-scratch",
+      "datastore_classification": "INTERNAL",
+      "sensitivity_level": "Private",
+      "encryption_status": "none",
+      "actual_data_types": [
+        "Generic Password",
+        "Secret Key",
+        "Token",
+        "Sensitive URL"
+      ],
+      "unique_accessors": 34,
+      "total_bytes_unencrypted": 4381001441,
+      "secrets_present": true,
+      "detection_signals": [
+        "Encryption policy: none \u2014 data at rest and in transit unprotected",
+        "Sensitivity level Private requires encryption per policy",
+        "34 users actively reading unencrypted data",
+        "4381.0MB transferred without encryption",
+        "No remediation ticket found in change management system"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "HIPAA \u00a7 164.312(a)(2)(iv) - Encryption and decryption",
+        "PCI DSS Req 3.5 - Protect stored cardholder data",
+        "GDPR Art.32 - Security of processing",
+        "SOC2 CC6.7 - Transmission and disclosure controls"
+      ],
+      "recommended_action": "Enable encryption at rest for 'meridian-dev-scratch-pad' immediately. Enable TLS for all in-transit access. Audit all data accessed during the unencrypted period. Add encryption enforcement to bucket/database policy to prevent disabling.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-012",
+      "scenario": "unencrypted_sensitive_data",
+      "severity": "HIGH",
+      "title": "Sensitive Data Stored Without Encryption \u2014 meridian-app-configs-prod",
+      "description": "Datastore 'meridian-app-configs-prod' has sensitivity level 'Private' and contains Generic Password, Secret Key, Token but has no encryption enforced. Over the simulation period, 34 users transferred 9551.6MB of data from this store without encryption protection. Any network interception or storage access bypasses all data protection controls.",
+      "affected_datastore": "s3-app-configs",
+      "datastore_classification": "INTERNAL",
+      "sensitivity_level": "Private",
+      "encryption_status": "none",
+      "actual_data_types": [
+        "Generic Password",
+        "Secret Key",
+        "Token",
+        "Sensitive URL",
+        "Runtime Secret"
+      ],
+      "unique_accessors": 34,
+      "total_bytes_unencrypted": 9551576974,
+      "secrets_present": true,
+      "detection_signals": [
+        "Encryption policy: none \u2014 data at rest and in transit unprotected",
+        "Sensitivity level Private requires encryption per policy",
+        "34 users actively reading unencrypted data",
+        "9551.6MB transferred without encryption",
+        "No remediation ticket found in change management system"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "HIPAA \u00a7 164.312(a)(2)(iv) - Encryption and decryption",
+        "PCI DSS Req 3.5 - Protect stored cardholder data",
+        "GDPR Art.32 - Security of processing",
+        "SOC2 CC6.7 - Transmission and disclosure controls"
+      ],
+      "recommended_action": "Enable encryption at rest for 'meridian-app-configs-prod' immediately. Enable TLS for all in-transit access. Audit all data accessed during the unencrypted period. Add encryption enforcement to bucket/database policy to prevent disabling.",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/healthcare",
       "AwsAccountId": "123456789012",
       "CreatedAt": "2024-03-31T00:00:00",
       "UpdatedAt": "2024-03-31T00:00:00",

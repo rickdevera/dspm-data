@@ -149,7 +149,8 @@ def validate_config(cfg):
     # Enabled scenarios must be known
     known_scenarios = {
         "pre_departure_exfil", "orphaned_account", "foreign_ip",
-        "service_account_overreach", "shadow_data"
+        "service_account_overreach", "shadow_data",
+        "secrets_exposed", "classification_mismatch", "unencrypted_sensitive_data"
     }
     enabled = cfg.get("scenarios", {}).get("enabled", [])
     for s in enabled:
