@@ -138,6 +138,128 @@ All output files are JSON. `activity_logs.json` and `findings.json` carry a `sch
 
 ---
 
+## Data Type Classification
+
+### Why it matters
+
+DSPM tools do not just flag "sensitive data" — they identify the specific data type (MRN, SSN, credit card number) and apply a sensitivity level based on what that type legally requires. The sensitivity level drives finding severity, compliance framework mapping, and recommended action. Two datastores can both contain "PII" but have very different risk profiles depending on whether that PII is an email address or a Social Security Number.
+
+### The four-tier hierarchy
+
+This simulation uses the Tenable Cloud Security sensitivity model, which maps to most enterprise data classification policies:
+
+```
+Restricted  ──  highest protection required, breach triggers legal notification
+Confidential ─  internal-only, access controls required, no public exposure
+Private     ──  internal use, no compliance obligation but not for external sharing
+Public      ──  intentionally public or non-sensitive
+```
+
+The hierarchy is defined in `config.json`:
+
+```json
+"_sensitivity_levels": "Public < Private < Confidential < Restricted"
+```
+
+A datastore's effective sensitivity is determined by its **highest-sensitivity data type** — not its label. A bucket labeled `CONFIDENTIAL` that contains MRN records has an effective sensitivity of `Restricted`. This gap is what drives the classification mismatch findings.
+
+### Data type reference
+
+Each datastore in `config.json` carries a `data_types_detected` array. Every entry has a category, a type, a plain-English description, a sensitivity level, and a record count — matching what a real content scanner would surface.
+
+**PHI — Protected Health Information** (HIPAA scope, always Restricted)
+
+| Type | Full Name | Description |
+|---|---|---|
+| MRN | Medical Record Number | Unique patient identifier assigned by a healthcare provider |
+| MBI | Medicare Beneficiary Identifier | 11-character alphanumeric ID issued by CMS, replaced SSN-based HICN in 2018 |
+| HICN | Health Insurance Claim Number | Legacy Medicare ID — SSN-based, still present in older records |
+| DEA | Drug Enforcement Agency Number | Prescriber identifier tied to controlled substance authority |
+| NPI | National Provider Identifier | 10-digit CMS identifier for healthcare providers |
+| HL7 | HL7 Message | Clinical and administrative health data in HL7 format |
+
+PHI is always classified `Restricted` regardless of the datastore label. HIPAA does not have a tiered protection model — any individually identifiable health information requires the same controls.
+
+**PII — Personally Identifiable Information**
+
+| Type | Sensitivity | Description |
+|---|---|---|
+| Social Security Number (SSN) | Restricted | US federal tax and identity identifier |
+| Bank Account Number | Restricted | Personal bank account — triggers state breach notification laws |
+| EIN | Restricted | Employer Identification Number — IRS-issued business tax ID |
+| Credit Card Number | Restricted | PAN — falls under PCI DSS Req 3 |
+| CVV | Restricted | Card verification value — PCI DSS prohibits storing post-authorization |
+| Full Magnetic Stripe | Restricted | Track 1/2 data — PCI DSS prohibits storing after authorization |
+| Birth Date | Confidential | Date of birth — often combined with name for identity verification |
+| Email | Confidential | Contact identifier — GDPR and CCPA in scope |
+| Phone Number | Confidential | Personal contact — GDPR and CCPA in scope |
+| Address | Confidential | Physical location — GDPR and CCPA in scope |
+| Person (full name) | Confidential | Name alone is Confidential; combined with other fields escalates |
+
+**Secrets** (always Restricted — exposure enables direct system compromise)
+
+| Type | Description |
+|---|---|
+| Generic Password | Detected via entropy analysis and pattern matching |
+| Secret Key | Persistent secret used for token signing or encryption |
+| Token | Ephemeral OAuth or session token |
+| Sensitive URL | URLs with embedded auth parameters or tokens |
+
+### How sensitivity drives finding severity
+
+When a scenario generates a finding, severity is set based on the datastore's effective sensitivity — not its label:
+
+```
+Restricted  →  CRITICAL (PHI, SSN, PCI, Secrets)
+Confidential →  HIGH    (PII without legal notification trigger)
+Private      →  MEDIUM  (internal data, no compliance obligation)
+```
+
+The `unencrypted_sensitive_data` scenario applies this directly:
+
+```python
+"severity": "HIGH" if ds.get("sensitivity_level") in ["Confidential", "Private"] else "CRITICAL"
+```
+
+---
+
+## MITRE ATT&CK Mapping
+
+### Why MITRE is included
+
+MITRE ATT&CK is the common language between DSPM tools and the security operations teams that act on findings. A finding that says "this user downloaded a lot of data" is an observation. A finding that says "T1537 — Transfer Data to Cloud Account, TA0010 — Exfiltration" tells a SOC analyst exactly where in the kill chain this sits, what other techniques to look for, and how to contain it. Most enterprise SIEM and SOAR tools use MITRE technique IDs for routing and playbook selection.
+
+### How mapping works in this simulation
+
+Each scenario has a hardcoded tactic and technique assignment in its finding dict. The mapping is not computed dynamically — it is chosen once per scenario based on what adversarial behavior the scenario most closely represents. This matches how real DSPM tools work: the scanner identifies the pattern, a human or rule maps it to the closest MITRE technique.
+
+### Scenario-to-technique mapping
+
+```
+Scenario behavior                    Tactic                    Technique
+─────────────────────────────────────────────────────────────────────────────
+Pre-departure download spike    TA0010  Exfiltration        T1537  Transfer Data to Cloud Account
+Orphaned account post-departure TA0001  Initial Access      T1078  Valid Accounts
+Foreign IP at unusual hours     TA0001  Initial Access      T1078.004  Cloud Accounts
+Service account overreach       TA0007  Discovery           T1530  Data from Cloud Storage
+PII copied to dev bucket        TA0009  Collection          T1530  Data from Cloud Storage
+Credentials in config bucket    TA0006  Credential Access   T1552.001  Credentials in Files
+Classification mismatch         TA0009  Collection          T1530  Data from Cloud Storage
+Unencrypted sensitive data      TA0009  Collection          T1530  Data from Cloud Storage
+```
+
+### Technique notes
+
+**T1537 — Transfer Data to Cloud Account** is used for pre-departure exfiltration rather than T1530 because the behavioral signal is volume and destination, not access to the store itself. The user has legitimate access to the datastore — what is anomalous is the sustained high-volume transfer pattern, which matches the MITRE definition of staging data for exfiltration to an external account.
+
+**T1078.004 — Cloud Accounts** (sub-technique) is used for foreign IP credential compromise rather than the parent T1078 because the access is to cloud infrastructure (S3, RDS) via cloud credentials — not an on-premises account. The sub-technique is more precise and routes to cloud-specific detection playbooks in SIEM tools.
+
+**T1552.001 — Credentials in Files** covers the secrets-in-bucket scenario. The tactic is Credential Access (TA0006) rather than Collection because the primary risk is that readable credential files enable lateral movement or privilege escalation — the data exposure is a means to an end, not the end itself.
+
+**T1530 — Data from Cloud Storage** appears across four scenarios because it is the correct technique for any unauthorized or excessive access to cloud object storage. MITRE does not distinguish between "data copied to wrong bucket," "service account over-read," and "classification mismatch" at the technique level — those distinctions live in the finding title and detection signals, not the MITRE ID.
+
+---
+
 ## Extension Points
 
 **Add a scenario** — decorate a function with `@register_scenario` in `scenarios.py`. It receives `(users, events, sim_end, cfg)` and returns `(events, findings)`. Register the name in `config_loader.validate_config` so it can appear in `config.json` without triggering a validation error.
