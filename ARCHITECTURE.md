@@ -146,7 +146,7 @@ DSPM tools do not just flag "sensitive data" — they identify the specific data
 
 ### The four-tier hierarchy
 
-This simulation uses the Tenable Cloud Security sensitivity model, which maps to most enterprise data classification policies:
+This simulation uses the standard four-tier sensitivity model, which maps to most enterprise data classification policies:
 
 ```
 Restricted  ──  highest protection required, breach triggers legal notification

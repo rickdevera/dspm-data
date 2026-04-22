@@ -18,7 +18,7 @@ Each new scenario follows the existing pattern: `@register_scenario` decorator, 
 
 **Rich datastore metadata (config.json)**
 
-Each datastore now carries a full content profile aligned to the Tenable Cloud Security data taxonomy:
+Each datastore now carries a full content profile aligned to the standard DSPM data taxonomy:
 
 - `sensitivity_level` — four-tier hierarchy: `Public < Private < Confidential < Restricted` (replaces the old free-form `sensitivity` field)
 - `category` — top-level data category (`PHI`, `PII`, `PCI`, `Financial`, `Internal`, `Secrets`)

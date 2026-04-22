@@ -14,16 +14,17 @@ The simulation only models cloud datastores (AWS S3, RDS). Real enterprise envir
 
 **The core problem**
 
-Cloud DSPM tools scan via cloud APIs with read-only IAM roles. On-premises has no equivalent abstraction layer — it requires network access, credentials, and agents or connectors deployed inside the network perimeter. Tenable Cloud Security does not support on-premises scanning.
+Cloud DSPM tools scan via cloud APIs with read-only IAM roles. On-premises has no equivalent abstraction layer — it requires network access, credentials, and agents or connectors deployed inside the network perimeter. Cloud-native DSPM tools generally do not support on-premises scanning without a connector or agent model.
 
-**Who covers on-prem**
+**On-prem coverage — evaluation checklist**
 
-| Vendor | On-Prem Coverage |
+| Capability | Validate |
 |---|---|
-| Varonis | Strongest on-prem story |
-| BigID | Hybrid connectors |
-| Netwrix | On-prem focused |
-| Fortra / Digital Guardian | On-prem DLP heritage |
+| Native on-prem scanning (no agent required) | [ ] |
+| Hybrid connector support (JDBC, agent-based) | [ ] |
+| Active Directory identity resolution | [ ] |
+| On-prem DLP heritage / file share scanning | [ ] |
+| Coverage gap reporting for unscanned segments | [ ] |
 
 **Two config templates needed (not one)**
 
@@ -81,9 +82,7 @@ AWS-managed hardware physically installed in a customer's data center. Runs AWS 
 
 **Why this breaks cloud DSPM assumptions**
 
-Tenable's scanner is region-based and requires the scanner to be co-located with the data. The Tenable FAQ states: *"Scanning is outpost-based and region-specific. The machine running the scanning is located in the same region as the machine being scanned."*
-
-For an AWS Outpost, the "region" is a customer's data center. Tenable has no scanner deployment there. The assumption of reachability breaks entirely.
+Cloud DSPM scanners are region-based and require the scanner to be co-located with the data. For a standard AWS region this works as expected. For an AWS Outpost, the "region" is a customer's data center — and no external scanner has a deployment there. The assumption of reachability breaks entirely.
 
 **Data sovereignty scenarios**
 
@@ -95,7 +94,7 @@ For an AWS Outpost, the "region" is a customer's data center. Tenable has no sca
 **Scenario B — Sovereign cloud (EU)**
 - EU healthcare company with data on AWS Outpost in Amsterdam
 - GDPR requires data *and* metadata stay in EU
-- Tenable platform is US-based — sending classification metadata outside the EU creates a compliance violation
+- Most DSPM platforms are US-based — sending classification metadata outside the EU creates a compliance violation
 - DSPM coverage = zero for this environment
 
 **Scenario C — Air-gapped Outpost**
@@ -103,15 +102,15 @@ For an AWS Outpost, the "region" is a customer's data center. Tenable has no sca
 - No external scanner can reach it
 - Completely outside any cloud DSPM coverage by design
 
-**Vendor comparison for Outpost and sovereignty**
+**Outpost / sovereignty coverage — evaluation checklist**
 
-| Vendor | Outpost / Sovereignty |
+| Capability | Validate |
 |---|---|
-| Tenable | Limited — regional scanner, sovereignty gaps |
-| Cyera | Cloud-native, similar limitations |
-| BigID | On-prem connector, better sovereignty story |
-| AWS Macie | Native to Outpost but S3 only |
-| Privacera | Built for hybrid governance including Outpost |
+| Scanner can run inside Outpost boundary | [ ] |
+| Metadata residency controls (stays in jurisdiction) | [ ] |
+| Native cloud service integration (scope: S3 only?) | [ ] |
+| On-prem connector for non-internet Outpost | [ ] |
+| Hybrid governance model for split-jurisdiction environments | [ ] |
 
 **Example config fields to add for Outpost datastores**
 
@@ -129,7 +128,7 @@ For an AWS Outpost, the "region" is a customer's data center. Tenable has no sca
   ],
   "coverage_gap": true,
   "coverage_gap_reason": "Sovereignty boundary prevents external DSPM scanning",
-  "alternative_coverage": "AWS Macie (S3 only)"
+  "alternative_coverage": "native cloud service — S3 only, no RDS coverage"
 }
 ```
 
@@ -143,10 +142,10 @@ External DSPM scanning would require metadata to transit outside
 the EU — violating data residency policy.
 
 Current coverage: None
-Recommended action: Deploy Macie natively within Outpost for S3.
-Evaluate BigID on-prem connector for RDS workloads.
+Recommended action: Evaluate native cloud services within Outpost boundary for object storage.
+Evaluate connector-based DSPM for database workloads inside the sovereignty zone.
 ```
 
-**Interview talking point**
+**Key insight**
 
 Cloud-native DSPM tools assume the scanner can reach the data and send telemetry back to a central platform. AWS Outpost with sovereignty requirements breaks both assumptions. The data is on AWS infrastructure but physically inside a regulated boundary — even metadata about what is in the bucket may not leave that boundary. This is a growing gap as regulated industries adopt Outpost for exactly this reason.
