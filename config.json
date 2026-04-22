@@ -1,0 +1,324 @@
+{
+  "_comment": "DSPM Demo Environment Configuration. Copy and edit to generate different environments.",
+
+  "company": {
+    "name": "Meridian Health Analytics",
+    "industry": "healthcare",
+    "size": "mid-market",
+    "primary_region": "us-east-1",
+    "regions": ["us-east-1", "us-west-2", "eu-west-1"]
+  },
+
+  "simulation": {
+    "days": 90,
+    "end_date": "2024-03-31",
+    "seed": 42,
+    "_seed_comment": "Set to null for random output every run. Set to integer for reproducible output."
+  },
+
+  "departments": {
+    "engineering": {
+      "headcount": 18,
+      "work_pattern": "flexible",
+      "base_region": "us-west-2",
+      "expected_data_access": ["source_code", "logs", "dev_databases"],
+      "risk_multiplier": 1.4
+    },
+    "data_science": {
+      "headcount": 10,
+      "work_pattern": "standard",
+      "base_region": "us-east-1",
+      "expected_data_access": ["analytics_datasets", "model_outputs", "research_data"],
+      "risk_multiplier": 1.6
+    },
+    "finance": {
+      "headcount": 8,
+      "work_pattern": "early",
+      "base_region": "us-east-1",
+      "expected_data_access": ["financial_reports", "billing_data", "contracts"],
+      "risk_multiplier": 1.0
+    },
+    "hr": {
+      "headcount": 6,
+      "work_pattern": "standard",
+      "base_region": "us-east-1",
+      "expected_data_access": ["employee_records", "payroll_data", "benefits"],
+      "risk_multiplier": 0.8
+    },
+    "sales": {
+      "headcount": 12,
+      "work_pattern": "extended",
+      "base_region": "us-east-1",
+      "expected_data_access": ["customer_data", "contracts", "pricing"],
+      "risk_multiplier": 1.2
+    },
+    "customer_success": {
+      "headcount": 9,
+      "work_pattern": "standard",
+      "base_region": "us-east-1",
+      "expected_data_access": ["customer_data", "support_tickets", "usage_metrics"],
+      "risk_multiplier": 1.1
+    },
+    "legal": {
+      "headcount": 4,
+      "work_pattern": "standard",
+      "base_region": "us-east-1",
+      "expected_data_access": ["contracts", "compliance_reports", "employee_records"],
+      "risk_multiplier": 0.7
+    },
+    "it_ops": {
+      "headcount": 7,
+      "work_pattern": "oncall",
+      "base_region": "us-east-1",
+      "expected_data_access": ["infrastructure_configs", "logs", "all_systems"],
+      "risk_multiplier": 1.8
+    }
+  },
+
+  "work_patterns": {
+    "early":    {"core_start": 7,  "core_end": 16, "variance_hrs": 0.5, "late_prob": 0.05},
+    "standard": {"core_start": 9,  "core_end": 18, "variance_hrs": 1.0, "late_prob": 0.10},
+    "flexible": {"core_start": 8,  "core_end": 20, "variance_hrs": 2.0, "late_prob": 0.20},
+    "extended": {"core_start": 7,  "core_end": 21, "variance_hrs": 2.0, "late_prob": 0.25},
+    "oncall":   {"core_start": 0,  "core_end": 24, "variance_hrs": 4.0, "late_prob": 0.40}
+  },
+
+  "datastores": [
+    {
+      "id": "s3-patient-records",
+      "name": "meridian-patient-records-prod",
+      "type": "s3_bucket",
+      "classification": "PHI",
+      "sensitivity": "critical",
+      "region": "us-east-1",
+      "contains": ["patient_names", "dob", "ssn", "diagnosis_codes", "treatment_records"],
+      "row_estimate": 2400000,
+      "legitimate_accessors": ["data_science", "engineering"],
+      "compliance": ["HIPAA", "SOC2"]
+    },
+    {
+      "id": "s3-customer-pii",
+      "name": "meridian-customer-data-prod",
+      "type": "s3_bucket",
+      "classification": "PII",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": ["customer_names", "emails", "phone_numbers", "addresses"],
+      "row_estimate": 180000,
+      "legitimate_accessors": ["sales", "customer_success", "engineering"],
+      "compliance": ["GDPR", "CCPA"]
+    },
+    {
+      "id": "rds-billing",
+      "name": "meridian-billing-db-prod",
+      "type": "rds_postgres",
+      "classification": "PCI",
+      "sensitivity": "critical",
+      "region": "us-east-1",
+      "contains": ["credit_card_tokens", "billing_history", "payment_methods"],
+      "row_estimate": 95000,
+      "legitimate_accessors": ["finance", "engineering"],
+      "compliance": ["PCI-DSS", "SOC2"]
+    },
+    {
+      "id": "s3-analytics-raw",
+      "name": "meridian-analytics-raw-data",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "high",
+      "region": "us-west-2",
+      "contains": ["aggregated_health_metrics", "de_identified_records", "model_training_data"],
+      "row_estimate": 8700000,
+      "legitimate_accessors": ["data_science", "engineering"],
+      "compliance": ["HIPAA", "SOC2"]
+    },
+    {
+      "id": "s3-employee-records",
+      "name": "meridian-hr-documents",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": ["employee_pii", "salary_data", "performance_reviews", "ssn"],
+      "row_estimate": 740,
+      "legitimate_accessors": ["hr", "legal", "finance"],
+      "compliance": ["SOC2"]
+    },
+    {
+      "id": "s3-financial-reports",
+      "name": "meridian-finance-reports",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "medium",
+      "region": "us-east-1",
+      "contains": ["quarterly_reports", "forecasts", "board_materials"],
+      "row_estimate": 3200,
+      "legitimate_accessors": ["finance", "legal"],
+      "compliance": ["SOC2"]
+    },
+    {
+      "id": "s3-dev-scratch",
+      "name": "meridian-dev-scratch-pad",
+      "type": "s3_bucket",
+      "classification": "INTERNAL",
+      "sensitivity": "medium",
+      "region": "us-west-2",
+      "contains": ["dev_configs", "test_data", "build_artifacts"],
+      "row_estimate": 12000,
+      "legitimate_accessors": ["engineering"],
+      "compliance": []
+    },
+    {
+      "id": "rds-app-prod",
+      "name": "meridian-app-db-prod",
+      "type": "rds_postgres",
+      "classification": "PII",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": ["user_accounts", "session_data", "api_keys", "customer_profiles"],
+      "row_estimate": 220000,
+      "legitimate_accessors": ["engineering", "customer_success"],
+      "compliance": ["SOC2", "GDPR"]
+    }
+  ],
+
+  "iam_roles": [
+    {
+      "id": "role-data-scientist",
+      "name": "DataScientistRole",
+      "policies": ["S3ReadAll", "AthenaFullAccess", "GlueReadOnly"],
+      "datastores": ["s3-analytics-raw", "s3-patient-records", "s3-customer-pii"],
+      "risk_level": "high"
+    },
+    {
+      "id": "role-engineer-dev",
+      "name": "EngineerDeveloperRole",
+      "policies": ["S3FullAccess", "RDSReadWrite", "CloudWatchFullAccess", "IAMReadOnly"],
+      "datastores": ["s3-dev-scratch", "rds-app-prod", "s3-analytics-raw"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "role-engineer-senior",
+      "name": "EngineerSeniorRole",
+      "policies": ["S3FullAccess", "RDSFullAccess", "IAMPowerUser", "EC2FullAccess"],
+      "datastores": ["s3-dev-scratch", "rds-app-prod", "rds-billing", "s3-analytics-raw"],
+      "risk_level": "high"
+    },
+    {
+      "id": "role-finance",
+      "name": "FinanceAnalystRole",
+      "policies": ["S3ReadOnly", "AthenaReadOnly"],
+      "datastores": ["s3-financial-reports", "rds-billing"],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-hr",
+      "name": "HRSpecialistRole",
+      "policies": ["S3ReadWrite"],
+      "datastores": ["s3-employee-records"],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-sales",
+      "name": "SalesRepRole",
+      "policies": ["S3ReadOnly", "DynamoDBReadOnly"],
+      "datastores": ["s3-customer-pii"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "role-admin",
+      "name": "ITAdminRole",
+      "policies": ["AdministratorAccess"],
+      "datastores": ["*"],
+      "risk_level": "critical"
+    },
+    {
+      "id": "role-readonly",
+      "name": "ReadOnlyAuditRole",
+      "policies": ["ReadOnlyAccess"],
+      "datastores": ["*"],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-svc-etl",
+      "name": "ETLServiceRole",
+      "policies": ["S3FullAccess", "RDSFullAccess", "GlueFullAccess"],
+      "datastores": ["s3-patient-records", "s3-analytics-raw", "rds-app-prod", "rds-billing"],
+      "risk_level": "critical"
+    },
+    {
+      "id": "role-contractor",
+      "name": "ContractorLimitedRole",
+      "policies": ["S3ReadOnly"],
+      "datastores": ["s3-dev-scratch"],
+      "risk_level": "low"
+    }
+  ],
+
+  "scenarios": {
+    "enabled": [
+      "pre_departure_exfil",
+      "orphaned_account",
+      "foreign_ip",
+      "service_account_overreach",
+      "shadow_data"
+    ],
+    "_available_comment": "Available: pre_departure_exfil, orphaned_account, foreign_ip, service_account_overreach, shadow_data",
+    "_future_comment": "Future: behavioral_drift, temp_access_abuse",
+
+    "orphaned_accounts": {
+      "count": 4,
+      "min_days_since_departure": 30,
+      "max_days_since_departure": 120
+    },
+
+    "pre_departure_exfil": {
+      "lookback_days": 14,
+      "volume_multiplier": 40,
+      "target_departments": ["sales", "customer_success"]
+    },
+
+    "foreign_ip": {
+      "incident_duration_days": 5,
+      "active_hours_start": 1,
+      "active_hours_end": 5,
+      "target_departments": ["engineering", "data_science", "finance"]
+    },
+
+    "shadow_data": {
+      "copy_volume_bytes": 450000000,
+      "target_destination": "s3-dev-scratch",
+      "source_classification": "PII"
+    }
+  },
+
+  "service_accounts": [
+    {
+      "user_id": "svc_etl_001",
+      "username": "svc-etl-pipeline",
+      "description": "ETL Pipeline Service Account",
+      "department": "engineering",
+      "role": "role-svc-etl",
+      "home_ip": "10.0.0.50",
+      "credentials_age_days": 340,
+      "flag": "OVERPERMISSIONED_SERVICE_ACCOUNT"
+    },
+    {
+      "user_id": "svc_backup_001",
+      "username": "svc-backup-agent",
+      "description": "Backup Service Account",
+      "department": "it_ops",
+      "role": "role-admin",
+      "home_ip": "10.0.0.51",
+      "credentials_age_days": 600,
+      "flag": "SERVICE_ACCOUNT_ADMIN_ACCESS"
+    }
+  ],
+
+  "identity_settings": {
+    "mfa_adoption_rate": 0.85,
+    "ghost_role_probability": 0.4,
+    "min_tenure_for_drift_days": 540,
+    "password_max_age_days": 365
+  }
+}

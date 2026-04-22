@@ -1,0 +1,37 @@
+
+============================================================
+  DATASTORE: meridian-patient-records-prod
+============================================================
+  ID:             s3-patient-records
+  Type:           s3_bucket
+  Classification: PHI  ← sensitivity label
+  Sensitivity:    CRITICAL
+  Region:         us-east-1
+  Est. records:   2,400,000
+  Contains:       patient_names, dob, ssn, diagnosis_codes, treatment_records
+  Compliance:     HIPAA, SOC2
+  Legitimate access for: data_science, engineering
+
+  ACCESS SUMMARY (simulation period)
+  Total accesses:   2,370
+  Flagged accesses: 6
+  Data transferred: 4548.7 MB
+
+  TOP ACCESSORS
+  ├── lisa.martin                     240 events     432.2 MB
+  ├── andrew.rodriguez                202 events     381.6 MB
+  ├── stephanie.anderson              197 events     407.8 MB
+  ├── lisa.green                      195 events     358.9 MB
+  ├── jessica.garcia2                 195 events     347.1 MB
+  ├── patricia.clark                  194 events     337.8 MB
+  ├── robert.brown                    188 events     357.0 MB
+  ├── ronald.young                    186 events     305.1 MB
+
+  ⚠ FLAGGED EVENTS
+  ├── 2024-02-23T20:29  rachel.rivera_old     ORPHANED_ACCOUNT, POST_DEPARTURE_ACCESS
+  ├── 2024-03-02T10:56  rachel.rivera_old     ORPHANED_ACCOUNT, POST_DEPARTURE_ACCESS
+  ├── 2024-03-08T01:22  william.taylor        FOREIGN_IP, TIME_ANOMALY, CREDENTIAL_RISK
+  ├── 2024-03-08T03:45  william.taylor        FOREIGN_IP, TIME_ANOMALY, CREDENTIAL_RISK
+  ├── 2024-03-10T01:47  william.taylor        FOREIGN_IP, TIME_ANOMALY, CREDENTIAL_RISK
+  └── ... and 1 more
+

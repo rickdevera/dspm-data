@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "company": "Acme Financial",
+  "total_findings": 5,
+  "by_severity": {
+    "CRITICAL": 2,
+    "HIGH": 3,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "findings": [
+    {
+      "finding_id": "FIND-001",
+      "scenario": "pre_departure_exfiltration",
+      "severity": "CRITICAL",
+      "title": "Suspected Pre-Departure Data Exfiltration",
+      "description": "James King (sales) showed a 40x spike in data downloads from the customer PII datastore in the 14 days prior to simulation end. Activity concentrated in evening hours (5pm-10pm), outside normal work pattern.",
+      "affected_user": "usr_1050",
+      "affected_user_name": "James King",
+      "affected_datastore": "s3-customer-pii",
+      "datastore_classification": "PII",
+      "event_count": 60,
+      "total_bytes": 16242572250,
+      "detection_signals": [
+        "Volume anomaly: 40x baseline download rate",
+        "Time anomaly: activity outside normal work hours",
+        "Datastore sensitivity: PII classification",
+        "Behavioral change: sustained over 14-day period"
+      ],
+      "mitre_tactic": "TA0010 - Exfiltration",
+      "mitre_technique": "T1537 - Transfer Data to Cloud Account",
+      "compliance_impact": [
+        "GDPR Art.33 - Breach notification",
+        "CCPA"
+      ],
+      "recommended_action": "Suspend account, initiate DLP review, preserve logs for forensics",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-002",
+      "scenario": "orphaned_account_access",
+      "severity": "HIGH",
+      "title": "Active Access by Departed Employee",
+      "description": "Rachel Rivera departed on 2024-02-05T00:00:00 but their account remains active. 4 access events detected after departure, targeting sensitive datastores including PII and employee records.",
+      "affected_user": "usr_dep_2",
+      "affected_user_name": "Rachel Rivera",
+      "departure_date": "2024-02-05T00:00:00",
+      "days_since_departure": 55,
+      "event_count": 4,
+      "detection_signals": [
+        "Account active past departure date",
+        "Access 55 days post-departure",
+        "No offboarding record in identity system",
+        "MFA disabled \u2014 account potentially compromised"
+      ],
+      "mitre_tactic": "TA0001 - Initial Access",
+      "mitre_technique": "T1078 - Valid Accounts",
+      "compliance_impact": [
+        "SOC2 CC6.2 - Logical access removal",
+        "HIPAA \u00a7 164.308(a)(3)"
+      ],
+      "recommended_action": "Immediately disable account, audit all post-departure activity, involve HR and Legal",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-003",
+      "scenario": "foreign_ip_credential_compromise",
+      "severity": "CRITICAL",
+      "title": "Possible Credential Compromise \u2014 Foreign IP Access to Sensitive Data",
+      "description": "William Taylor (data_science) accessed critical datastores from IP 103.21.244.115 (foreign range) between 1am-5am over 4 days. Normal access pattern is standard from 192.168.1.203.",
+      "affected_user": "usr_1019",
+      "affected_user_name": "William Taylor",
+      "suspicious_ip": "103.21.244.115",
+      "normal_ip": "192.168.1.203",
+      "event_count": 14,
+      "detection_signals": [
+        "IP deviation: normal 192.168.1.203 vs suspicious 103.21.244.115",
+        "Time anomaly: 1am-5am activity, outside all work patterns",
+        "Geolocation: foreign IP range, not VPN",
+        "Data sensitivity: PHI and PCI datastores accessed",
+        "No travel notice logged in HR system"
+      ],
+      "mitre_tactic": "TA0001 - Initial Access",
+      "mitre_technique": "T1078.004 - Cloud Accounts",
+      "compliance_impact": [
+        "HIPAA Breach Rule",
+        "PCI DSS Req 10.6"
+      ],
+      "recommended_action": "Force password reset, revoke active sessions, enable step-up MFA, review accessed records",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-004",
+      "scenario": "service_account_overreach",
+      "severity": "HIGH",
+      "title": "Service Account Actively Using Excess Permissions",
+      "description": "ETL pipeline service account (svc-etl-pipeline) has permissions to 4 datastores but only requires 2 for its stated function. Over 90 days, it made 28 accesses to patient records (PHI) and billing database (PCI) \u2014 datastores with no documented ETL requirement.",
+      "affected_user": "svc_etl_001",
+      "affected_datastore": [
+        "rds-app-prod",
+        "rds-billing"
+      ],
+      "event_count": 28,
+      "detection_signals": [
+        "Service account accessing PHI datastore with no documented requirement",
+        "Service account accessing PCI datastore with no documented requirement",
+        "Consistent pattern over 90 days \u2014 not one-time",
+        "No change ticket or approval found for these access patterns",
+        "Credentials not rotated in 340 days"
+      ],
+      "mitre_tactic": "TA0007 - Discovery",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "HIPAA \u00a7 164.312(a)(1) - Access Control",
+        "PCI DSS Req 7"
+      ],
+      "recommended_action": "Scope service account to minimum required permissions, rotate credentials, audit all historical access",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    },
+    {
+      "finding_id": "FIND-005",
+      "scenario": "shadow_data_in_dev",
+      "severity": "HIGH",
+      "title": "PII Data Found in Unclassified Development Bucket",
+      "description": "Timothy Martin copied 450MB from the customer PII datastore to the dev scratch bucket on 2024-01-16. The dev bucket has no encryption enforcement, no DLP controls, and broader access than production. 6 subsequent accesses by other engineers detected.",
+      "affected_user": "usr_1016",
+      "original_datastore": "s3-customer-pii",
+      "shadow_datastore": "s3-dev-scratch",
+      "copy_date": "2024-01-16T00:00:00",
+      "days_exposed": 75,
+      "data_volume_bytes": 450000000,
+      "secondary_accessors": 6,
+      "detection_signals": [
+        "Large CopyObject from PII-classified to INTERNAL-classified bucket",
+        "Classification mismatch: PII data in non-PII bucket",
+        "Dev bucket lacks encryption at rest enforcement",
+        "Dev bucket accessible to all engineers (18 users)",
+        "Data exposed for 75 days without remediation"
+      ],
+      "mitre_tactic": "TA0009 - Collection",
+      "mitre_technique": "T1530 - Data from Cloud Storage",
+      "compliance_impact": [
+        "GDPR Art.25 - Data Protection by Design",
+        "CCPA",
+        "SOC2 CC6.1"
+      ],
+      "recommended_action": "Delete copied data immediately, add bucket policy to prevent cross-classification copies, classify dev bucket correctly",
+      "ProductArn": "arn:aws:securityhub:::product/dspm-demo/financial",
+      "AwsAccountId": "123456789012",
+      "CreatedAt": "2024-03-31T00:00:00",
+      "UpdatedAt": "2024-03-31T00:00:00",
+      "Region": "us-east-1",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "RecordState": "ACTIVE"
+    }
+  ]
+}

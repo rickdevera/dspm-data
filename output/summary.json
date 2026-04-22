@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-04-21T20:10:15.756369",
+  "company": "Acme Financial",
+  "industry": "financial",
+  "config_used": "configs/acme.json",
+  "simulation_days": 90,
+  "identity_summary": {
+    "total_identities": 80,
+    "active_employees": 74,
+    "orphaned_accounts": 4,
+    "service_accounts": 2,
+    "users_without_mfa": 14,
+    "users_with_permission_drift": 1
+  },
+  "datastore_summary": {
+    "total_datastores": 8,
+    "critical_sensitivity": 2,
+    "phi_datastores": 1,
+    "pii_datastores": 2,
+    "pci_datastores": 1
+  },
+  "activity_summary": {
+    "total_events": 35655,
+    "scenario_events": 113,
+    "total_data_transferred_gb": 71.12,
+    "unique_flagged_users": 10
+  },
+  "findings_summary": {
+    "total": 5,
+    "critical": 2,
+    "high": 3,
+    "findings": [
+      {
+        "id": "FIND-001",
+        "severity": "CRITICAL",
+        "title": "Suspected Pre-Departure Data Exfiltration"
+      },
+      {
+        "id": "FIND-002",
+        "severity": "HIGH",
+        "title": "Active Access by Departed Employee"
+      },
+      {
+        "id": "FIND-003",
+        "severity": "CRITICAL",
+        "title": "Possible Credential Compromise \u2014 Foreign IP Access to Sensitive Data"
+      },
+      {
+        "id": "FIND-004",
+        "severity": "HIGH",
+        "title": "Service Account Actively Using Excess Permissions"
+      },
+      {
+        "id": "FIND-005",
+        "severity": "HIGH",
+        "title": "PII Data Found in Unclassified Development Bucket"
+      }
+    ]
+  }
+}

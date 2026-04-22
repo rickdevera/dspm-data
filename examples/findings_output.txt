@@ -1,0 +1,40 @@
+
+============================================================
+  DSPM FINDINGS (5 total)
+============================================================
+
+  🔴 [CRITICAL] FIND-001 — Suspected Pre-Departure Data Exfiltration
+     James King (sales) showed a 40x spike in data downloads from the customer PII datastore in the 14 days prior to simulati...
+     MITRE: T1537 - Transfer Data to Cloud Account
+     Signals: 4 | Events: 60
+     Compliance: GDPR Art.33 - Breach notification, CCPA
+     → Suspend account, initiate DLP review, preserve logs for forensics
+
+  🔴 [CRITICAL] FIND-003 — Possible Credential Compromise — Foreign IP Access to Sensitive Data
+     William Taylor (data_science) accessed critical datastores from IP 103.21.244.115 (foreign range) between 1am-5am over 4...
+     MITRE: T1078.004 - Cloud Accounts
+     Signals: 5 | Events: 14
+     Compliance: HIPAA Breach Rule, PCI DSS Req 10.6
+     → Force password reset, revoke active sessions, enable step-up MFA, review accessed records
+
+  🟠 [HIGH    ] FIND-002 — Active Access by Departed Employee
+     Rachel Rivera departed on 2024-02-05T00:00:00 but their account remains active. 4 access events detected after departure...
+     MITRE: T1078 - Valid Accounts
+     Signals: 4 | Events: 4
+     Compliance: SOC2 CC6.2 - Logical access removal, HIPAA § 164.308(a)(3)
+     → Immediately disable account, audit all post-departure activity, involve HR and Legal
+
+  🟠 [HIGH    ] FIND-004 — Service Account Actively Using Excess Permissions
+     ETL pipeline service account (svc-etl-pipeline) has permissions to 4 datastores but only requires 2 for its stated funct...
+     MITRE: T1530 - Data from Cloud Storage
+     Signals: 5 | Events: 28
+     Compliance: HIPAA § 164.312(a)(1) - Access Control, PCI DSS Req 7
+     → Scope service account to minimum required permissions, rotate credentials, audit all historical acce
+
+  🟠 [HIGH    ] FIND-005 — PII Data Found in Unclassified Development Bucket
+     Timothy Martin copied 450MB from the customer PII datastore to the dev scratch bucket on 2024-01-16. The dev bucket has ...
+     MITRE: T1530 - Data from Cloud Storage
+     Signals: 5 | Events: 0
+     Compliance: GDPR Art.25 - Data Protection by Design, CCPA, SOC2 CC6.1
+     → Delete copied data immediately, add bucket policy to prevent cross-classification copies, classify d
+

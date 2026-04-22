@@ -1,0 +1,3272 @@
+{
+  "company": {
+    "name": "Acme Financial",
+    "industry": "financial",
+    "size": "mid-market",
+    "primary_region": "us-east-1",
+    "regions": [
+      "us-east-1",
+      "us-west-2",
+      "eu-west-1"
+    ]
+  },
+  "generated_at": "2026-04-21T20:10:15.278530",
+  "config_used": "configs/acme.json",
+  "simulation_period": {
+    "start": "2024-01-01T00:00:00",
+    "end": "2024-03-31T00:00:00",
+    "days": 90
+  },
+  "identities": {
+    "total": 80,
+    "employees": 78,
+    "service_accounts": 2,
+    "by_department": {
+      "engineering": 18,
+      "data_science": 10,
+      "finance": 9,
+      "hr": 7,
+      "sales": 12,
+      "customer_success": 9,
+      "legal": 6,
+      "it_ops": 7
+    }
+  },
+  "users": [
+    {
+      "user_id": "usr_1000",
+      "employee_id": "EMP23434",
+      "username": "timothy.davis",
+      "email": "timothy.davis@acmefinancial.io",
+      "full_name": "Timothy Davis",
+      "department": "engineering",
+      "title": "Engineering Manager",
+      "manager": null,
+      "hire_date": "2022-09-26T00:00:00",
+      "tenure_days": 552,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.199",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-03-25T00:00:00",
+          "revoked_date": null,
+          "reason": "never_revoked_on_promotion",
+          "flag": "PERMISSION_DRIFT"
+        },
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": true,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2024-02-15T00:00:00"
+    },
+    {
+      "user_id": "usr_1001",
+      "employee_id": "EMP40495",
+      "username": "samantha.ramirez",
+      "email": "samantha.ramirez@acmefinancial.io",
+      "full_name": "Samantha Ramirez",
+      "department": "engineering",
+      "title": "Senior Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2023-05-02T00:00:00",
+      "tenure_days": 334,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.164",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-05-02T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-20T00:00:00"
+    },
+    {
+      "user_id": "usr_1002",
+      "employee_id": "EMP87236",
+      "username": "lisa.adams7",
+      "email": "lisa.adams7@acmefinancial.io",
+      "full_name": "Lisa Adams",
+      "department": "engineering",
+      "title": "Senior Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2022-11-24T00:00:00",
+      "tenure_days": 493,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.217",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2024-01-09T00:00:00"
+    },
+    {
+      "user_id": "usr_1003",
+      "employee_id": "EMP54118",
+      "username": "edward.ramirez",
+      "email": "edward.ramirez@acmefinancial.io",
+      "full_name": "Edward Ramirez",
+      "department": "engineering",
+      "title": "Senior Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2023-02-03T00:00:00",
+      "tenure_days": 422,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "10.1.1.33",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-09-29T00:00:00"
+    },
+    {
+      "user_id": "usr_1004",
+      "employee_id": "EMP70217",
+      "username": "donald.hill",
+      "email": "donald.hill@acmefinancial.io",
+      "full_name": "Donald Hill",
+      "department": "engineering",
+      "title": "Senior Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2023-10-12T00:00:00",
+      "tenure_days": 171,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.41",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-10-12T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2023-09-19T00:00:00"
+    },
+    {
+      "user_id": "usr_1005",
+      "employee_id": "EMP57400",
+      "username": "jessica.scott",
+      "email": "jessica.scott@acmefinancial.io",
+      "full_name": "Jessica Scott",
+      "department": "engineering",
+      "title": "Senior Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2021-09-08T00:00:00",
+      "tenure_days": 935,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.59",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2021-09-08T00:00:00",
+          "revoked_date": "2023-03-02T00:00:00",
+          "reason": "initial_role"
+        },
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-03-07T00:00:00"
+    },
+    {
+      "user_id": "usr_1006",
+      "employee_id": "EMP23238",
+      "username": "ronald.anderson2",
+      "email": "ronald.anderson2@acmefinancial.io",
+      "full_name": "Ronald Anderson",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2020-07-16T00:00:00",
+      "tenure_days": 1354,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.81",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-09-26T00:00:00"
+    },
+    {
+      "user_id": "usr_1007",
+      "employee_id": "EMP99593",
+      "username": "william.white",
+      "email": "william.white@acmefinancial.io",
+      "full_name": "William White",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2021-07-25T00:00:00",
+      "tenure_days": 980,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.28",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-03T00:00:00"
+    },
+    {
+      "user_id": "usr_1008",
+      "employee_id": "EMP45382",
+      "username": "kevin.campbell",
+      "email": "kevin.campbell@acmefinancial.io",
+      "full_name": "Kevin Campbell",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2022-03-07T00:00:00",
+      "tenure_days": 755,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.186",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-15T00:00:00"
+    },
+    {
+      "user_id": "usr_1009",
+      "employee_id": "EMP51347",
+      "username": "mark.roberts4",
+      "email": "mark.roberts4@acmefinancial.io",
+      "full_name": "Mark Roberts",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2020-11-02T00:00:00",
+      "tenure_days": 1245,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.78",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-14T00:00:00"
+    },
+    {
+      "user_id": "usr_1010",
+      "employee_id": "EMP94259",
+      "username": "lisa.lee",
+      "email": "lisa.lee@acmefinancial.io",
+      "full_name": "Lisa Lee",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2022-01-26T00:00:00",
+      "tenure_days": 795,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.46",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-25T00:00:00"
+    },
+    {
+      "user_id": "usr_1011",
+      "employee_id": "EMP66155",
+      "username": "anna.scott",
+      "email": "anna.scott@acmefinancial.io",
+      "full_name": "Anna Scott",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2021-05-02T00:00:00",
+      "tenure_days": 1064,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.112",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-20T00:00:00"
+    },
+    {
+      "user_id": "usr_1012",
+      "employee_id": "EMP24371",
+      "username": "joshua.young",
+      "email": "joshua.young@acmefinancial.io",
+      "full_name": "Joshua Young",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2023-09-30T00:00:00",
+      "tenure_days": 183,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.1.170",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-09-30T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-17T00:00:00"
+    },
+    {
+      "user_id": "usr_1013",
+      "employee_id": "EMP71348",
+      "username": "megan.hill",
+      "email": "megan.hill@acmefinancial.io",
+      "full_name": "Megan Hill",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2022-06-03T00:00:00",
+      "tenure_days": 667,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.74",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2024-03-25T00:00:00"
+    },
+    {
+      "user_id": "usr_1014",
+      "employee_id": "EMP44973",
+      "username": "michelle.campbell",
+      "email": "michelle.campbell@acmefinancial.io",
+      "full_name": "Michelle Campbell",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2020-04-11T00:00:00",
+      "tenure_days": 1450,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.97",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-21T00:00:00"
+    },
+    {
+      "user_id": "usr_1015",
+      "employee_id": "EMP44522",
+      "username": "william.robinson",
+      "email": "william.robinson@acmefinancial.io",
+      "full_name": "William Robinson",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2021-05-30T00:00:00",
+      "tenure_days": 1036,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "192.168.2.205",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-02-05T00:00:00"
+    },
+    {
+      "user_id": "usr_1016",
+      "employee_id": "EMP30032",
+      "username": "timothy.martin9",
+      "email": "timothy.martin9@acmefinancial.io",
+      "full_name": "Timothy Martin",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2021-09-29T00:00:00",
+      "tenure_days": 914,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.205",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-07-03T00:00:00"
+    },
+    {
+      "user_id": "usr_1017",
+      "employee_id": "EMP57576",
+      "username": "james.hill",
+      "email": "james.hill@acmefinancial.io",
+      "full_name": "James Hill",
+      "department": "engineering",
+      "title": "Software Engineer",
+      "manager": "usr_1000",
+      "hire_date": "2023-12-29T00:00:00",
+      "tenure_days": 93,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-west-2",
+      "home_ip": "10.1.2.71",
+      "work_pattern": "flexible",
+      "work_pattern_config": {
+        "core_start": 8,
+        "core_end": 20,
+        "variance_hrs": 2.0,
+        "late_prob": 0.2
+      },
+      "current_role": "role-engineer-dev",
+      "role_history": [
+        {
+          "role_id": "role-engineer-dev",
+          "granted_date": "2023-12-29T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-14T00:00:00"
+    },
+    {
+      "user_id": "usr_1018",
+      "employee_id": "EMP79822",
+      "username": "jessica.garcia2",
+      "email": "jessica.garcia2@acmefinancial.io",
+      "full_name": "Jessica Garcia",
+      "department": "data_science",
+      "title": "Head of Data Science",
+      "manager": null,
+      "hire_date": "2019-06-13T00:00:00",
+      "tenure_days": 1753,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.42",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-23T00:00:00"
+    },
+    {
+      "user_id": "usr_1019",
+      "employee_id": "EMP37760",
+      "username": "william.taylor",
+      "email": "william.taylor@acmefinancial.io",
+      "full_name": "William Taylor",
+      "department": "data_science",
+      "title": "Senior Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2021-10-02T00:00:00",
+      "tenure_days": 911,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.203",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-19T00:00:00"
+    },
+    {
+      "user_id": "usr_1020",
+      "employee_id": "EMP58944",
+      "username": "lisa.martin",
+      "email": "lisa.martin@acmefinancial.io",
+      "full_name": "Lisa Martin",
+      "department": "data_science",
+      "title": "Senior Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2021-07-23T00:00:00",
+      "tenure_days": 982,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.240",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-29T00:00:00"
+    },
+    {
+      "user_id": "usr_1021",
+      "employee_id": "EMP82603",
+      "username": "stephanie.anderson",
+      "email": "stephanie.anderson@acmefinancial.io",
+      "full_name": "Stephanie Anderson",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2023-12-24T00:00:00",
+      "tenure_days": 98,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.160",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-12-24T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-02-23T00:00:00"
+    },
+    {
+      "user_id": "usr_1022",
+      "employee_id": "EMP14117",
+      "username": "lisa.green",
+      "email": "lisa.green@acmefinancial.io",
+      "full_name": "Lisa Green",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2023-07-26T00:00:00",
+      "tenure_days": 249,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.28",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-07-26T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-09T00:00:00"
+    },
+    {
+      "user_id": "usr_1023",
+      "employee_id": "EMP84847",
+      "username": "ronald.young",
+      "email": "ronald.young@acmefinancial.io",
+      "full_name": "Ronald Young",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2023-02-28T00:00:00",
+      "tenure_days": 397,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.131",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1024",
+      "employee_id": "EMP66498",
+      "username": "patricia.clark",
+      "email": "patricia.clark@acmefinancial.io",
+      "full_name": "Patricia Clark",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2023-04-21T00:00:00",
+      "tenure_days": 345,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.118",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-21T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-03-03T00:00:00"
+    },
+    {
+      "user_id": "usr_1025",
+      "employee_id": "EMP54473",
+      "username": "michelle.adams2",
+      "email": "michelle.adams2@acmefinancial.io",
+      "full_name": "Michelle Adams",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2023-08-17T00:00:00",
+      "tenure_days": 227,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.73",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-08-17T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-30T00:00:00"
+    },
+    {
+      "user_id": "usr_1026",
+      "employee_id": "EMP42742",
+      "username": "andrew.rodriguez",
+      "email": "andrew.rodriguez@acmefinancial.io",
+      "full_name": "Andrew Rodriguez",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2022-09-22T00:00:00",
+      "tenure_days": 556,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.123",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-23T00:00:00"
+    },
+    {
+      "user_id": "usr_1027",
+      "employee_id": "EMP11934",
+      "username": "robert.brown",
+      "email": "robert.brown@acmefinancial.io",
+      "full_name": "Robert Brown",
+      "department": "data_science",
+      "title": "Data Scientist",
+      "manager": "usr_1018",
+      "hire_date": "2021-12-12T00:00:00",
+      "tenure_days": 840,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.247",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-data-scientist",
+      "role_history": [
+        {
+          "role_id": "role-data-scientist",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-30T00:00:00"
+    },
+    {
+      "user_id": "usr_1028",
+      "employee_id": "EMP62565",
+      "username": "william.clark",
+      "email": "william.clark@acmefinancial.io",
+      "full_name": "William Clark",
+      "department": "finance",
+      "title": "Finance Director",
+      "manager": null,
+      "hire_date": "2022-12-02T00:00:00",
+      "tenure_days": 485,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.52",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-09-13T00:00:00"
+    },
+    {
+      "user_id": "usr_1029",
+      "employee_id": "EMP82845",
+      "username": "matthew.robinson",
+      "email": "matthew.robinson@acmefinancial.io",
+      "full_name": "Matthew Robinson",
+      "department": "finance",
+      "title": "Senior Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2021-06-26T00:00:00",
+      "tenure_days": 1009,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.193",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-24T00:00:00"
+    },
+    {
+      "user_id": "usr_1030",
+      "employee_id": "EMP51104",
+      "username": "anthony.wilson9",
+      "email": "anthony.wilson9@acmefinancial.io",
+      "full_name": "Anthony Wilson",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2023-08-16T00:00:00",
+      "tenure_days": 228,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.22",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-08-16T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-07-17T00:00:00"
+    },
+    {
+      "user_id": "usr_1031",
+      "employee_id": "EMP34356",
+      "username": "danielle.hernandez",
+      "email": "danielle.hernandez@acmefinancial.io",
+      "full_name": "Danielle Hernandez",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2022-01-17T00:00:00",
+      "tenure_days": 804,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.162",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1032",
+      "employee_id": "EMP15209",
+      "username": "rachel.davis4",
+      "email": "rachel.davis4@acmefinancial.io",
+      "full_name": "Rachel Davis",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2021-11-01T00:00:00",
+      "tenure_days": 881,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.30",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-06T00:00:00"
+    },
+    {
+      "user_id": "usr_1033",
+      "employee_id": "EMP97782",
+      "username": "brian.king",
+      "email": "brian.king@acmefinancial.io",
+      "full_name": "Brian King",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2022-10-12T00:00:00",
+      "tenure_days": 536,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.90",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-09-10T00:00:00"
+    },
+    {
+      "user_id": "usr_1034",
+      "employee_id": "EMP19508",
+      "username": "john.nelson",
+      "email": "john.nelson@acmefinancial.io",
+      "full_name": "John Nelson",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2022-03-13T00:00:00",
+      "tenure_days": 749,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.127",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-16T00:00:00"
+    },
+    {
+      "user_id": "usr_1035",
+      "employee_id": "EMP27361",
+      "username": "robert.jones",
+      "email": "robert.jones@acmefinancial.io",
+      "full_name": "Robert Jones",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "manager": "usr_1028",
+      "hire_date": "2022-01-19T00:00:00",
+      "tenure_days": 802,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.235",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-finance",
+      "role_history": [
+        {
+          "role_id": "role-finance",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-26T00:00:00"
+    },
+    {
+      "user_id": "usr_1036",
+      "employee_id": "EMP49651",
+      "username": "amber.jackson",
+      "email": "amber.jackson@acmefinancial.io",
+      "full_name": "Amber Jackson",
+      "department": "hr",
+      "title": "HR Director",
+      "manager": null,
+      "hire_date": "2020-09-24T00:00:00",
+      "tenure_days": 1284,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.216",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-03-26T00:00:00"
+    },
+    {
+      "user_id": "usr_1037",
+      "employee_id": "EMP27601",
+      "username": "ronald.scott",
+      "email": "ronald.scott@acmefinancial.io",
+      "full_name": "Ronald Scott",
+      "department": "hr",
+      "title": "Senior HR Business Partner",
+      "manager": "usr_1036",
+      "hire_date": "2021-08-01T00:00:00",
+      "tenure_days": 973,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.39",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2023-06-21T00:00:00"
+    },
+    {
+      "user_id": "usr_1038",
+      "employee_id": "EMP54942",
+      "username": "jennifer.moore",
+      "email": "jennifer.moore@acmefinancial.io",
+      "full_name": "Jennifer Moore",
+      "department": "hr",
+      "title": "HR Specialist",
+      "manager": "usr_1036",
+      "hire_date": "2022-12-05T00:00:00",
+      "tenure_days": 482,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.185",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-16T00:00:00"
+    },
+    {
+      "user_id": "usr_1039",
+      "employee_id": "EMP16658",
+      "username": "joshua.young",
+      "email": "joshua.young@acmefinancial.io",
+      "full_name": "Joshua Young",
+      "department": "hr",
+      "title": "HR Specialist",
+      "manager": "usr_1036",
+      "hire_date": "2020-01-26T00:00:00",
+      "tenure_days": 1526,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.172",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-10T00:00:00"
+    },
+    {
+      "user_id": "usr_1040",
+      "employee_id": "EMP44335",
+      "username": "michael.smith",
+      "email": "michael.smith@acmefinancial.io",
+      "full_name": "Michael Smith",
+      "department": "hr",
+      "title": "HR Specialist",
+      "manager": "usr_1036",
+      "hire_date": "2023-03-02T00:00:00",
+      "tenure_days": 395,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.199",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-04T00:00:00"
+    },
+    {
+      "user_id": "usr_1041",
+      "employee_id": "EMP29536",
+      "username": "megan.scott",
+      "email": "megan.scott@acmefinancial.io",
+      "full_name": "Megan Scott",
+      "department": "hr",
+      "title": "HR Specialist",
+      "manager": "usr_1036",
+      "hire_date": "2023-07-01T00:00:00",
+      "tenure_days": 274,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.19",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-hr",
+      "role_history": [
+        {
+          "role_id": "role-hr",
+          "granted_date": "2023-07-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-06T00:00:00"
+    },
+    {
+      "user_id": "usr_1042",
+      "employee_id": "EMP57795",
+      "username": "chelsea.martinez",
+      "email": "chelsea.martinez@acmefinancial.io",
+      "full_name": "Chelsea Martinez",
+      "department": "sales",
+      "title": "VP of Sales",
+      "manager": null,
+      "hire_date": "2023-10-17T00:00:00",
+      "tenure_days": 166,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.240",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-10-17T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-16T00:00:00"
+    },
+    {
+      "user_id": "usr_1043",
+      "employee_id": "EMP63264",
+      "username": "stephanie.nelson",
+      "email": "stephanie.nelson@acmefinancial.io",
+      "full_name": "Stephanie Nelson",
+      "department": "sales",
+      "title": "Senior Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2021-03-18T00:00:00",
+      "tenure_days": 1109,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.201",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-30T00:00:00"
+    },
+    {
+      "user_id": "usr_1044",
+      "employee_id": "EMP53540",
+      "username": "william.lopez1",
+      "email": "william.lopez1@acmefinancial.io",
+      "full_name": "William Lopez",
+      "department": "sales",
+      "title": "Senior Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2023-01-08T00:00:00",
+      "tenure_days": 448,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.215",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-11-24T00:00:00"
+    },
+    {
+      "user_id": "usr_1045",
+      "employee_id": "EMP15075",
+      "username": "nicole.hernandez2",
+      "email": "nicole.hernandez2@acmefinancial.io",
+      "full_name": "Nicole Hernandez",
+      "department": "sales",
+      "title": "Senior Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2022-06-02T00:00:00",
+      "tenure_days": 668,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.66",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-08T00:00:00"
+    },
+    {
+      "user_id": "usr_1046",
+      "employee_id": "EMP96511",
+      "username": "donald.martin4",
+      "email": "donald.martin4@acmefinancial.io",
+      "full_name": "Donald Martin",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2022-11-22T00:00:00",
+      "tenure_days": 495,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.112",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-02-24T00:00:00"
+    },
+    {
+      "user_id": "usr_1047",
+      "employee_id": "EMP99065",
+      "username": "sandra.moore",
+      "email": "sandra.moore@acmefinancial.io",
+      "full_name": "Sandra Moore",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2022-01-15T00:00:00",
+      "tenure_days": 806,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.94",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2024-01-31T00:00:00"
+    },
+    {
+      "user_id": "usr_1048",
+      "employee_id": "EMP15014",
+      "username": "matthew.lopez",
+      "email": "matthew.lopez@acmefinancial.io",
+      "full_name": "Matthew Lopez",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2019-05-26T00:00:00",
+      "tenure_days": 1771,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.162",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-10-22T00:00:00"
+    },
+    {
+      "user_id": "usr_1049",
+      "employee_id": "EMP85574",
+      "username": "megan.hill2",
+      "email": "megan.hill2@acmefinancial.io",
+      "full_name": "Megan Hill",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2022-05-30T00:00:00",
+      "tenure_days": 671,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.75",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-20T00:00:00"
+    },
+    {
+      "user_id": "usr_1050",
+      "employee_id": "EMP97900",
+      "username": "james.king9",
+      "email": "james.king9@acmefinancial.io",
+      "full_name": "James King",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2021-07-07T00:00:00",
+      "tenure_days": 998,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.103",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-25T00:00:00"
+    },
+    {
+      "user_id": "usr_1051",
+      "employee_id": "EMP49363",
+      "username": "heather.flores",
+      "email": "heather.flores@acmefinancial.io",
+      "full_name": "Heather Flores",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2020-08-09T00:00:00",
+      "tenure_days": 1330,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.89",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-10-15T00:00:00"
+    },
+    {
+      "user_id": "usr_1052",
+      "employee_id": "EMP65108",
+      "username": "rachel.hall",
+      "email": "rachel.hall@acmefinancial.io",
+      "full_name": "Rachel Hall",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2023-03-05T00:00:00",
+      "tenure_days": 392,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.250",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1053",
+      "employee_id": "EMP10053",
+      "username": "crystal.torres",
+      "email": "crystal.torres@acmefinancial.io",
+      "full_name": "Crystal Torres",
+      "department": "sales",
+      "title": "Account Executive",
+      "manager": "usr_1042",
+      "hire_date": "2021-12-04T00:00:00",
+      "tenure_days": 848,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.83",
+      "work_pattern": "extended",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 21,
+        "variance_hrs": 2.0,
+        "late_prob": 0.25
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-08T00:00:00"
+    },
+    {
+      "user_id": "usr_1054",
+      "employee_id": "EMP98555",
+      "username": "george.adams",
+      "email": "george.adams@acmefinancial.io",
+      "full_name": "George Adams",
+      "department": "customer_success",
+      "title": "Head of Customer Success",
+      "manager": null,
+      "hire_date": "2022-03-29T00:00:00",
+      "tenure_days": 733,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.140",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-04T00:00:00"
+    },
+    {
+      "user_id": "usr_1055",
+      "employee_id": "EMP91167",
+      "username": "ronald.garcia",
+      "email": "ronald.garcia@acmefinancial.io",
+      "full_name": "Ronald Garcia",
+      "department": "customer_success",
+      "title": "Senior Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2021-08-01T00:00:00",
+      "tenure_days": 973,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.33",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1056",
+      "employee_id": "EMP13201",
+      "username": "michelle.martin",
+      "email": "michelle.martin@acmefinancial.io",
+      "full_name": "Michelle Martin",
+      "department": "customer_success",
+      "title": "Senior Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2022-12-18T00:00:00",
+      "tenure_days": 469,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.72",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2023-05-23T00:00:00"
+    },
+    {
+      "user_id": "usr_1057",
+      "employee_id": "EMP85454",
+      "username": "sandra.jones",
+      "email": "sandra.jones@acmefinancial.io",
+      "full_name": "Sandra Jones",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2020-04-07T00:00:00",
+      "tenure_days": 1454,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.193",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-07-21T00:00:00"
+    },
+    {
+      "user_id": "usr_1058",
+      "employee_id": "EMP23970",
+      "username": "rachel.thomas",
+      "email": "rachel.thomas@acmefinancial.io",
+      "full_name": "Rachel Thomas",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2021-07-06T00:00:00",
+      "tenure_days": 999,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.66",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-09T00:00:00"
+    },
+    {
+      "user_id": "usr_1059",
+      "employee_id": "EMP25906",
+      "username": "danielle.robinson",
+      "email": "danielle.robinson@acmefinancial.io",
+      "full_name": "Danielle Robinson",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2022-10-24T00:00:00",
+      "tenure_days": 524,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.44",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-04-24T00:00:00"
+    },
+    {
+      "user_id": "usr_1060",
+      "employee_id": "EMP68008",
+      "username": "danielle.scott",
+      "email": "danielle.scott@acmefinancial.io",
+      "full_name": "Danielle Scott",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2019-09-12T00:00:00",
+      "tenure_days": 1662,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.218",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-07-16T00:00:00"
+    },
+    {
+      "user_id": "usr_1061",
+      "employee_id": "EMP72216",
+      "username": "megan.scott",
+      "email": "megan.scott@acmefinancial.io",
+      "full_name": "Megan Scott",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2023-01-30T00:00:00",
+      "tenure_days": 426,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.76",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-05-09T00:00:00"
+    },
+    {
+      "user_id": "usr_1062",
+      "employee_id": "EMP45992",
+      "username": "nicole.roberts8",
+      "email": "nicole.roberts8@acmefinancial.io",
+      "full_name": "Nicole Roberts",
+      "department": "customer_success",
+      "title": "Customer Success Manager",
+      "manager": "usr_1054",
+      "hire_date": "2021-09-10T00:00:00",
+      "tenure_days": 933,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.29",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-sales",
+      "role_history": [
+        {
+          "role_id": "role-sales",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-12-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1063",
+      "employee_id": "EMP28136",
+      "username": "nicole.perez",
+      "email": "nicole.perez@acmefinancial.io",
+      "full_name": "Nicole Perez",
+      "department": "legal",
+      "title": "General Counsel",
+      "manager": null,
+      "hire_date": "2021-12-13T00:00:00",
+      "tenure_days": 839,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.69",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [
+        {
+          "role_id": "role-readonly",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-01-12T00:00:00"
+    },
+    {
+      "user_id": "usr_1064",
+      "employee_id": "EMP81121",
+      "username": "lisa.wilson",
+      "email": "lisa.wilson@acmefinancial.io",
+      "full_name": "Lisa Wilson",
+      "department": "legal",
+      "title": "Legal Associate",
+      "manager": "usr_1063",
+      "hire_date": "2022-05-06T00:00:00",
+      "tenure_days": 695,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.116",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [
+        {
+          "role_id": "role-readonly",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-28T00:00:00"
+    },
+    {
+      "user_id": "usr_1065",
+      "employee_id": "EMP85456",
+      "username": "steven.roberts",
+      "email": "steven.roberts@acmefinancial.io",
+      "full_name": "Steven Roberts",
+      "department": "legal",
+      "title": "Legal Associate",
+      "manager": "usr_1063",
+      "hire_date": "2021-06-27T00:00:00",
+      "tenure_days": 1008,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.132",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [
+        {
+          "role_id": "role-readonly",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-10-02T00:00:00"
+    },
+    {
+      "user_id": "usr_1066",
+      "employee_id": "EMP64921",
+      "username": "elizabeth.carter",
+      "email": "elizabeth.carter@acmefinancial.io",
+      "full_name": "Elizabeth Carter",
+      "department": "legal",
+      "title": "Legal Associate",
+      "manager": "usr_1063",
+      "hire_date": "2020-03-20T00:00:00",
+      "tenure_days": 1472,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.201",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [
+        {
+          "role_id": "role-readonly",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-05-27T00:00:00"
+    },
+    {
+      "user_id": "usr_1067",
+      "employee_id": "EMP13804",
+      "username": "daniel.young",
+      "email": "daniel.young@acmefinancial.io",
+      "full_name": "Daniel Young",
+      "department": "it_ops",
+      "title": "IT Operations Manager",
+      "manager": null,
+      "hire_date": "2022-04-05T00:00:00",
+      "tenure_days": 726,
+      "is_active": true,
+      "is_manager": true,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.96",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-admin",
+      "role_history": [
+        {
+          "role_id": "role-admin",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-09-05T00:00:00"
+    },
+    {
+      "user_id": "usr_1068",
+      "employee_id": "EMP80008",
+      "username": "jason.hernandez3",
+      "email": "jason.hernandez3@acmefinancial.io",
+      "full_name": "Jason Hernandez",
+      "department": "it_ops",
+      "title": "Senior Systems Engineer",
+      "manager": "usr_1067",
+      "hire_date": "2019-06-04T00:00:00",
+      "tenure_days": 1762,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.242",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-admin",
+      "role_history": [
+        {
+          "role_id": "role-admin",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-06-16T00:00:00"
+    },
+    {
+      "user_id": "usr_1069",
+      "employee_id": "EMP70515",
+      "username": "ronald.johnson",
+      "email": "ronald.johnson@acmefinancial.io",
+      "full_name": "Ronald Johnson",
+      "department": "it_ops",
+      "title": "Systems Administrator",
+      "manager": "usr_1067",
+      "hire_date": "2022-04-13T00:00:00",
+      "tenure_days": 718,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.22",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-10-15T00:00:00"
+    },
+    {
+      "user_id": "usr_1070",
+      "employee_id": "EMP59692",
+      "username": "melissa.robinson",
+      "email": "melissa.robinson@acmefinancial.io",
+      "full_name": "Melissa Robinson",
+      "department": "it_ops",
+      "title": "Systems Administrator",
+      "manager": "usr_1067",
+      "hire_date": "2021-04-17T00:00:00",
+      "tenure_days": 1079,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.202",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": false,
+      "last_password_change": "2023-08-28T00:00:00"
+    },
+    {
+      "user_id": "usr_1071",
+      "employee_id": "EMP16826",
+      "username": "matthew.garcia",
+      "email": "matthew.garcia@acmefinancial.io",
+      "full_name": "Matthew Garcia",
+      "department": "it_ops",
+      "title": "Systems Administrator",
+      "manager": "usr_1067",
+      "hire_date": "2021-04-30T00:00:00",
+      "tenure_days": 1066,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.67",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-05-02T00:00:00"
+    },
+    {
+      "user_id": "usr_1072",
+      "employee_id": "EMP12671",
+      "username": "michael.carter",
+      "email": "michael.carter@acmefinancial.io",
+      "full_name": "Michael Carter",
+      "department": "it_ops",
+      "title": "Systems Administrator",
+      "manager": "usr_1067",
+      "hire_date": "2022-10-26T00:00:00",
+      "tenure_days": 522,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.49",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2023-08-01T00:00:00"
+    },
+    {
+      "user_id": "usr_1073",
+      "employee_id": "EMP43586",
+      "username": "ronald.davis",
+      "email": "ronald.davis@acmefinancial.io",
+      "full_name": "Ronald Davis",
+      "department": "it_ops",
+      "title": "Systems Administrator",
+      "manager": "usr_1067",
+      "hire_date": "2022-11-27T00:00:00",
+      "tenure_days": 490,
+      "is_active": true,
+      "is_manager": false,
+      "is_senior": false,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.52",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "current_role": "role-engineer-senior",
+      "role_history": [
+        {
+          "role_id": "role-engineer-senior",
+          "granted_date": "2023-04-01T00:00:00",
+          "revoked_date": null,
+          "reason": "current"
+        }
+      ],
+      "has_ghost_role": false,
+      "risk_score": 0.0,
+      "mfa_enabled": true,
+      "last_password_change": "2024-02-01T00:00:00"
+    },
+    {
+      "user_id": "usr_dep_1",
+      "employee_id": "EMP50888",
+      "username": "elizabeth.miller_old",
+      "email": "elizabeth.miller_old@acmefinancial.io",
+      "full_name": "Elizabeth Miller",
+      "department": "finance",
+      "title": "Financial Analyst",
+      "hire_date": "2022-10-27T00:00:00",
+      "departure_date": "2023-12-18T00:00:00",
+      "tenure_days": 417,
+      "is_active": true,
+      "is_departed": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.183",
+      "work_pattern": "early",
+      "work_pattern_config": {
+        "core_start": 7,
+        "core_end": 16,
+        "variance_hrs": 0.5,
+        "late_prob": 0.05
+      },
+      "current_role": "role-readonly",
+      "role_history": [],
+      "has_ghost_role": false,
+      "mfa_enabled": false,
+      "flag": "ORPHANED_ACCOUNT",
+      "risk_score": 0.8
+    },
+    {
+      "user_id": "usr_dep_2",
+      "employee_id": "EMP87607",
+      "username": "rachel.rivera_old",
+      "email": "rachel.rivera_old@acmefinancial.io",
+      "full_name": "Rachel Rivera",
+      "department": "legal",
+      "title": "Legal Associate",
+      "hire_date": "2022-09-03T00:00:00",
+      "departure_date": "2024-02-05T00:00:00",
+      "tenure_days": 520,
+      "is_active": true,
+      "is_departed": true,
+      "region": "us-east-1",
+      "home_ip": "192.168.1.222",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [],
+      "has_ghost_role": false,
+      "mfa_enabled": false,
+      "flag": "ORPHANED_ACCOUNT",
+      "risk_score": 0.8
+    },
+    {
+      "user_id": "usr_dep_3",
+      "employee_id": "EMP84177",
+      "username": "robert.hall_old",
+      "email": "robert.hall_old@acmefinancial.io",
+      "full_name": "Robert Hall",
+      "department": "hr",
+      "title": "HR Specialist",
+      "hire_date": "2022-05-21T00:00:00",
+      "departure_date": "2024-01-23T00:00:00",
+      "tenure_days": 612,
+      "is_active": true,
+      "is_departed": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.1.98",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [],
+      "has_ghost_role": false,
+      "mfa_enabled": false,
+      "flag": "ORPHANED_ACCOUNT",
+      "risk_score": 0.8
+    },
+    {
+      "user_id": "usr_dep_4",
+      "employee_id": "EMP94874",
+      "username": "ronald.white_old",
+      "email": "ronald.white_old@acmefinancial.io",
+      "full_name": "Ronald White",
+      "department": "legal",
+      "title": "Legal Associate",
+      "hire_date": "2020-04-22T00:00:00",
+      "departure_date": "2024-02-22T00:00:00",
+      "tenure_days": 1401,
+      "is_active": true,
+      "is_departed": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.2.13",
+      "work_pattern": "standard",
+      "work_pattern_config": {
+        "core_start": 9,
+        "core_end": 18,
+        "variance_hrs": 1.0,
+        "late_prob": 0.1
+      },
+      "current_role": "role-readonly",
+      "role_history": [],
+      "has_ghost_role": false,
+      "mfa_enabled": false,
+      "flag": "ORPHANED_ACCOUNT",
+      "risk_score": 0.8
+    },
+    {
+      "user_id": "svc_etl_001",
+      "username": "svc-etl-pipeline",
+      "email": "svc-etl-pipeline@acmefinancial.io",
+      "full_name": "ETL Pipeline Service Account",
+      "account_type": "service",
+      "department": "engineering",
+      "current_role": "role-svc-etl",
+      "created_date": "2023-01-09T00:00:00",
+      "last_rotated": "2023-04-26T00:00:00",
+      "is_active": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.0.50",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "mfa_enabled": false,
+      "flag": "OVERPERMISSIONED_SERVICE_ACCOUNT",
+      "notes": "ETL Pipeline Service Account",
+      "risk_score": 0.9,
+      "role_history": [],
+      "has_ghost_role": false
+    },
+    {
+      "user_id": "svc_backup_001",
+      "username": "svc-backup-agent",
+      "email": "svc-backup-agent@acmefinancial.io",
+      "full_name": "Backup Service Account",
+      "account_type": "service",
+      "department": "it_ops",
+      "current_role": "role-admin",
+      "created_date": "2022-04-06T00:00:00",
+      "last_rotated": "2022-08-09T00:00:00",
+      "is_active": true,
+      "region": "us-east-1",
+      "home_ip": "10.0.0.51",
+      "work_pattern": "oncall",
+      "work_pattern_config": {
+        "core_start": 0,
+        "core_end": 24,
+        "variance_hrs": 4.0,
+        "late_prob": 0.4
+      },
+      "mfa_enabled": false,
+      "flag": "SERVICE_ACCOUNT_ADMIN_ACCESS",
+      "notes": "Backup Service Account",
+      "risk_score": 0.9,
+      "role_history": [],
+      "has_ghost_role": false
+    }
+  ],
+  "datastores": [
+    {
+      "id": "s3-financial-records",
+      "name": "acme-financial-records-prod",
+      "type": "s3_bucket",
+      "classification": "PHI",
+      "sensitivity": "critical",
+      "region": "us-east-1",
+      "contains": [
+        "financial_names",
+        "dob",
+        "ssn",
+        "diagnosis_codes",
+        "treatment_records"
+      ],
+      "row_estimate": 2400000,
+      "legitimate_accessors": [
+        "data_science",
+        "engineering"
+      ],
+      "compliance": [
+        "HIPAA",
+        "SOC2"
+      ]
+    },
+    {
+      "id": "s3-customer-pii",
+      "name": "acme-customer-data-prod",
+      "type": "s3_bucket",
+      "classification": "PII",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": [
+        "customer_names",
+        "emails",
+        "phone_numbers",
+        "addresses"
+      ],
+      "row_estimate": 180000,
+      "legitimate_accessors": [
+        "sales",
+        "customer_success",
+        "engineering"
+      ],
+      "compliance": [
+        "GDPR",
+        "CCPA"
+      ]
+    },
+    {
+      "id": "rds-billing",
+      "name": "acme-billing-db-prod",
+      "type": "rds_postgres",
+      "classification": "PCI",
+      "sensitivity": "critical",
+      "region": "us-east-1",
+      "contains": [
+        "credit_card_tokens",
+        "billing_history",
+        "payment_methods"
+      ],
+      "row_estimate": 95000,
+      "legitimate_accessors": [
+        "finance",
+        "engineering"
+      ],
+      "compliance": [
+        "PCI-DSS",
+        "SOC2"
+      ]
+    },
+    {
+      "id": "s3-analytics-raw",
+      "name": "acme-analytics-raw-data",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "high",
+      "region": "us-west-2",
+      "contains": [
+        "aggregated_health_metrics",
+        "de_identified_records",
+        "model_training_data"
+      ],
+      "row_estimate": 8700000,
+      "legitimate_accessors": [
+        "data_science",
+        "engineering"
+      ],
+      "compliance": [
+        "HIPAA",
+        "SOC2"
+      ]
+    },
+    {
+      "id": "s3-employee-records",
+      "name": "acme-hr-documents",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": [
+        "employee_pii",
+        "salary_data",
+        "performance_reviews",
+        "ssn"
+      ],
+      "row_estimate": 740,
+      "legitimate_accessors": [
+        "hr",
+        "legal",
+        "finance"
+      ],
+      "compliance": [
+        "SOC2"
+      ]
+    },
+    {
+      "id": "s3-financial-reports",
+      "name": "acme-finance-reports",
+      "type": "s3_bucket",
+      "classification": "CONFIDENTIAL",
+      "sensitivity": "medium",
+      "region": "us-east-1",
+      "contains": [
+        "quarterly_reports",
+        "forecasts",
+        "board_materials"
+      ],
+      "row_estimate": 3200,
+      "legitimate_accessors": [
+        "finance",
+        "legal"
+      ],
+      "compliance": [
+        "SOC2"
+      ]
+    },
+    {
+      "id": "s3-dev-scratch",
+      "name": "acme-dev-scratch-pad",
+      "type": "s3_bucket",
+      "classification": "INTERNAL",
+      "sensitivity": "medium",
+      "region": "us-west-2",
+      "contains": [
+        "dev_configs",
+        "test_data",
+        "build_artifacts"
+      ],
+      "row_estimate": 12000,
+      "legitimate_accessors": [
+        "engineering"
+      ],
+      "compliance": []
+    },
+    {
+      "id": "rds-app-prod",
+      "name": "acme-app-db-prod",
+      "type": "rds_postgres",
+      "classification": "PII",
+      "sensitivity": "high",
+      "region": "us-east-1",
+      "contains": [
+        "user_accounts",
+        "session_data",
+        "api_keys",
+        "customer_profiles"
+      ],
+      "row_estimate": 220000,
+      "legitimate_accessors": [
+        "engineering",
+        "customer_success"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR"
+      ]
+    }
+  ],
+  "iam_roles": [
+    {
+      "id": "role-data-scientist",
+      "name": "DataScientistRole",
+      "policies": [
+        "S3ReadAll",
+        "AthenaFullAccess",
+        "GlueReadOnly"
+      ],
+      "datastores": [
+        "s3-analytics-raw",
+        "s3-financial-records",
+        "s3-customer-pii"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "id": "role-engineer-dev",
+      "name": "EngineerDeveloperRole",
+      "policies": [
+        "S3FullAccess",
+        "RDSReadWrite",
+        "CloudWatchFullAccess",
+        "IAMReadOnly"
+      ],
+      "datastores": [
+        "s3-dev-scratch",
+        "rds-app-prod",
+        "s3-analytics-raw"
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "id": "role-engineer-senior",
+      "name": "EngineerSeniorRole",
+      "policies": [
+        "S3FullAccess",
+        "RDSFullAccess",
+        "IAMPowerUser",
+        "EC2FullAccess"
+      ],
+      "datastores": [
+        "s3-dev-scratch",
+        "rds-app-prod",
+        "rds-billing",
+        "s3-analytics-raw"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "id": "role-finance",
+      "name": "FinanceAnalystRole",
+      "policies": [
+        "S3ReadOnly",
+        "AthenaReadOnly"
+      ],
+      "datastores": [
+        "s3-financial-reports",
+        "rds-billing"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-hr",
+      "name": "HRSpecialistRole",
+      "policies": [
+        "S3ReadWrite"
+      ],
+      "datastores": [
+        "s3-employee-records"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-sales",
+      "name": "SalesRepRole",
+      "policies": [
+        "S3ReadOnly",
+        "DynamoDBReadOnly"
+      ],
+      "datastores": [
+        "s3-customer-pii"
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "id": "role-admin",
+      "name": "ITAdminRole",
+      "policies": [
+        "AdministratorAccess"
+      ],
+      "datastores": [
+        "*"
+      ],
+      "risk_level": "critical"
+    },
+    {
+      "id": "role-readonly",
+      "name": "ReadOnlyAuditRole",
+      "policies": [
+        "ReadOnlyAccess"
+      ],
+      "datastores": [
+        "*"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "id": "role-svc-etl",
+      "name": "ETLServiceRole",
+      "policies": [
+        "S3FullAccess",
+        "RDSFullAccess",
+        "GlueFullAccess"
+      ],
+      "datastores": [
+        "s3-financial-records",
+        "s3-analytics-raw",
+        "rds-app-prod",
+        "rds-billing"
+      ],
+      "risk_level": "critical"
+    },
+    {
+      "id": "role-contractor",
+      "name": "ContractorLimitedRole",
+      "policies": [
+        "S3ReadOnly"
+      ],
+      "datastores": [
+        "s3-dev-scratch"
+      ],
+      "risk_level": "low"
+    }
+  ]
+}

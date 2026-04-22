@@ -1,0 +1,31 @@
+
+============================================================
+  Meridian Health Analytics — Demo Environment
+  Simulation: 90 days
+============================================================
+
+  IDENTITIES
+  ├── Active employees:       74
+  ├── Orphaned accounts:      4  ⚠
+  ├── Service accounts:       2
+  ├── No MFA:                 14  ⚠
+  └── Permission drift:       1  ⚠
+
+  DATASTORES
+  ├── Total:                  8
+  ├── Critical sensitivity:   2
+  ├── PHI:                    1
+  ├── PII:                    2
+  └── PCI:                    1
+
+  ACTIVITY (90 days)
+  ├── Total events:           35,655
+  ├── Scenario events:        113
+  ├── Data transferred:       71.12 GB
+  └── Flagged users:          10
+
+  FINDINGS
+  ├── Total:                  5
+  ├── Critical:               2  🔴
+  └── High:                   3  🟠
+
