@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T22:42:24.086612",
+  "generated_at": "2026-04-21T22:46:10.631796",
   "company": "Meridian Health Analytics",
   "industry": "healthcare",
   "config_used": "config.json",
@@ -20,10 +20,10 @@
     "pci_datastores": 1
   },
   "activity_summary": {
-    "total_events": 35531,
-    "scenario_events": 181,
-    "total_data_transferred_gb": 72.95,
-    "unique_flagged_users": 15
+    "total_events": 35220,
+    "scenario_events": 144,
+    "total_data_transferred_gb": 72.63,
+    "unique_flagged_users": 19
   },
   "findings_summary": {
     "total": 12,
