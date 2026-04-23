@@ -1,7 +1,7 @@
 {
   "company": {
-    "name": "Meridian Health Analytics",
-    "industry": "healthcare",
+    "name": "Acme Financial",
+    "industry": "financial",
     "size": "mid-market",
     "primary_region": "us-east-1",
     "regions": [
@@ -10,12 +10,12 @@
       "eu-west-1"
     ]
   },
-  "generated_at": "2026-04-21T22:46:10.127891",
-  "config_used": "config.json",
+  "generated_at": "2026-04-22T21:00:49.981292",
+  "config_used": "configs/acme.json",
   "simulation_period": {
-    "start": "2024-01-01T00:00:00",
+    "start": "2024-03-24T00:00:00",
     "end": "2024-03-31T00:00:00",
-    "days": 90
+    "days": 7
   },
   "identities": {
     "total": 80,
@@ -37,7 +37,7 @@
       "user_id": "usr_1000",
       "employee_id": "EMP23434",
       "username": "timothy.davis",
-      "email": "timothy.davis@meridianhealthanalytics.io",
+      "email": "timothy.davis@acmefinancial.io",
       "full_name": "Timothy Davis",
       "department": "engineering",
       "title": "Engineering Manager",
@@ -81,7 +81,7 @@
       "user_id": "usr_1001",
       "employee_id": "EMP40495",
       "username": "samantha.ramirez",
-      "email": "samantha.ramirez@meridianhealthanalytics.io",
+      "email": "samantha.ramirez@acmefinancial.io",
       "full_name": "Samantha Ramirez",
       "department": "engineering",
       "title": "Senior Software Engineer",
@@ -118,7 +118,7 @@
       "user_id": "usr_1002",
       "employee_id": "EMP87236",
       "username": "lisa.adams7",
-      "email": "lisa.adams7@meridianhealthanalytics.io",
+      "email": "lisa.adams7@acmefinancial.io",
       "full_name": "Lisa Adams",
       "department": "engineering",
       "title": "Senior Software Engineer",
@@ -155,7 +155,7 @@
       "user_id": "usr_1003",
       "employee_id": "EMP54118",
       "username": "edward.ramirez",
-      "email": "edward.ramirez@meridianhealthanalytics.io",
+      "email": "edward.ramirez@acmefinancial.io",
       "full_name": "Edward Ramirez",
       "department": "engineering",
       "title": "Senior Software Engineer",
@@ -192,7 +192,7 @@
       "user_id": "usr_1004",
       "employee_id": "EMP70217",
       "username": "donald.hill",
-      "email": "donald.hill@meridianhealthanalytics.io",
+      "email": "donald.hill@acmefinancial.io",
       "full_name": "Donald Hill",
       "department": "engineering",
       "title": "Senior Software Engineer",
@@ -229,7 +229,7 @@
       "user_id": "usr_1005",
       "employee_id": "EMP57400",
       "username": "jessica.scott",
-      "email": "jessica.scott@meridianhealthanalytics.io",
+      "email": "jessica.scott@acmefinancial.io",
       "full_name": "Jessica Scott",
       "department": "engineering",
       "title": "Senior Software Engineer",
@@ -272,7 +272,7 @@
       "user_id": "usr_1006",
       "employee_id": "EMP23238",
       "username": "ronald.anderson2",
-      "email": "ronald.anderson2@meridianhealthanalytics.io",
+      "email": "ronald.anderson2@acmefinancial.io",
       "full_name": "Ronald Anderson",
       "department": "engineering",
       "title": "Software Engineer",
@@ -309,7 +309,7 @@
       "user_id": "usr_1007",
       "employee_id": "EMP99593",
       "username": "william.white",
-      "email": "william.white@meridianhealthanalytics.io",
+      "email": "william.white@acmefinancial.io",
       "full_name": "William White",
       "department": "engineering",
       "title": "Software Engineer",
@@ -346,7 +346,7 @@
       "user_id": "usr_1008",
       "employee_id": "EMP45382",
       "username": "kevin.campbell",
-      "email": "kevin.campbell@meridianhealthanalytics.io",
+      "email": "kevin.campbell@acmefinancial.io",
       "full_name": "Kevin Campbell",
       "department": "engineering",
       "title": "Software Engineer",
@@ -383,7 +383,7 @@
       "user_id": "usr_1009",
       "employee_id": "EMP51347",
       "username": "mark.roberts4",
-      "email": "mark.roberts4@meridianhealthanalytics.io",
+      "email": "mark.roberts4@acmefinancial.io",
       "full_name": "Mark Roberts",
       "department": "engineering",
       "title": "Software Engineer",
@@ -420,7 +420,7 @@
       "user_id": "usr_1010",
       "employee_id": "EMP94259",
       "username": "lisa.lee",
-      "email": "lisa.lee@meridianhealthanalytics.io",
+      "email": "lisa.lee@acmefinancial.io",
       "full_name": "Lisa Lee",
       "department": "engineering",
       "title": "Software Engineer",
@@ -457,7 +457,7 @@
       "user_id": "usr_1011",
       "employee_id": "EMP66155",
       "username": "anna.scott",
-      "email": "anna.scott@meridianhealthanalytics.io",
+      "email": "anna.scott@acmefinancial.io",
       "full_name": "Anna Scott",
       "department": "engineering",
       "title": "Software Engineer",
@@ -494,7 +494,7 @@
       "user_id": "usr_1012",
       "employee_id": "EMP24371",
       "username": "joshua.young",
-      "email": "joshua.young@meridianhealthanalytics.io",
+      "email": "joshua.young@acmefinancial.io",
       "full_name": "Joshua Young",
       "department": "engineering",
       "title": "Software Engineer",
@@ -531,7 +531,7 @@
       "user_id": "usr_1013",
       "employee_id": "EMP71348",
       "username": "megan.hill",
-      "email": "megan.hill@meridianhealthanalytics.io",
+      "email": "megan.hill@acmefinancial.io",
       "full_name": "Megan Hill",
       "department": "engineering",
       "title": "Software Engineer",
@@ -568,7 +568,7 @@
       "user_id": "usr_1014",
       "employee_id": "EMP44973",
       "username": "michelle.campbell",
-      "email": "michelle.campbell@meridianhealthanalytics.io",
+      "email": "michelle.campbell@acmefinancial.io",
       "full_name": "Michelle Campbell",
       "department": "engineering",
       "title": "Software Engineer",
@@ -605,7 +605,7 @@
       "user_id": "usr_1015",
       "employee_id": "EMP44522",
       "username": "william.robinson",
-      "email": "william.robinson@meridianhealthanalytics.io",
+      "email": "william.robinson@acmefinancial.io",
       "full_name": "William Robinson",
       "department": "engineering",
       "title": "Software Engineer",
@@ -642,7 +642,7 @@
       "user_id": "usr_1016",
       "employee_id": "EMP30032",
       "username": "timothy.martin9",
-      "email": "timothy.martin9@meridianhealthanalytics.io",
+      "email": "timothy.martin9@acmefinancial.io",
       "full_name": "Timothy Martin",
       "department": "engineering",
       "title": "Software Engineer",
@@ -679,7 +679,7 @@
       "user_id": "usr_1017",
       "employee_id": "EMP57576",
       "username": "james.hill",
-      "email": "james.hill@meridianhealthanalytics.io",
+      "email": "james.hill@acmefinancial.io",
       "full_name": "James Hill",
       "department": "engineering",
       "title": "Software Engineer",
@@ -716,7 +716,7 @@
       "user_id": "usr_1018",
       "employee_id": "EMP79822",
       "username": "jessica.garcia2",
-      "email": "jessica.garcia2@meridianhealthanalytics.io",
+      "email": "jessica.garcia2@acmefinancial.io",
       "full_name": "Jessica Garcia",
       "department": "data_science",
       "title": "Head of Data Science",
@@ -753,7 +753,7 @@
       "user_id": "usr_1019",
       "employee_id": "EMP37760",
       "username": "william.taylor",
-      "email": "william.taylor@meridianhealthanalytics.io",
+      "email": "william.taylor@acmefinancial.io",
       "full_name": "William Taylor",
       "department": "data_science",
       "title": "Senior Data Scientist",
@@ -790,7 +790,7 @@
       "user_id": "usr_1020",
       "employee_id": "EMP58944",
       "username": "lisa.martin",
-      "email": "lisa.martin@meridianhealthanalytics.io",
+      "email": "lisa.martin@acmefinancial.io",
       "full_name": "Lisa Martin",
       "department": "data_science",
       "title": "Senior Data Scientist",
@@ -827,7 +827,7 @@
       "user_id": "usr_1021",
       "employee_id": "EMP82603",
       "username": "stephanie.anderson",
-      "email": "stephanie.anderson@meridianhealthanalytics.io",
+      "email": "stephanie.anderson@acmefinancial.io",
       "full_name": "Stephanie Anderson",
       "department": "data_science",
       "title": "Data Scientist",
@@ -864,7 +864,7 @@
       "user_id": "usr_1022",
       "employee_id": "EMP14117",
       "username": "lisa.green",
-      "email": "lisa.green@meridianhealthanalytics.io",
+      "email": "lisa.green@acmefinancial.io",
       "full_name": "Lisa Green",
       "department": "data_science",
       "title": "Data Scientist",
@@ -901,7 +901,7 @@
       "user_id": "usr_1023",
       "employee_id": "EMP84847",
       "username": "ronald.young",
-      "email": "ronald.young@meridianhealthanalytics.io",
+      "email": "ronald.young@acmefinancial.io",
       "full_name": "Ronald Young",
       "department": "data_science",
       "title": "Data Scientist",
@@ -938,7 +938,7 @@
       "user_id": "usr_1024",
       "employee_id": "EMP66498",
       "username": "patricia.clark",
-      "email": "patricia.clark@meridianhealthanalytics.io",
+      "email": "patricia.clark@acmefinancial.io",
       "full_name": "Patricia Clark",
       "department": "data_science",
       "title": "Data Scientist",
@@ -975,7 +975,7 @@
       "user_id": "usr_1025",
       "employee_id": "EMP54473",
       "username": "michelle.adams2",
-      "email": "michelle.adams2@meridianhealthanalytics.io",
+      "email": "michelle.adams2@acmefinancial.io",
       "full_name": "Michelle Adams",
       "department": "data_science",
       "title": "Data Scientist",
@@ -1012,7 +1012,7 @@
       "user_id": "usr_1026",
       "employee_id": "EMP42742",
       "username": "andrew.rodriguez",
-      "email": "andrew.rodriguez@meridianhealthanalytics.io",
+      "email": "andrew.rodriguez@acmefinancial.io",
       "full_name": "Andrew Rodriguez",
       "department": "data_science",
       "title": "Data Scientist",
@@ -1049,7 +1049,7 @@
       "user_id": "usr_1027",
       "employee_id": "EMP11934",
       "username": "robert.brown",
-      "email": "robert.brown@meridianhealthanalytics.io",
+      "email": "robert.brown@acmefinancial.io",
       "full_name": "Robert Brown",
       "department": "data_science",
       "title": "Data Scientist",
@@ -1086,7 +1086,7 @@
       "user_id": "usr_1028",
       "employee_id": "EMP62565",
       "username": "william.clark",
-      "email": "william.clark@meridianhealthanalytics.io",
+      "email": "william.clark@acmefinancial.io",
       "full_name": "William Clark",
       "department": "finance",
       "title": "Finance Director",
@@ -1123,7 +1123,7 @@
       "user_id": "usr_1029",
       "employee_id": "EMP82845",
       "username": "matthew.robinson",
-      "email": "matthew.robinson@meridianhealthanalytics.io",
+      "email": "matthew.robinson@acmefinancial.io",
       "full_name": "Matthew Robinson",
       "department": "finance",
       "title": "Senior Financial Analyst",
@@ -1160,7 +1160,7 @@
       "user_id": "usr_1030",
       "employee_id": "EMP51104",
       "username": "anthony.wilson9",
-      "email": "anthony.wilson9@meridianhealthanalytics.io",
+      "email": "anthony.wilson9@acmefinancial.io",
       "full_name": "Anthony Wilson",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1197,7 +1197,7 @@
       "user_id": "usr_1031",
       "employee_id": "EMP34356",
       "username": "danielle.hernandez",
-      "email": "danielle.hernandez@meridianhealthanalytics.io",
+      "email": "danielle.hernandez@acmefinancial.io",
       "full_name": "Danielle Hernandez",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1234,7 +1234,7 @@
       "user_id": "usr_1032",
       "employee_id": "EMP15209",
       "username": "rachel.davis4",
-      "email": "rachel.davis4@meridianhealthanalytics.io",
+      "email": "rachel.davis4@acmefinancial.io",
       "full_name": "Rachel Davis",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1271,7 +1271,7 @@
       "user_id": "usr_1033",
       "employee_id": "EMP97782",
       "username": "brian.king",
-      "email": "brian.king@meridianhealthanalytics.io",
+      "email": "brian.king@acmefinancial.io",
       "full_name": "Brian King",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1308,7 +1308,7 @@
       "user_id": "usr_1034",
       "employee_id": "EMP19508",
       "username": "john.nelson",
-      "email": "john.nelson@meridianhealthanalytics.io",
+      "email": "john.nelson@acmefinancial.io",
       "full_name": "John Nelson",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1345,7 +1345,7 @@
       "user_id": "usr_1035",
       "employee_id": "EMP27361",
       "username": "robert.jones",
-      "email": "robert.jones@meridianhealthanalytics.io",
+      "email": "robert.jones@acmefinancial.io",
       "full_name": "Robert Jones",
       "department": "finance",
       "title": "Financial Analyst",
@@ -1382,7 +1382,7 @@
       "user_id": "usr_1036",
       "employee_id": "EMP49651",
       "username": "amber.jackson",
-      "email": "amber.jackson@meridianhealthanalytics.io",
+      "email": "amber.jackson@acmefinancial.io",
       "full_name": "Amber Jackson",
       "department": "hr",
       "title": "HR Director",
@@ -1419,7 +1419,7 @@
       "user_id": "usr_1037",
       "employee_id": "EMP27601",
       "username": "ronald.scott",
-      "email": "ronald.scott@meridianhealthanalytics.io",
+      "email": "ronald.scott@acmefinancial.io",
       "full_name": "Ronald Scott",
       "department": "hr",
       "title": "Senior HR Business Partner",
@@ -1456,7 +1456,7 @@
       "user_id": "usr_1038",
       "employee_id": "EMP54942",
       "username": "jennifer.moore",
-      "email": "jennifer.moore@meridianhealthanalytics.io",
+      "email": "jennifer.moore@acmefinancial.io",
       "full_name": "Jennifer Moore",
       "department": "hr",
       "title": "HR Specialist",
@@ -1493,7 +1493,7 @@
       "user_id": "usr_1039",
       "employee_id": "EMP16658",
       "username": "joshua.young",
-      "email": "joshua.young@meridianhealthanalytics.io",
+      "email": "joshua.young@acmefinancial.io",
       "full_name": "Joshua Young",
       "department": "hr",
       "title": "HR Specialist",
@@ -1530,7 +1530,7 @@
       "user_id": "usr_1040",
       "employee_id": "EMP44335",
       "username": "michael.smith",
-      "email": "michael.smith@meridianhealthanalytics.io",
+      "email": "michael.smith@acmefinancial.io",
       "full_name": "Michael Smith",
       "department": "hr",
       "title": "HR Specialist",
@@ -1567,7 +1567,7 @@
       "user_id": "usr_1041",
       "employee_id": "EMP29536",
       "username": "megan.scott",
-      "email": "megan.scott@meridianhealthanalytics.io",
+      "email": "megan.scott@acmefinancial.io",
       "full_name": "Megan Scott",
       "department": "hr",
       "title": "HR Specialist",
@@ -1604,7 +1604,7 @@
       "user_id": "usr_1042",
       "employee_id": "EMP57795",
       "username": "chelsea.martinez",
-      "email": "chelsea.martinez@meridianhealthanalytics.io",
+      "email": "chelsea.martinez@acmefinancial.io",
       "full_name": "Chelsea Martinez",
       "department": "sales",
       "title": "VP of Sales",
@@ -1641,7 +1641,7 @@
       "user_id": "usr_1043",
       "employee_id": "EMP63264",
       "username": "stephanie.nelson",
-      "email": "stephanie.nelson@meridianhealthanalytics.io",
+      "email": "stephanie.nelson@acmefinancial.io",
       "full_name": "Stephanie Nelson",
       "department": "sales",
       "title": "Senior Account Executive",
@@ -1678,7 +1678,7 @@
       "user_id": "usr_1044",
       "employee_id": "EMP53540",
       "username": "william.lopez1",
-      "email": "william.lopez1@meridianhealthanalytics.io",
+      "email": "william.lopez1@acmefinancial.io",
       "full_name": "William Lopez",
       "department": "sales",
       "title": "Senior Account Executive",
@@ -1715,7 +1715,7 @@
       "user_id": "usr_1045",
       "employee_id": "EMP15075",
       "username": "nicole.hernandez2",
-      "email": "nicole.hernandez2@meridianhealthanalytics.io",
+      "email": "nicole.hernandez2@acmefinancial.io",
       "full_name": "Nicole Hernandez",
       "department": "sales",
       "title": "Senior Account Executive",
@@ -1752,7 +1752,7 @@
       "user_id": "usr_1046",
       "employee_id": "EMP96511",
       "username": "donald.martin4",
-      "email": "donald.martin4@meridianhealthanalytics.io",
+      "email": "donald.martin4@acmefinancial.io",
       "full_name": "Donald Martin",
       "department": "sales",
       "title": "Account Executive",
@@ -1789,7 +1789,7 @@
       "user_id": "usr_1047",
       "employee_id": "EMP99065",
       "username": "sandra.moore",
-      "email": "sandra.moore@meridianhealthanalytics.io",
+      "email": "sandra.moore@acmefinancial.io",
       "full_name": "Sandra Moore",
       "department": "sales",
       "title": "Account Executive",
@@ -1826,7 +1826,7 @@
       "user_id": "usr_1048",
       "employee_id": "EMP15014",
       "username": "matthew.lopez",
-      "email": "matthew.lopez@meridianhealthanalytics.io",
+      "email": "matthew.lopez@acmefinancial.io",
       "full_name": "Matthew Lopez",
       "department": "sales",
       "title": "Account Executive",
@@ -1863,7 +1863,7 @@
       "user_id": "usr_1049",
       "employee_id": "EMP85574",
       "username": "megan.hill2",
-      "email": "megan.hill2@meridianhealthanalytics.io",
+      "email": "megan.hill2@acmefinancial.io",
       "full_name": "Megan Hill",
       "department": "sales",
       "title": "Account Executive",
@@ -1900,7 +1900,7 @@
       "user_id": "usr_1050",
       "employee_id": "EMP97900",
       "username": "james.king9",
-      "email": "james.king9@meridianhealthanalytics.io",
+      "email": "james.king9@acmefinancial.io",
       "full_name": "James King",
       "department": "sales",
       "title": "Account Executive",
@@ -1937,7 +1937,7 @@
       "user_id": "usr_1051",
       "employee_id": "EMP49363",
       "username": "heather.flores",
-      "email": "heather.flores@meridianhealthanalytics.io",
+      "email": "heather.flores@acmefinancial.io",
       "full_name": "Heather Flores",
       "department": "sales",
       "title": "Account Executive",
@@ -1974,7 +1974,7 @@
       "user_id": "usr_1052",
       "employee_id": "EMP65108",
       "username": "rachel.hall",
-      "email": "rachel.hall@meridianhealthanalytics.io",
+      "email": "rachel.hall@acmefinancial.io",
       "full_name": "Rachel Hall",
       "department": "sales",
       "title": "Account Executive",
@@ -2011,7 +2011,7 @@
       "user_id": "usr_1053",
       "employee_id": "EMP10053",
       "username": "crystal.torres",
-      "email": "crystal.torres@meridianhealthanalytics.io",
+      "email": "crystal.torres@acmefinancial.io",
       "full_name": "Crystal Torres",
       "department": "sales",
       "title": "Account Executive",
@@ -2048,7 +2048,7 @@
       "user_id": "usr_1054",
       "employee_id": "EMP98555",
       "username": "george.adams",
-      "email": "george.adams@meridianhealthanalytics.io",
+      "email": "george.adams@acmefinancial.io",
       "full_name": "George Adams",
       "department": "customer_success",
       "title": "Head of Customer Success",
@@ -2085,7 +2085,7 @@
       "user_id": "usr_1055",
       "employee_id": "EMP91167",
       "username": "ronald.garcia",
-      "email": "ronald.garcia@meridianhealthanalytics.io",
+      "email": "ronald.garcia@acmefinancial.io",
       "full_name": "Ronald Garcia",
       "department": "customer_success",
       "title": "Senior Customer Success Manager",
@@ -2122,7 +2122,7 @@
       "user_id": "usr_1056",
       "employee_id": "EMP13201",
       "username": "michelle.martin",
-      "email": "michelle.martin@meridianhealthanalytics.io",
+      "email": "michelle.martin@acmefinancial.io",
       "full_name": "Michelle Martin",
       "department": "customer_success",
       "title": "Senior Customer Success Manager",
@@ -2159,7 +2159,7 @@
       "user_id": "usr_1057",
       "employee_id": "EMP85454",
       "username": "sandra.jones",
-      "email": "sandra.jones@meridianhealthanalytics.io",
+      "email": "sandra.jones@acmefinancial.io",
       "full_name": "Sandra Jones",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2196,7 +2196,7 @@
       "user_id": "usr_1058",
       "employee_id": "EMP23970",
       "username": "rachel.thomas",
-      "email": "rachel.thomas@meridianhealthanalytics.io",
+      "email": "rachel.thomas@acmefinancial.io",
       "full_name": "Rachel Thomas",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2233,7 +2233,7 @@
       "user_id": "usr_1059",
       "employee_id": "EMP25906",
       "username": "danielle.robinson",
-      "email": "danielle.robinson@meridianhealthanalytics.io",
+      "email": "danielle.robinson@acmefinancial.io",
       "full_name": "Danielle Robinson",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2270,7 +2270,7 @@
       "user_id": "usr_1060",
       "employee_id": "EMP68008",
       "username": "danielle.scott",
-      "email": "danielle.scott@meridianhealthanalytics.io",
+      "email": "danielle.scott@acmefinancial.io",
       "full_name": "Danielle Scott",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2307,7 +2307,7 @@
       "user_id": "usr_1061",
       "employee_id": "EMP72216",
       "username": "megan.scott",
-      "email": "megan.scott@meridianhealthanalytics.io",
+      "email": "megan.scott@acmefinancial.io",
       "full_name": "Megan Scott",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2344,7 +2344,7 @@
       "user_id": "usr_1062",
       "employee_id": "EMP45992",
       "username": "nicole.roberts8",
-      "email": "nicole.roberts8@meridianhealthanalytics.io",
+      "email": "nicole.roberts8@acmefinancial.io",
       "full_name": "Nicole Roberts",
       "department": "customer_success",
       "title": "Customer Success Manager",
@@ -2381,7 +2381,7 @@
       "user_id": "usr_1063",
       "employee_id": "EMP28136",
       "username": "nicole.perez",
-      "email": "nicole.perez@meridianhealthanalytics.io",
+      "email": "nicole.perez@acmefinancial.io",
       "full_name": "Nicole Perez",
       "department": "legal",
       "title": "General Counsel",
@@ -2418,7 +2418,7 @@
       "user_id": "usr_1064",
       "employee_id": "EMP81121",
       "username": "lisa.wilson",
-      "email": "lisa.wilson@meridianhealthanalytics.io",
+      "email": "lisa.wilson@acmefinancial.io",
       "full_name": "Lisa Wilson",
       "department": "legal",
       "title": "Legal Associate",
@@ -2455,7 +2455,7 @@
       "user_id": "usr_1065",
       "employee_id": "EMP85456",
       "username": "steven.roberts",
-      "email": "steven.roberts@meridianhealthanalytics.io",
+      "email": "steven.roberts@acmefinancial.io",
       "full_name": "Steven Roberts",
       "department": "legal",
       "title": "Legal Associate",
@@ -2492,7 +2492,7 @@
       "user_id": "usr_1066",
       "employee_id": "EMP64921",
       "username": "elizabeth.carter",
-      "email": "elizabeth.carter@meridianhealthanalytics.io",
+      "email": "elizabeth.carter@acmefinancial.io",
       "full_name": "Elizabeth Carter",
       "department": "legal",
       "title": "Legal Associate",
@@ -2529,7 +2529,7 @@
       "user_id": "usr_1067",
       "employee_id": "EMP13804",
       "username": "daniel.young",
-      "email": "daniel.young@meridianhealthanalytics.io",
+      "email": "daniel.young@acmefinancial.io",
       "full_name": "Daniel Young",
       "department": "it_ops",
       "title": "IT Operations Manager",
@@ -2566,7 +2566,7 @@
       "user_id": "usr_1068",
       "employee_id": "EMP80008",
       "username": "jason.hernandez3",
-      "email": "jason.hernandez3@meridianhealthanalytics.io",
+      "email": "jason.hernandez3@acmefinancial.io",
       "full_name": "Jason Hernandez",
       "department": "it_ops",
       "title": "Senior Systems Engineer",
@@ -2603,7 +2603,7 @@
       "user_id": "usr_1069",
       "employee_id": "EMP70515",
       "username": "ronald.johnson",
-      "email": "ronald.johnson@meridianhealthanalytics.io",
+      "email": "ronald.johnson@acmefinancial.io",
       "full_name": "Ronald Johnson",
       "department": "it_ops",
       "title": "Systems Administrator",
@@ -2640,7 +2640,7 @@
       "user_id": "usr_1070",
       "employee_id": "EMP59692",
       "username": "melissa.robinson",
-      "email": "melissa.robinson@meridianhealthanalytics.io",
+      "email": "melissa.robinson@acmefinancial.io",
       "full_name": "Melissa Robinson",
       "department": "it_ops",
       "title": "Systems Administrator",
@@ -2677,7 +2677,7 @@
       "user_id": "usr_1071",
       "employee_id": "EMP16826",
       "username": "matthew.garcia",
-      "email": "matthew.garcia@meridianhealthanalytics.io",
+      "email": "matthew.garcia@acmefinancial.io",
       "full_name": "Matthew Garcia",
       "department": "it_ops",
       "title": "Systems Administrator",
@@ -2714,7 +2714,7 @@
       "user_id": "usr_1072",
       "employee_id": "EMP12671",
       "username": "michael.carter",
-      "email": "michael.carter@meridianhealthanalytics.io",
+      "email": "michael.carter@acmefinancial.io",
       "full_name": "Michael Carter",
       "department": "it_ops",
       "title": "Systems Administrator",
@@ -2751,7 +2751,7 @@
       "user_id": "usr_1073",
       "employee_id": "EMP43586",
       "username": "ronald.davis",
-      "email": "ronald.davis@meridianhealthanalytics.io",
+      "email": "ronald.davis@acmefinancial.io",
       "full_name": "Ronald Davis",
       "department": "it_ops",
       "title": "Systems Administrator",
@@ -2788,7 +2788,7 @@
       "user_id": "usr_dep_1",
       "employee_id": "EMP50888",
       "username": "elizabeth.miller_old",
-      "email": "elizabeth.miller_old@meridianhealthanalytics.io",
+      "email": "elizabeth.miller_old@acmefinancial.io",
       "full_name": "Elizabeth Miller",
       "department": "finance",
       "title": "Financial Analyst",
@@ -2817,7 +2817,7 @@
       "user_id": "usr_dep_2",
       "employee_id": "EMP87607",
       "username": "rachel.rivera_old",
-      "email": "rachel.rivera_old@meridianhealthanalytics.io",
+      "email": "rachel.rivera_old@acmefinancial.io",
       "full_name": "Rachel Rivera",
       "department": "legal",
       "title": "Legal Associate",
@@ -2846,7 +2846,7 @@
       "user_id": "usr_dep_3",
       "employee_id": "EMP84177",
       "username": "robert.hall_old",
-      "email": "robert.hall_old@meridianhealthanalytics.io",
+      "email": "robert.hall_old@acmefinancial.io",
       "full_name": "Robert Hall",
       "department": "hr",
       "title": "HR Specialist",
@@ -2875,7 +2875,7 @@
       "user_id": "usr_dep_4",
       "employee_id": "EMP94874",
       "username": "ronald.white_old",
-      "email": "ronald.white_old@meridianhealthanalytics.io",
+      "email": "ronald.white_old@acmefinancial.io",
       "full_name": "Ronald White",
       "department": "legal",
       "title": "Legal Associate",
@@ -2903,7 +2903,7 @@
     {
       "user_id": "svc_etl_001",
       "username": "svc-etl-pipeline",
-      "email": "svc-etl-pipeline@meridianhealthanalytics.io",
+      "email": "svc-etl-pipeline@acmefinancial.io",
       "full_name": "ETL Pipeline Service Account",
       "account_type": "service",
       "department": "engineering",
@@ -2930,7 +2930,7 @@
     {
       "user_id": "svc_backup_001",
       "username": "svc-backup-agent",
-      "email": "svc-backup-agent@meridianhealthanalytics.io",
+      "email": "svc-backup-agent@acmefinancial.io",
       "full_name": "Backup Service Account",
       "account_type": "service",
       "department": "it_ops",
@@ -2957,19 +2957,19 @@
   ],
   "datastores": [
     {
-      "id": "s3-patient-records",
-      "name": "meridian-patient-records-prod",
+      "id": "s3-financial-records",
+      "name": "acme-financial-records-prod",
       "type": "s3_bucket",
-      "category": "PHI",
       "classification": "PHI",
-      "sensitivity_level": "Restricted",
-      "_sensitivity_note": "PHI always Restricted per HIPAA \u2014 finding severity escalated one level",
+      "sensitivity": "critical",
       "region": "us-east-1",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2023-09-01",
-      "classification_age_days": 212,
-      "stale_classification": false,
+      "contains": [
+        "financial_names",
+        "dob",
+        "ssn",
+        "diagnosis_codes",
+        "treatment_records"
+      ],
       "row_estimate": 2400000,
       "legitimate_accessors": [
         "data_science",
@@ -2978,107 +2978,21 @@
       "compliance": [
         "HIPAA",
         "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "csv",
-            "parquet"
-          ],
-          "object_count": 1840
-        },
-        {
-          "classification": "Unstructured",
-          "type": "Documents",
-          "extensions": [
-            "pdf"
-          ],
-          "object_count": 412
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PHI",
-          "data_type": "MRN",
-          "description": "Medical Record Number",
-          "sensitivity": "Restricted",
-          "entry_count": 2400000
-        },
-        {
-          "category": "PHI",
-          "data_type": "DEA",
-          "description": "Drug Enforcement Agency Number",
-          "sensitivity": "Restricted",
-          "entry_count": 18400
-        },
-        {
-          "category": "PHI",
-          "data_type": "HL7",
-          "description": "Clinical and administrative health data",
-          "sensitivity": "Restricted",
-          "entry_count": 890000
-        },
-        {
-          "category": "PHI",
-          "data_type": "NPI",
-          "description": "National Provider Identifier",
-          "sensitivity": "Restricted",
-          "entry_count": 4200
-        },
-        {
-          "category": "PII",
-          "data_type": "Social Security Number",
-          "description": "US SSN",
-          "sensitivity": "Restricted",
-          "entry_count": 2400000
-        },
-        {
-          "category": "PII",
-          "data_type": "Birth Date",
-          "description": "Person date of birth",
-          "sensitivity": "Private",
-          "entry_count": 2400000
-        },
-        {
-          "category": "PII",
-          "data_type": "Person",
-          "description": "Full name",
-          "sensitivity": "Confidential",
-          "entry_count": 2400000
-        }
-      ],
-      "actual_data_types": [
-        "MRN",
-        "DEA",
-        "HL7",
-        "NPI",
-        "Social Security Number",
-        "Birth Date",
-        "Person"
-      ],
-      "labeled_data_types": [
-        "PHI",
-        "health_records"
-      ],
-      "classification_mismatch": false,
-      "sample_finding_evidence": "SSN pattern detected: XXX-XX-XXXX in 2.4M records across 1,840 CSV objects"
+      ]
     },
     {
       "id": "s3-customer-pii",
-      "name": "meridian-customer-data-prod",
+      "name": "acme-customer-data-prod",
       "type": "s3_bucket",
-      "category": "PII",
       "classification": "PII",
-      "sensitivity_level": "Restricted",
+      "sensitivity": "high",
       "region": "us-east-1",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2023-11-15",
-      "classification_age_days": 137,
-      "stale_classification": false,
+      "contains": [
+        "customer_names",
+        "emails",
+        "phone_numbers",
+        "addresses"
+      ],
       "row_estimate": 180000,
       "legitimate_accessors": [
         "sales",
@@ -3088,92 +3002,20 @@
       "compliance": [
         "GDPR",
         "CCPA"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "csv",
-            "xlsx"
-          ],
-          "object_count": 340
-        },
-        {
-          "classification": "Semi-structured",
-          "type": "Configuration files",
-          "extensions": [
-            "json"
-          ],
-          "object_count": 89
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PII",
-          "data_type": "Person",
-          "description": "Full name",
-          "sensitivity": "Confidential",
-          "entry_count": 180000
-        },
-        {
-          "category": "PII",
-          "data_type": "Email",
-          "description": "Email address",
-          "sensitivity": "Confidential",
-          "entry_count": 178500
-        },
-        {
-          "category": "PII",
-          "data_type": "Phone Number",
-          "description": "Personal contact number",
-          "sensitivity": "Confidential",
-          "entry_count": 162000
-        },
-        {
-          "category": "PII",
-          "data_type": "Address",
-          "description": "Physical address",
-          "sensitivity": "Confidential",
-          "entry_count": 174000
-        },
-        {
-          "category": "PII",
-          "data_type": "Zip Code",
-          "description": "Postal code",
-          "sensitivity": "Confidential",
-          "entry_count": 174000
-        }
-      ],
-      "actual_data_types": [
-        "Person",
-        "Email",
-        "Phone Number",
-        "Address",
-        "Zip Code"
-      ],
-      "labeled_data_types": [
-        "PII",
-        "customer_data"
-      ],
-      "classification_mismatch": false,
-      "sample_finding_evidence": "Email pattern detected: 178,500 entries matching RFC-5322 format across 340 CSV objects"
+      ]
     },
     {
       "id": "rds-billing",
-      "name": "meridian-billing-db-prod",
+      "name": "acme-billing-db-prod",
       "type": "rds_postgres",
-      "category": "PCI",
       "classification": "PCI",
-      "sensitivity_level": "Restricted",
-      "_sensitivity_note": "CVV and Credit Card Number are both Restricted \u2014 finding severity escalated",
+      "sensitivity": "critical",
       "region": "us-east-1",
-      "encryption": "AES-256 + TLS in-transit",
-      "public_access": false,
-      "last_classified": "2024-01-10",
-      "classification_age_days": 81,
-      "stale_classification": false,
+      "contains": [
+        "credit_card_tokens",
+        "billing_history",
+        "payment_methods"
+      ],
       "row_estimate": 95000,
       "legitimate_accessors": [
         "finance",
@@ -3182,83 +3024,20 @@
       "compliance": [
         "PCI-DSS",
         "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Managed database",
-          "extensions": [
-            "rds_postgres"
-          ],
-          "table_count": 14
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PCI",
-          "data_type": "Credit Card Number",
-          "description": "Personal account number (Visa/MC/AMEX)",
-          "sensitivity": "Restricted",
-          "entry_count": 95000
-        },
-        {
-          "category": "PCI",
-          "data_type": "CVV",
-          "description": "Credit Card Verification Number",
-          "sensitivity": "Restricted",
-          "entry_count": 95000
-        },
-        {
-          "category": "PCI",
-          "data_type": "Full Magnetic Stripe",
-          "description": "Full track data",
-          "sensitivity": "Restricted",
-          "entry_count": 12400
-        },
-        {
-          "category": "PII",
-          "data_type": "Person",
-          "description": "Cardholder name",
-          "sensitivity": "Confidential",
-          "entry_count": 95000
-        },
-        {
-          "category": "PII",
-          "data_type": "Address",
-          "description": "Billing address",
-          "sensitivity": "Confidential",
-          "entry_count": 95000
-        }
-      ],
-      "actual_data_types": [
-        "Credit Card Number",
-        "CVV",
-        "Full Magnetic Stripe",
-        "Person",
-        "Address"
-      ],
-      "labeled_data_types": [
-        "PCI",
-        "financial_data"
-      ],
-      "classification_mismatch": false,
-      "sample_finding_evidence": "Credit Card Number detected: Visa (4xxx), Mastercard (5xxx), AMEX (3xxx) patterns in billing_transactions table"
+      ]
     },
     {
       "id": "s3-analytics-raw",
-      "name": "meridian-analytics-raw-data",
+      "name": "acme-analytics-raw-data",
       "type": "s3_bucket",
-      "category": "PHI",
       "classification": "CONFIDENTIAL",
-      "sensitivity_level": "Confidential",
-      "_classification_warning": "Labeled CONFIDENTIAL but contains PHI data types \u2014 stale classification",
+      "sensitivity": "high",
       "region": "us-west-2",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2022-06-01",
-      "classification_age_days": 669,
-      "stale_classification": true,
+      "contains": [
+        "aggregated_health_metrics",
+        "de_identified_records",
+        "model_training_data"
+      ],
       "row_estimate": 8700000,
       "legitimate_accessors": [
         "data_science",
@@ -3267,85 +3046,21 @@
       "compliance": [
         "HIPAA",
         "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "parquet",
-            "csv"
-          ],
-          "object_count": 14200
-        },
-        {
-          "classification": "Semi-structured",
-          "type": "Configuration files",
-          "extensions": [
-            "json"
-          ],
-          "object_count": 890
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PHI",
-          "data_type": "MRN",
-          "description": "Medical Record Number",
-          "sensitivity": "Restricted",
-          "entry_count": 4100000
-        },
-        {
-          "category": "PHI",
-          "data_type": "HICN",
-          "description": "Health Insurance Claim Number",
-          "sensitivity": "Confidential",
-          "entry_count": 2800000
-        },
-        {
-          "category": "PHI",
-          "data_type": "MBI",
-          "description": "Medicare Beneficiary Identifier",
-          "sensitivity": "Restricted",
-          "entry_count": 1200000
-        },
-        {
-          "category": "PII",
-          "data_type": "Birth Date",
-          "description": "Person date of birth",
-          "sensitivity": "Private",
-          "entry_count": 8700000
-        }
-      ],
-      "actual_data_types": [
-        "MRN",
-        "HICN",
-        "MBI",
-        "Birth Date"
-      ],
-      "labeled_data_types": [
-        "CONFIDENTIAL",
-        "analytics"
-      ],
-      "classification_mismatch": true,
-      "_mismatch_note": "Scanner found MRN and MBI (both Restricted PHI) \u2014 bucket labeled CONFIDENTIAL. Last classified 669 days ago.",
-      "sample_finding_evidence": "MRN pattern detected in 4.1M records across parquet objects last modified after classification date"
+      ]
     },
     {
       "id": "s3-employee-records",
-      "name": "meridian-hr-documents",
+      "name": "acme-hr-documents",
       "type": "s3_bucket",
-      "category": "PII",
       "classification": "CONFIDENTIAL",
-      "sensitivity_level": "Confidential",
-      "_classification_warning": "Contains SSN and Bank Account Number \u2014 should be Restricted",
+      "sensitivity": "high",
       "region": "us-east-1",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2021-03-15",
-      "classification_age_days": 1117,
-      "stale_classification": true,
+      "contains": [
+        "employee_pii",
+        "salary_data",
+        "performance_reviews",
+        "ssn"
+      ],
       "row_estimate": 740,
       "legitimate_accessors": [
         "hr",
@@ -3354,101 +3069,20 @@
       ],
       "compliance": [
         "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "xlsx",
-            "csv"
-          ],
-          "object_count": 48
-        },
-        {
-          "classification": "Unstructured",
-          "type": "Documents",
-          "extensions": [
-            "pdf",
-            "docx"
-          ],
-          "object_count": 312
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PII",
-          "data_type": "Social Security Number",
-          "description": "US SSN",
-          "sensitivity": "Restricted",
-          "entry_count": 740
-        },
-        {
-          "category": "PII",
-          "data_type": "Bank Account Number",
-          "description": "Personal bank account (US)",
-          "sensitivity": "Restricted",
-          "entry_count": 740
-        },
-        {
-          "category": "PII",
-          "data_type": "Person",
-          "description": "Full name",
-          "sensitivity": "Confidential",
-          "entry_count": 740
-        },
-        {
-          "category": "PII",
-          "data_type": "Birth Date",
-          "description": "Date of birth",
-          "sensitivity": "Private",
-          "entry_count": 740
-        },
-        {
-          "category": "PII",
-          "data_type": "Address",
-          "description": "Home address",
-          "sensitivity": "Confidential",
-          "entry_count": 740
-        },
-        {
-          "category": "PII",
-          "data_type": "Email",
-          "description": "Personal email",
-          "sensitivity": "Confidential",
-          "entry_count": 740
-        }
-      ],
-      "actual_data_types": [
-        "Social Security Number",
-        "Bank Account Number",
-        "Person",
-        "Birth Date",
-        "Address",
-        "Email"
-      ],
-      "labeled_data_types": [
-        "CONFIDENTIAL",
-        "hr_records"
-      ],
-      "classification_mismatch": true,
-      "_mismatch_note": "Contains Social Security Number and Bank Account Number (both Restricted) \u2014 bucket labeled CONFIDENTIAL. 1,117 days since last classification.",
-      "sample_finding_evidence": "SSN pattern XXX-XX-XXXX detected in payroll.xlsx. Bank routing + account number pairs detected in direct_deposit.csv."
+      ]
     },
     {
       "id": "s3-financial-reports",
-      "name": "meridian-finance-reports",
+      "name": "acme-finance-reports",
       "type": "s3_bucket",
-      "category": "Financial",
       "classification": "CONFIDENTIAL",
-      "sensitivity_level": "Confidential",
+      "sensitivity": "medium",
       "region": "us-east-1",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2023-07-20",
-      "classification_age_days": 255,
-      "stale_classification": false,
+      "contains": [
+        "quarterly_reports",
+        "forecasts",
+        "board_materials"
+      ],
       "row_estimate": 3200,
       "legitimate_accessors": [
         "finance",
@@ -3456,177 +3090,39 @@
       ],
       "compliance": [
         "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Unstructured",
-          "type": "Documents",
-          "extensions": [
-            "pdf",
-            "docx"
-          ],
-          "object_count": 847
-        },
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "xlsx"
-          ],
-          "object_count": 312
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PII",
-          "data_type": "EIN",
-          "description": "US Employer Identification Number",
-          "sensitivity": "Restricted",
-          "entry_count": 24
-        },
-        {
-          "category": "PII",
-          "data_type": "Billing",
-          "description": "Transaction statements",
-          "sensitivity": "Confidential",
-          "entry_count": 3200
-        },
-        {
-          "category": "PII",
-          "data_type": "Person",
-          "description": "Executive names",
-          "sensitivity": "Confidential",
-          "entry_count": 156
-        }
-      ],
-      "actual_data_types": [
-        "EIN",
-        "Billing",
-        "Person"
-      ],
-      "labeled_data_types": [
-        "CONFIDENTIAL",
-        "financial"
-      ],
-      "classification_mismatch": false,
-      "sample_finding_evidence": "EIN pattern XX-XXXXXXX detected in 24 quarterly report objects"
+      ]
     },
     {
       "id": "s3-dev-scratch",
-      "name": "meridian-dev-scratch-pad",
+      "name": "acme-dev-scratch-pad",
       "type": "s3_bucket",
-      "category": "Internal",
       "classification": "INTERNAL",
-      "sensitivity_level": "Private",
-      "_sensitivity_note": "No encryption enforced \u2014 any sensitive data copied here becomes immediately at risk",
+      "sensitivity": "medium",
       "region": "us-west-2",
-      "encryption": "none",
-      "public_access": false,
-      "last_classified": "2022-01-05",
-      "classification_age_days": 816,
-      "stale_classification": true,
+      "contains": [
+        "dev_configs",
+        "test_data",
+        "build_artifacts"
+      ],
       "row_estimate": 12000,
       "legitimate_accessors": [
         "engineering"
       ],
-      "compliance": [],
-      "secrets_risk": true,
-      "file_formats_detected": [
-        {
-          "classification": "Semi-structured",
-          "type": "Configuration files",
-          "extensions": [
-            "env",
-            "yaml",
-            "json",
-            "tfstate"
-          ],
-          "object_count": 847
-        },
-        {
-          "classification": "Unstructured",
-          "type": "Code",
-          "extensions": [
-            "py",
-            "sh",
-            "ps1"
-          ],
-          "object_count": 2140
-        },
-        {
-          "classification": "Secrets",
-          "type": "Key files",
-          "extensions": [
-            "pem",
-            "key"
-          ],
-          "object_count": 3
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "Secrets",
-          "data_type": "Generic Password",
-          "description": "Unified password detection with entropy validation",
-          "sensitivity": "Restricted",
-          "entry_count": 47
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Secret Key",
-          "description": "Persistent secret for token generation",
-          "sensitivity": "Restricted",
-          "entry_count": 12
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Token",
-          "description": "Ephemeral secret used for authentication",
-          "sensitivity": "Restricted",
-          "entry_count": 34
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Sensitive URL",
-          "description": "URLs containing auth parameters or embedded tokens",
-          "sensitivity": "Restricted",
-          "entry_count": 8
-        }
-      ],
-      "actual_data_types": [
-        "Generic Password",
-        "Secret Key",
-        "Token",
-        "Sensitive URL"
-      ],
-      "labeled_data_types": [
-        "INTERNAL",
-        "engineering"
-      ],
-      "classification_mismatch": false,
-      "_note": "Secrets present but classification not technically wrong \u2014 issue is secrets should not be here at all",
-      "known_secrets": [
-        "Generic Password",
-        "Secret Key",
-        "Token",
-        "Sensitive URL"
-      ],
-      "sample_finding_evidence": "Generic Password detected in 47 .env files. Secret Key detected in 3 .pem files. Entropy validation passed \u2014 not synthetic data."
+      "compliance": []
     },
     {
       "id": "rds-app-prod",
-      "name": "meridian-app-db-prod",
+      "name": "acme-app-db-prod",
       "type": "rds_postgres",
-      "category": "PII",
       "classification": "PII",
-      "sensitivity_level": "Restricted",
+      "sensitivity": "high",
       "region": "us-east-1",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2023-12-01",
-      "classification_age_days": 121,
-      "stale_classification": false,
+      "contains": [
+        "user_accounts",
+        "session_data",
+        "api_keys",
+        "customer_profiles"
+      ],
       "row_estimate": 220000,
       "legitimate_accessors": [
         "engineering",
@@ -3635,272 +3131,7 @@
       "compliance": [
         "SOC2",
         "GDPR"
-      ],
-      "secrets_risk": true,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Managed database",
-          "extensions": [
-            "rds_postgres"
-          ],
-          "table_count": 22
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PII",
-          "data_type": "Email",
-          "description": "User email addresses",
-          "sensitivity": "Confidential",
-          "entry_count": 220000
-        },
-        {
-          "category": "PII",
-          "data_type": "User Name",
-          "description": "Electronic username identifiers",
-          "sensitivity": "Confidential",
-          "entry_count": 220000
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Token",
-          "description": "OAuth and session tokens in api_keys table",
-          "sensitivity": "Restricted",
-          "entry_count": 184000
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Secret Key",
-          "description": "API keys stored in application database",
-          "sensitivity": "Restricted",
-          "entry_count": 64000
-        }
-      ],
-      "actual_data_types": [
-        "Email",
-        "User Name",
-        "Token",
-        "Secret Key"
-      ],
-      "labeled_data_types": [
-        "PII",
-        "application_data"
-      ],
-      "classification_mismatch": false,
-      "known_secrets": [
-        "Token",
-        "Secret Key"
-      ],
-      "sample_finding_evidence": "Token pattern detected in api_keys table: 184,000 entries matching OAuth bearer token format. Secret Key detected: 64,000 API key entries."
-    },
-    {
-      "id": "s3-app-configs",
-      "name": "meridian-app-configs-prod",
-      "type": "s3_bucket",
-      "category": "Secrets",
-      "classification": "INTERNAL",
-      "sensitivity_level": "Private",
-      "_classification_warning": "Labeled INTERNAL but scanner found Restricted secrets \u2014 effective sensitivity is critical",
-      "region": "us-east-1",
-      "encryption": "none",
-      "public_access": false,
-      "last_classified": "2021-08-12",
-      "classification_age_days": 962,
-      "stale_classification": true,
-      "row_estimate": 847,
-      "legitimate_accessors": [
-        "engineering",
-        "it_ops"
-      ],
-      "compliance": [],
-      "secrets_risk": true,
-      "file_formats_detected": [
-        {
-          "classification": "Semi-structured",
-          "type": "Configuration files",
-          "extensions": [
-            "env",
-            "yaml",
-            "yml",
-            "json",
-            "properties"
-          ],
-          "object_count": 612
-        },
-        {
-          "classification": "Secrets",
-          "type": "Key files",
-          "extensions": [
-            "pem",
-            "key",
-            "p12"
-          ],
-          "object_count": 8
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "Secrets",
-          "data_type": "Generic Password",
-          "description": "Database passwords with entropy validation",
-          "sensitivity": "Restricted",
-          "entry_count": 23
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Secret Key",
-          "description": "Encryption and signing keys",
-          "sensitivity": "Restricted",
-          "entry_count": 8
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Token",
-          "description": "Third-party API tokens (Slack, Stripe, SendGrid)",
-          "sensitivity": "Restricted",
-          "entry_count": 31
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Sensitive URL",
-          "description": "Connection strings with embedded credentials",
-          "sensitivity": "Restricted",
-          "entry_count": 14
-        },
-        {
-          "category": "Secrets",
-          "data_type": "Runtime Secret",
-          "description": "Secrets detected in deployment scripts",
-          "sensitivity": "Restricted",
-          "entry_count": 6
-        }
-      ],
-      "actual_data_types": [
-        "Generic Password",
-        "Secret Key",
-        "Token",
-        "Sensitive URL",
-        "Runtime Secret"
-      ],
-      "labeled_data_types": [
-        "INTERNAL",
-        "configs"
-      ],
-      "classification_mismatch": true,
-      "_mismatch_note": "All detected data types are Secrets/Restricted. Bucket labeled INTERNAL \u2014 correct label would be Secrets/Restricted. 962 days since classification.",
-      "known_secrets": [
-        "Generic Password",
-        "Secret Key",
-        "Token",
-        "Sensitive URL",
-        "Runtime Secret"
-      ],
-      "sample_finding_evidence": "Generic Password: 23 occurrences in .env files matching DB_PASSWORD=, REDIS_PASSWORD= patterns. Secret Key: 8 .pem files. Token: 31 third-party tokens (Slack webhook, Stripe secret, SendGrid API key patterns detected)."
-    },
-    {
-      "id": "s3-data-lake",
-      "name": "meridian-data-lake-raw",
-      "type": "s3_bucket",
-      "category": "PHI",
-      "classification": "CONFIDENTIAL",
-      "sensitivity_level": "Confidential",
-      "_classification_warning": "Raw ingest bucket \u2014 scanner found PHI and PCI data in recently added objects",
-      "region": "us-west-2",
-      "encryption": "AES-256",
-      "public_access": false,
-      "last_classified": "2020-11-30",
-      "classification_age_days": 1217,
-      "stale_classification": true,
-      "row_estimate": 45000000,
-      "legitimate_accessors": [
-        "data_science",
-        "engineering"
-      ],
-      "compliance": [
-        "HIPAA",
-        "SOC2"
-      ],
-      "secrets_risk": false,
-      "file_formats_detected": [
-        {
-          "classification": "Structured",
-          "type": "Spreadsheets and databases",
-          "extensions": [
-            "parquet",
-            "csv",
-            "tsv"
-          ],
-          "object_count": 84200
-        },
-        {
-          "classification": "Semi-structured",
-          "type": "Configuration files",
-          "extensions": [
-            "json"
-          ],
-          "object_count": 12400
-        }
-      ],
-      "data_types_detected": [
-        {
-          "category": "PHI",
-          "data_type": "MRN",
-          "description": "Medical Record Number in raw feed objects",
-          "sensitivity": "Restricted",
-          "entry_count": 12000000
-        },
-        {
-          "category": "PHI",
-          "data_type": "MBI",
-          "description": "Medicare Beneficiary Identifier",
-          "sensitivity": "Restricted",
-          "entry_count": 4800000
-        },
-        {
-          "category": "PHI",
-          "data_type": "NPI",
-          "description": "National Provider Identifier",
-          "sensitivity": "Restricted",
-          "entry_count": 890000
-        },
-        {
-          "category": "PII",
-          "data_type": "Social Security Number",
-          "description": "SSN in insurance claim feeds",
-          "sensitivity": "Restricted",
-          "entry_count": 8200000
-        },
-        {
-          "category": "PCI",
-          "data_type": "Credit Card Number",
-          "description": "Payment card numbers in billing feeds",
-          "sensitivity": "Restricted",
-          "entry_count": 340000
-        },
-        {
-          "category": "PII",
-          "data_type": "Birth Date",
-          "description": "Date of birth",
-          "sensitivity": "Private",
-          "entry_count": 45000000
-        }
-      ],
-      "actual_data_types": [
-        "MRN",
-        "MBI",
-        "NPI",
-        "Social Security Number",
-        "Credit Card Number",
-        "Birth Date"
-      ],
-      "labeled_data_types": [
-        "CONFIDENTIAL",
-        "data_lake"
-      ],
-      "classification_mismatch": true,
-      "_mismatch_note": "Scanner found MRN, MBI, SSN (all Restricted PHI/PII) and Credit Card Number (Restricted PCI). Bucket labeled CONFIDENTIAL. 1,217 days since last classification \u2014 data composition has changed significantly.",
-      "sample_finding_evidence": "SSN pattern XXX-XX-XXXX: 8.2M entries in insurance_claims_*.parquet. Credit Card Number (Visa/MC): 340K entries in payment_feeds_*.csv. MRN pattern detected across 84,200 objects."
+      ]
     }
   ],
   "iam_roles": [
@@ -3914,9 +3145,8 @@
       ],
       "datastores": [
         "s3-analytics-raw",
-        "s3-patient-records",
-        "s3-customer-pii",
-        "s3-data-lake"
+        "s3-financial-records",
+        "s3-customer-pii"
       ],
       "risk_level": "high"
     },
@@ -3931,11 +3161,10 @@
       ],
       "datastores": [
         "s3-dev-scratch",
-        "s3-app-configs",
         "rds-app-prod",
         "s3-analytics-raw"
       ],
-      "risk_level": "high"
+      "risk_level": "medium"
     },
     {
       "id": "role-engineer-senior",
@@ -3948,12 +3177,11 @@
       ],
       "datastores": [
         "s3-dev-scratch",
-        "s3-app-configs",
         "rds-app-prod",
         "rds-billing",
         "s3-analytics-raw"
       ],
-      "risk_level": "critical"
+      "risk_level": "high"
     },
     {
       "id": "role-finance",
@@ -4022,11 +3250,10 @@
         "GlueFullAccess"
       ],
       "datastores": [
-        "s3-patient-records",
+        "s3-financial-records",
         "s3-analytics-raw",
         "rds-app-prod",
-        "rds-billing",
-        "s3-data-lake"
+        "rds-billing"
       ],
       "risk_level": "critical"
     },
@@ -4039,8 +3266,7 @@
       "datastores": [
         "s3-dev-scratch"
       ],
-      "risk_level": "medium",
-      "_note": "Contractors access dev scratch \u2014 which contains Restricted secrets"
+      "risk_level": "low"
     }
   ]
 }

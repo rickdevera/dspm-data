@@ -231,7 +231,7 @@ MITRE ATT&CK is the common language between DSPM tools and the security operatio
 
 ### How mapping works in this simulation
 
-Each scenario has a hardcoded tactic and technique assignment in its finding dict. The mapping is not computed dynamically — it is chosen once per scenario based on what adversarial behavior the scenario most closely represents. This matches how real DSPM tools work: the scanner identifies the pattern, a human or rule maps it to the closest MITRE technique.
+Each scenario has a hardcoded tactic and technique assignment in its finding dict. The mapping is not computed dynamically — it is chosen once per scenario based on what adversarial behavior the scenario most closely represents. For DSPM tools that support MITRE, the expectation is that the scanner identifies the pattern and maps it to the closest technique — giving security operations teams a consistent framework for prioritization, playbook selection, and correlation with other signals.
 
 ### Scenario-to-technique mapping
 

@@ -184,10 +184,10 @@ def cmd_datastore(args):
     print(f"  ID:             {ds['id']}")
     print(f"  Type:           {ds['type']}")
     print(f"  Classification: {ds['classification']}  ← sensitivity label")
-    print(f"  Sensitivity:    {ds['sensitivity'].upper()}")
+    print(f"  Sensitivity:    {ds.get('sensitivity_level', ds.get('sensitivity', 'unknown')).upper()}")
     print(f"  Region:         {ds['region']}")
     print(f"  Est. records:   {ds['row_estimate']:,}")
-    print(f"  Contains:       {', '.join(ds['contains'])}")
+    print(f"  Contains:       {', '.join(ds.get('actual_data_types', ds.get('contains', [])))}")
     print(f"  Compliance:     {', '.join(ds['compliance']) if ds['compliance'] else 'none'}")
     print(f"  Legitimate access for: {', '.join(ds['legitimate_accessors'])}")
 

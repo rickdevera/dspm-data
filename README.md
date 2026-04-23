@@ -14,15 +14,18 @@ The goal is for the  engine to generate flexible data that accurately represents
 git clone <repo>
 cd dspm-demo
 
-python3 generate.py                          # Generate the default environment
-python3 query.py summary                     # Environment overview
-python3 query.py findings                    # All findings
+# Step 1 — generate the environment (writes to output/)
+python3 generate.py                              # default: Meridian Health (config.json)
+python3 generate.py --config configs/acme.json   # alternate: Acme Financial
+python3 generate.py --quick                       # 7-day test run
+
+# Step 2 — explore what was generated
+# query.py always reads from output/ — it reflects whatever generate.py last produced
+python3 query.py summary
+python3 query.py findings
 python3 query.py findings --severity CRITICAL
 python3 query.py user <username>
 python3 query.py datastore s3-patient-records
-
-python3 generate.py --config configs/acme.json   # Alternate company (financial)
-python3 generate.py --quick                       # 7-day test run
 ```
 
 ---
