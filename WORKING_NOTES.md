@@ -2,6 +2,22 @@
 
 ---
 
+## Deferred Features
+
+Items that are architecturally supported but not yet built.
+
+**Web dashboard** — The CLI query tool covers the same ground without adding dependencies. A visual interface is a reasonable next step but not required to demonstrate the core idea.
+
+**Low-severity findings** — A real scan of an 80-person company would produce 50–150 findings, mostly low severity, with a few important ones buried in the noise. This prototype surfaces CRITICAL and HIGH findings only. A post-simulation scan engine that walks users, datastores, and activity logs automatically would produce realistic volume and distribution — the data structure supports it.
+
+**Live cloud infrastructure** — Output mirrors the AWS Security Hub schema so it could be ingested by real tooling without code changes. No AWS account is involved — the simulation generates what a real scan would find, not the underlying infrastructure to scan.
+
+**Behavioral drift scenario** — A user gradually starts accessing data outside their normal job function over 30 days. There is no single suspicious event — the signal is that their access pattern diverges from peers. Requires tracking relative behavior over time, which works better with AI-assisted generation than fixed probability rules.
+
+**Temporary access abuse scenario** — A user is granted elevated permissions for a specific task. Three failure modes: accessing things outside the stated reason while elevated, permissions not removed on expiration, or post-revocation attempts to reach data discovered during the elevated window. The third signal is the most subtle and the most telling.
+
+---
+
 ## FUTURE ARCHITECTURE DISCUSSIONS
 
 ---

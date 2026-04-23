@@ -42,15 +42,15 @@ See [`examples/`](examples/) for sample output from a default run.
 
 ## Decisions and Tradeoffs
 
-**AI query layer — not built.** The output is structured to support it; adding it is a ~30-minute task on top of what exists. Set aside to keep focus on data quality, which is the harder problem.
+**Config-driven design** — The environment is fully defined in `config.json` with no code changes needed to generate a different company. This makes the simulation reproducible via a seed value and extensible to new industries without touching the pipeline. A hardcoded approach would have produced one demo environment; the config approach produces an unlimited number of internally consistent ones.
 
-**Web dashboard — not built.** The CLI query tool covers the same ground without adding dependencies. A visual interface is a reasonable next step, not a required one.
+**Healthcare as the domain** — Healthcare surfaces multiple sensitive data types simultaneously: PHI (MRN, MBI, DEA), PII (SSN, name, address), PCI (payment data), and credentials. A single-type dataset produces narrow findings. Healthcare creates overlapping compliance scope — HIPAA, GDPR, PCI-DSS, SOC2 — in one environment, which is a more realistic and interesting demo target.
 
-**Low-severity findings — not generated.** A real scan of an 80-person company would produce 50–150 findings, mostly low severity. This prototype surfaces 12 CRITICAL and HIGH findings. A post-simulation scan engine that auto-generates finding volume is architecturally straightforward — the data supports it, it just has not been built.
+**MITRE ATT&CK mapping** — Every finding maps to a tactic and technique. This is the shared language between DSPM output and the security operations teams that act on findings — it determines which detection playbooks apply and where in the kill chain the activity sits. See [ARCHITECTURE.md](ARCHITECTURE.md) for the full mapping rationale.
 
-**Live cloud infrastructure — not used.** Output mirrors the AWS Security Hub schema so it could be ingested by real tooling. No AWS account is involved — the simulation generates what a real scan would find, not the infrastructure to scan.
+**AI query layer** — The output format (structured JSON, AWS Security Hub schema) was chosen specifically to support it. Set aside to keep focus on data quality, which is the harder problem. See [WORKING_NOTES.md](WORKING_NOTES.md) for the planned approach.
 
-**Two scenarios designed but not built:** behavioral drift (access pattern diverges from peers over 30 days) and temporary access abuse (elevated permissions not revoked, or post-revocation access to data discovered during the elevated window). Both require tracking how behavior changes over time — better suited to AI-assisted generation than fixed probability rules.
+**On-prem and hybrid coverage** — Out of scope for this prototype due to time constraints. Extending to on-prem requires a fundamentally different scanning model — connectors, agents, no cloud API abstraction. See [WORKING_NOTES.md](WORKING_NOTES.md) for the architecture discussion.
 
 ---
 
