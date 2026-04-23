@@ -1,4 +1,5 @@
 .DS_Store
+.claude/
 output/activity_logs.json
 output/company_baseline.json
 output/findings.json
