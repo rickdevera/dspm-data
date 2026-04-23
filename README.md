@@ -57,6 +57,16 @@ See [`examples/`](examples/) for sample output from a default run.
 
 ---
 
+## Known Limitations
+
+- `--severity` does not validate input — a misspelling returns zero results with no error message
+- `query.py list-users` shows a maximum of 6 users per department; larger departments are silently truncated
+- `query.py timeline` shows the last 50 events only with no indication that earlier events exist
+- `query.py timeline` and `query.py summary` label the simulation period as "90 days" regardless of whether `--quick` was used
+- Datastore ID lookup is case-sensitive; username lookup is not — behavior is inconsistent across commands
+
+---
+
 ## Further Reading
 
 - [ARCHITECTURE.md](ARCHITECTURE.md) — pipeline design, module responsibilities, config schema, extension points
