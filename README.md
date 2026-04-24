@@ -26,6 +26,13 @@ python3 query.py findings
 python3 query.py findings --severity CRITICAL
 python3 query.py user <username>
 python3 query.py datastore s3-patient-records
+
+# timeline — pipe-friendly, outputs all events with username on every line
+python3 query.py timeline                        # all events
+python3 query.py timeline <username>             # filter to one user
+python3 query.py timeline | grep EXFIL_PATTERN
+python3 query.py timeline | grep s3-customer-pii
+python3 query.py timeline | grep FOREIGN_IP
 ```
 
 ---
@@ -61,8 +68,8 @@ See [`examples/`](examples/) for sample output from a default run.
 
 - `--severity` does not validate input — a misspelling returns zero results with no error message
 - `query.py list-users` shows a maximum of 6 users per department; larger departments are silently truncated
-- `query.py timeline` shows the last 50 events only with no indication that earlier events exist
-- `query.py timeline` and `query.py summary` label the simulation period as "90 days" regardless of whether `--quick` was used
+- `query.py timeline` outputs all events — large environments will produce significant output; pipe to `grep` or `head` to narrow results
+- `query.py summary` labels the activity period as "90 days" regardless of whether `--quick` was used
 - Datastore ID lookup is case-sensitive; username lookup is not — behavior is inconsistent across commands
 
 ---

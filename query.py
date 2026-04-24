@@ -253,31 +253,26 @@ def cmd_list_users(args):
 
 def cmd_timeline(args):
     logs = load("activity_logs.json")
-    baseline = load("company_baseline.json")
 
-    user_id = args.user_id
-    user = next((u for u in baseline["users"] if u.get("user_id") == user_id
-                 or u.get("username") == user_id), None)
+    user_filter = args.user_id
+    events = logs["events"]
 
-    user_events = [e for e in logs["events"] if e.get("user_id") == user_id
-                   or e.get("username") == user_id]
+    if user_filter:
+        events = [e for e in events if e.get("user_id") == user_filter
+                  or e.get("username") == user_filter]
+        if not events:
+            print(f"[!] No events found for: {user_filter}")
+            print(f"    Try: python3 query.py list-users")
+            return
 
-    if not user_events:
-        print(f"[!] No events found for: {user_id}")
-        return
+    print(f"timestamp           username                       action          datastore                            bytes       flags")
+    print(f"{'-'*120}")
 
-    name = user.get("full_name", user_id) if user else user_id
-    print(f"\n  90-DAY TIMELINE: {name}")
-    print(f"  {'Date':12} {'Hour':6} {'Action':15} {'Datastore':35} {'Bytes':12} {'Flags'}")
-    print(f"  {'-'*100}")
-
-    for e in user_events[-50:]:    # last 50 events
+    for e in events:
         ts = e["timestamp"][:16]
         flags = " ".join(e.get("flags", []))
-        flag_indicator = f"  ⚠ {flags}" if flags else ""
-        print(f"  {ts}  {e['action']:15} {e['datastore_id']:35} "
-              f"{e.get('bytes_transferred', 0):>10,}  {flag_indicator}")
-    print()
+        print(f"{ts}  {e.get('username',''):30} {e['action']:15} {e['datastore_id']:35} "
+              f"{e.get('bytes_transferred', 0):>10,}  {flags}")
 
 
 if __name__ == "__main__":
@@ -309,7 +304,7 @@ if __name__ == "__main__":
 
     # timeline
     p_timeline = subparsers.add_parser("timeline", help="Show user activity timeline")
-    p_timeline.add_argument("user_id", help="User ID or username")
+    p_timeline.add_argument("user_id", nargs="?", help="Username or user_id (default: most flagged user)")
     p_timeline.set_defaults(func=cmd_timeline)
 
     args = parser.parse_args()
